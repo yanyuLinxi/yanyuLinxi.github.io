@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <title>
         Pure theme for Hugo</title>
@@ -56,16 +56,16 @@
     <div class="slimContent">
       <div class="navbar-header">
         <div class="profile-block text-center">
-          <a id="avatar" href="https://github.com/xiaoheiAh" target="_blank">
-            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/avatar.png" width="200" height="200">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">xiaoheiAh</h2>
-          <h3 id="title" class="hidden-xs hidden-sm hidden-md">author title</h3>
-          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Shanghai, China</small>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
         </div><div class="search" id="search-form-wrap">
     <form class="search-form sidebar-form">
         <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
             <span class="input-group-btn">
                 <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
                         class="icon icon-search"></i></button>
@@ -75,7 +75,7 @@
             <div class="ins-search-mask"></div>
             <div class="ins-search-container">
                 <div class="ins-input-wrapper">
-                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
                         x-webkit-speech />
                     <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
                         aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -99,31 +99,31 @@
             <li class="menu-item menu-item-home">
                 <a href="/">
                     <i class="icon icon-home-fill"></i>
-                  <span class="menu-title">Home</span>
+                  <span class="menu-title">主页</span>
                 </a>
             </li>
             <li class="menu-item menu-item-archives">
                 <a href="/posts/">
                     <i class="icon icon-archives-fill"></i>
-                  <span class="menu-title">Archives</span>
+                  <span class="menu-title">所有文章</span>
                 </a>
             </li>
             <li class="menu-item menu-item-categories">
                 <a href="/categories/">
                     <i class="icon icon-folder"></i>
-                  <span class="menu-title">Categories</span>
+                  <span class="menu-title">分类</span>
                 </a>
             </li>
             <li class="menu-item menu-item-tags">
                 <a href="/tags/">
                     <i class="icon icon-tags"></i>
-                  <span class="menu-title">Tags</span>
+                  <span class="menu-title">标签</span>
                 </a>
             </li>
             <li class="menu-item menu-item-about">
                 <a href="/about/">
                     <i class="icon icon-cup-fill"></i>
-                  <span class="menu-title">About</span>
+                  <span class="menu-title">关于</span>
                 </a>
             </li>
         </ul>
@@ -131,211 +131,24 @@
     </div>
   </header>
 
-<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-      <div class="widget">
-    <h3 class="widget-title">Board</h3>
-    <div class="widget-body">
-        <div id="board">
-            <div class="content"><p>enjoy~</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-      <div class="widget">
-    <h3 class="widget-title"> Tags</h3>
-    <div id="tag-cloud-list" class="widget-body">
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/css/" class="tag-list-link" rel="1">css<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/emoji/" class="tag-list-link" rel="1">emoji<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/html/" class="tag-list-link" rel="1">html<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/index/" class="tag-list-link" rel="1">index<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/markdown/" class="tag-list-link" rel="2">markdown<span
-               class="tag-list-count">2</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/privacy/" class="tag-list-link" rel="1">privacy<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/shortcodes/" class="tag-list-link" rel="1">shortcodes<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/text/" class="tag-list-link" rel="1">text<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/themes/" class="tag-list-link" rel="1">themes<span
-               class="tag-list-count">1</span></a>
-            
-    </div>
-<script>
-document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    tagCloud('#tag-cloud-list a',  8 ,  20 );
-  }
-};
-
-function tagCloud(where, min, max) {
-  let iMax = 0;
-  let iMin = 0;
-  $(where).each(function() {
-    let weight = Number($(this).attr("rel"));
-    if(iMax < weight) iMax = weight;
-    if(iMin > weight || iMin == 0) iMin = weight;
-  });
-  let step = (max - min)/(iMax - iMin);
-  $(where).each(function() {
-    let weight = $(this).attr("rel") - iMin;
-    $(this).css({"font-size": min + (weight * step) + 'px'});
-  });
-};
-</script>
-</div>
-
-      <div class="widget">
-    <h3 class="widget-title"> Categories</h3>
-    <div class="widget-body">
-        <ul class="category-list">
-            <li class="category-list-item"><a href="https://yanyuLinxi.github.io/categories/syntax/" class="category-list-link">syntax</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://yanyuLinxi.github.io/categories/themes/" class="category-list-link">themes</a><span class="category-list-count">1</span></li>
-        </ul>
-    </div>
-</div>
-      <div class="widget">
-    <h3 class="widget-title"> Tags</h3>
-    <div class="widget-body">
-        <ul class="tag-list">
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/css/" class="tag-list-link">css</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/emoji/" class="tag-list-link">emoji</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/html/" class="tag-list-link">html</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/index/" class="tag-list-link">index</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/markdown/" class="tag-list-link">markdown</a><span
-                    class="tag-list-count">2</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/privacy/" class="tag-list-link">privacy</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/shortcodes/" class="tag-list-link">shortcodes</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/text/" class="tag-list-link">text</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/themes/" class="tag-list-link">themes</a><span
-                    class="tag-list-count">1</span></li>
-            
-        </ul>
-
-    </div>
-</div>
-      
-<div class="widget">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget-body">
-        <ul class="recent-post-list list-unstyled no-thumbnail">
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/markdown-syntax/" class="title">Markdown Syntax Guide</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/rich-content/" class="title">Rich Content</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/placeholder-text/" class="title">Placeholder Text</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-09</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/math-typesetting/" class="title">Math Typesetting</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-08</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/emoji-support/" class="title">Emoji Support</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-05</time>
-                    </p>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-  </div>
-</aside>
-
-    
     
 <main class="main" role="main">
     <article class="article article-categories article-type-list" itemscope="">
         <header class="article-header">
             <h1 itemprop="name" class="hidden-xs">Categories</h1>
-            <p class="text-muted hidden-xs">Total 2 categories</p>
+            <p class="text-muted hidden-xs">共 8 个分类</p>
             <nav role="navigation" id="nav-main" class="okayNav">
                 <ul>
                     <li><a href="https://yanyuLinxi.github.io/categories">All</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/categories/syntax/">syntax</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/categories/themes/">themes</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/categories/english/">english</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/categories/%E5%85%B6%E4%BB%96/">其他</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/categories/%E5%8E%A8%E8%89%BA%E5%AD%A6%E4%B9%A0/">厨艺学习</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">科研学习笔记</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/categories/%E7%A7%91%E7%A0%94%E8%AE%B0%E5%BD%95/">科研记录</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/categories/%E8%87%AA%E5%AD%A6/">自学</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">论文阅读笔记</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/categories/%E9%9F%B3%E4%B9%90/">音乐</a></li>
                 </ul>
             </nav>
         </header>
@@ -344,18 +157,18 @@ function tagCloud(where, min, max) {
             <div class="panel panel-default b-no">
                 <div class="panel-heading" role="tab">
                     <h3 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse55152fd428afc5d73e8878d27d0b09c3" aria-expanded="true">
-                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>syntax
+                        <a data-toggle="collapse" href="#collapseba0a6ddd94c73698a3658f92ac222f8a" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>english
                         </a>
                         <small class="text-muted">(Total1 articles)</small>
                     </h3>
                 </div>
-                <div id="collapse55152fd428afc5d73e8878d27d0b09c3" class="panel-collapse collapse in" role="tabpanel"
-                    aria-labelledby="headingsyntax ">
+                <div id="collapseba0a6ddd94c73698a3658f92ac222f8a" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="headingenglish ">
                     <div class="panel-body">
-                        <div class="collection"><a href="https://yanyuLinxi.github.io/2019/03/markdown-syntax/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2019-03-11 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2019-03-11
-    </time>Markdown Syntax Guide
+                        <div class="collection"><a href="https://yanyuLinxi.github.io/2021/08/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-08-30 16:16:00 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-08-30
+    </time>EnglishLearning
 </a>
                         </div>
                     </div>
@@ -364,18 +177,201 @@ function tagCloud(where, min, max) {
             <div class="panel panel-default b-no">
                 <div class="panel-heading" role="tab">
                     <h3 class="panel-title">
-                        <a data-toggle="collapse" href="#collapsefe021943dcda87150f590b3475afaded" aria-expanded="true">
-                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>themes
+                        <a data-toggle="collapse" href="#collapse0d98c74797e49d00bcc4c17c9d557a2b" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>其他
                         </a>
                         <small class="text-muted">(Total1 articles)</small>
                     </h3>
                 </div>
-                <div id="collapsefe021943dcda87150f590b3475afaded" class="panel-collapse collapse in" role="tabpanel"
-                    aria-labelledby="headingthemes ">
+                <div id="collapse0d98c74797e49d00bcc4c17c9d557a2b" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="heading其他 ">
                     <div class="panel-body">
-                        <div class="collection"><a href="https://yanyuLinxi.github.io/2019/03/markdown-syntax/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2019-03-11 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2019-03-11
-    </time>Markdown Syntax Guide
+                        <div class="collection"><a href="https://yanyuLinxi.github.io/2021/06/%E9%92%A2%E7%90%B4%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-06-13 09:35:45 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-06-13
+    </time>钢琴学习记录
+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default b-no">
+                <div class="panel-heading" role="tab">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse6b15460dd3b620b9bb8291a6adf2419a" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>厨艺学习
+                        </a>
+                        <small class="text-muted">(Total1 articles)</small>
+                    </h3>
+                </div>
+                <div id="collapse6b15460dd3b620b9bb8291a6adf2419a" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="heading厨艺学习 ">
+                    <div class="panel-body">
+                        <div class="collection"><a href="https://yanyuLinxi.github.io/2021/07/%E5%8E%A8%E7%A5%9E%E5%9F%B9%E5%85%BB%E8%AE%A1%E5%88%92/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-07-05 09:18:29 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-07-05
+    </time>厨神培养计划
+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default b-no">
+                <div class="panel-heading" role="tab">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" href="#collapsebd2931d71b0b583291737d8c744f606b" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>科研学习笔记
+                        </a>
+                        <small class="text-muted">(Total2 articles)</small>
+                    </h3>
+                </div>
+                <div id="collapsebd2931d71b0b583291737d8c744f606b" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="heading科研学习笔记 ">
+                    <div class="panel-body">
+                        <div class="collection"><a href="https://yanyuLinxi.github.io/2021/09/outlier%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-29 20:06:48 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-29
+    </time>Outlier异常值检测技术记录
+</a><a href="https://yanyuLinxi.github.io/2021/09/%E6%97%A0%E7%9B%91%E7%9D%A3%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-27 15:28:41 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-27
+    </time>无监督聚类算法学习总结
+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default b-no">
+                <div class="panel-heading" role="tab">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse824a20e97664686760bada2659b4d1b1" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>科研记录
+                        </a>
+                        <small class="text-muted">(Total3 articles)</small>
+                    </h3>
+                </div>
+                <div id="collapse824a20e97664686760bada2659b4d1b1" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="heading科研记录 ">
+                    <div class="panel-body">
+                        <div class="collection"><a href="https://yanyuLinxi.github.io/2021/07/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7mark/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-07-21 10:05:44 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-07-21
+    </time>科研工具mark
+</a><a href="https://yanyuLinxi.github.io/2021/07/%E5%89%8D%E4%BA%BA%E7%A7%91%E7%A0%94%E7%BB%8F%E9%AA%8C/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-07-21 08:50:19 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-07-21
+    </time>前人科研经验
+</a><a href="https://yanyuLinxi.github.io/2021/06/%E8%AE%BA%E6%96%87%E5%A5%87%E6%80%9D%E5%A6%99%E6%83%B3/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-06-13 09:34:23 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-06-13
+    </time>论文奇思妙想
+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default b-no">
+                <div class="panel-heading" role="tab">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" href="#collapseee7b340aabcf140a6f165bde3fed6a4d" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>自学
+                        </a>
+                        <small class="text-muted">(Total1 articles)</small>
+                    </h3>
+                </div>
+                <div id="collapseee7b340aabcf140a6f165bde3fed6a4d" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="heading自学 ">
+                    <div class="panel-body">
+                        <div class="collection"><a href="https://yanyuLinxi.github.io/2021/06/%E9%92%A2%E7%90%B4%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-06-13 09:35:45 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-06-13
+    </time>钢琴学习记录
+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default b-no">
+                <div class="panel-heading" role="tab">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" href="#collapsef8cf8b231670535d70fc4d59568a93bd" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>论文阅读笔记
+                        </a>
+                        <small class="text-muted">(Total19 articles)</small>
+                    </h3>
+                </div>
+                <div id="collapsef8cf8b231670535d70fc4d59568a93bd" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="heading论文阅读笔记 ">
+                    <div class="panel-body">
+                        <div class="collection"><a href="https://yanyuLinxi.github.io/2021/11/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-11-18 16:57:54 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-11-18
+    </time>SimCLR a Simple Framework for Contrastive Learning of Visual Representations
+</a><a href="https://yanyuLinxi.github.io/2021/10/sourcefinder-finding-malware-source-code-from-publiclyu-available-repositories-in-github/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-10-15 08:28:59 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-10-15
+    </time>SourceFinder Finding Malware Source Code From Publiclyu Available Repositories in Github
+</a><a href="https://yanyuLinxi.github.io/2021/10/progress-in-outlier-detection-techniques-a-survey/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-10-07 16:20:04 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-10-07
+    </time>Progress in Outlier Detection Techniques a Survey
+</a><a href="https://yanyuLinxi.github.io/2021/09/analyzing-data-granularity-levels-for-insider-threat-detection-using-machine-learning/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-28 09:24:22 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-28
+    </time>Analyzing Data Granularity Levels for Insider Threat Detection Using Machine Learning
+</a><a href="https://yanyuLinxi.github.io/2021/09/insider-threat-detection-via-hierarchical-neural-temporal-point-process/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-26 10:42:54 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-26
+    </time>Insider Threat Detection via Hierarchical Neural Temporal Point Process
+</a><a href="https://yanyuLinxi.github.io/2021/09/log2vec-a-heterogeneous-graph-embedding-based-approach-for-detecting-cyber-threats-within-enterprise/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-25 14:45:30 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-25
+    </time>Log2Vec a Heterogeneous Graph Embedding Based Approach for Detecting Cyber Threats Within Enterprise
+</a><a href="https://yanyuLinxi.github.io/2021/09/an-insider-threat-detection-approach-based-on-mouse-dynamics-and-deep-learning/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-25 10:30:25 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-25
+    </time>An Insider Threat Detection Approach Based on Mouse Dynamics and Deep Learning
+</a><a href="https://yanyuLinxi.github.io/2021/09/deep-learning-for-unsupervised-insider-threat-detection-in-structured-cybersecurity-datastreams/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-24 19:33:54 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-24
+    </time>Deep Learning for Unsupervised Insider Threat Detection in Structured Cybersecurity DataStreams
+</a><a href="https://yanyuLinxi.github.io/2021/09/anomaly-based-insider-threat-detection-using-deep-autoencoders/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-16 20:21:40 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-16
+    </time>Anomaly Based Insider Threat Detection Using Deep Autoencoders
+</a><a href="https://yanyuLinxi.github.io/2021/09/deep-learning-for-insider-threat-detection-review-challenges-and-opportunities/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-16 18:47:40 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-16
+    </time>Deep Learning for Insider Threat Detection Review Challenges and Opportunities
+</a><a href="https://yanyuLinxi.github.io/2021/09/demids-a-misuse-detection-system-for-database-systems/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-16 15:38:15 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-16
+    </time>DEMIDS a Misuse Detection System for Database Systems
+</a><a href="https://yanyuLinxi.github.io/2021/09/%E5%9F%BA%E4%BA%8Ecnn-lstm%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%AD%E4%B9%B0%E8%A1%8C%E4%B8%BA%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-16 15:30:42 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-16
+    </time>基于CNN LSTM的用户购买行为预测模型
+</a><a href="https://yanyuLinxi.github.io/2021/09/detection-and-prevention-of-malicious-activites-on-rdbms-relational-database-management-systems/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-16 14:48:04 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-16
+    </time>Detection and Prevention of Malicious Activites on RdBMS Relational Database Management Systems
+</a><a href="https://yanyuLinxi.github.io/2021/09/dbrain%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%82%E5%B8%B8%E5%88%86%E6%9E%90%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-15 16:35:37 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-15
+    </time>DBrain数据库异常分析功能分析
+</a><a href="https://yanyuLinxi.github.io/2021/09/%E4%B8%80%E7%A7%8D%E6%97%A0%E7%9B%91%E7%9D%A3%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-15 15:45:46 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-15
+    </time>一种无监督的数据库用户行为异常检测方法
+</a><a href="https://yanyuLinxi.github.io/2021/09/using-rnn-for-dexompiliation/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-12 16:27:43 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-12
+    </time>Using RNN for Dexompiliation
+</a><a href="https://yanyuLinxi.github.io/2021/09/recognizing-functions-in-binaries-with-neural-networks/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-12 15:34:32 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-12
+    </time>Recognizing Functions in Binaries With Neural Networks
+</a><a href="https://yanyuLinxi.github.io/2021/09/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E5%A4%A7%E8%B5%9B%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-09-05 14:49:07 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-09-05
+    </time>信息安全技术大赛两个项目汇报
+</a><a href="https://yanyuLinxi.github.io/2021/04/code-completion-by-modeling-flattened-abstract-syntax-trees-as-graphs%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-04-13 10:40:02 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-04-13
+    </time>“Code Completion by Modeling Flattened Abstract Syntax Trees as Graphs”阅读笔记
+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default b-no">
+                <div class="panel-heading" role="tab">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse95521bb744463633c858cc50abb44e7d" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>音乐
+                        </a>
+                        <small class="text-muted">(Total1 articles)</small>
+                    </h3>
+                </div>
+                <div id="collapse95521bb744463633c858cc50abb44e7d" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="heading音乐 ">
+                    <div class="panel-body">
+                        <div class="collection"><a href="https://yanyuLinxi.github.io/2021/06/%E9%92%A2%E7%90%B4%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2021-06-13 09:35:45 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2021-06-13
+    </time>钢琴学习记录
 </a>
                         </div>
                     </div>
@@ -385,13 +381,15 @@ function tagCloud(where, min, max) {
     </article>
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
-    <li><a href="https://github.com/xiaoheiAh" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
     <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
             <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
 </ul>
   <div class="copyright">
-    &copy;2017  -
+    &copy;2020  -
     2021
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
@@ -431,11 +429,11 @@ function tagCloud(where, min, max) {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
             },
             ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
             CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',

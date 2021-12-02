@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unsupervised on Pure theme for Hugo</title>
+    <link>https://yanyuLinxi.github.io/tags/unsupervised/</link>
+    <description>Recent content in Unsupervised on Pure theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>CC BY 4.0 CN</copyright>
+    <lastBuildDate>Thu, 16 Sep 2021 20:21:40 +0800</lastBuildDate>
+    
+        <atom:link href="https://yanyuLinxi.github.io/tags/unsupervised/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kaggle祖传代码</title>
+      <link>https://yanyuLinxi.github.io/2021/11/kaggle%E7%A5%96%E4%BC%A0%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Fri, 05 Nov 2021 09:02:40 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/11/kaggle%E7%A5%96%E4%BC%A0%E4%BB%A3%E7%A0%81/</guid>
+      <description>这里给出祖传代码list 使用高斯归一化 使用贝叶斯搜寻参数 常用的utils。包括归一化函数、pytorch训练等。 使用bert进行masked</description>
+    </item>
+    
+    <item>
+      <title>Kaggle前人经验</title>
+      <link>https://yanyuLinxi.github.io/2021/11/kaggle%E5%89%8D%E4%BA%BA%E7%BB%8F%E9%AA%8C/</link>
+      <pubDate>Mon, 01 Nov 2021 20:10:31 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/11/kaggle%E5%89%8D%E4%BA%BA%E7%BB%8F%E9%AA%8C/</guid>
+      <description>大佬经验总结 一位master： 网址:https://mp.weixin.qq.com/s?__biz=Mzk0NDE5Nzg1Ng==&amp;am</description>
+    </item>
+    
+    <item>
+      <title>Gensim学习笔记</title>
+      <link>https://yanyuLinxi.github.io/2021/10/gensim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 22 Oct 2021 10:29:55 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/gensim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>使用腾讯中文语料库 腾讯词向量使用方法： https://www.jianshu.com/p/65a29663130a 语料库地址： https://ai.tencent.com/ailab/nlp/zh/embedding.html 语料库 chinese-word-vectors: https://github.com/Embedding/Chinese-Word-Vectors 300维 腾讯词向量： https://www.jianshu.com/p/65a29663130a 200维，800万词。 其他多语言语料库 https://sites.google.com/site/rmyeid/projects/polyglot 使用gensi</description>
+    </item>
+    
+    <item>
+      <title>ATEC科技精英赛</title>
+      <link>https://yanyuLinxi.github.io/2021/10/atec%E7%A7%91%E6%8A%80%E7%B2%BE%E8%8B%B1%E8%B5%9B/</link>
+      <pubDate>Wed, 20 Oct 2021 15:25:35 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/atec%E7%A7%91%E6%8A%80%E7%B2%BE%E8%8B%B1%E8%B5%9B/</guid>
+      <description>比赛题目 第一道题： 赛题从当前社会中高发的电信网络欺诈识别场景入手，提供模拟的“用户”投诉欺诈信息，要求选手识别投诉中的欺诈风险。 本赛道将选取</description>
+    </item>
+    
+    <item>
+      <title>Leetcode3_hash表</title>
+      <link>https://yanyuLinxi.github.io/2021/10/leetcode3_hash%E8%A1%A8/</link>
+      <pubDate>Wed, 20 Oct 2021 15:03:30 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/leetcode3_hash%E8%A1%A8/</guid>
+      <description>基础知识 hash将通过hash函数将某个东西转为数值，然后存在哈希表上。这个哈希表可能是数组，也可能是红黑树等等。 如果hashCode的数值</description>
+    </item>
+    
+    <item>
+      <title>0 引言</title>
+      <link>https://yanyuLinxi.github.io/2021/10/0-%E5%BC%95%E8%A8%80%E5%92%8C%E7%AC%A6%E5%8F%B7%E8%A1%A8/</link>
+      <pubDate>Tue, 19 Oct 2021 08:17:36 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/0-%E5%BC%95%E8%A8%80%E5%92%8C%E7%AC%A6%E5%8F%B7%E8%A1%A8/</guid>
+      <description>引言 计算机可以处理形式化的语言。人工智能的一大难题就是将如何将非形式化的传达给计算机。 人工智能AI系统需要具备自己获取知识的能力，即从原始数</description>
+    </item>
+    
+    <item>
+      <title>线性代数</title>
+      <link>https://yanyuLinxi.github.io/2021/10/1-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</link>
+      <pubDate>Tue, 19 Oct 2021 08:03:54 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/1-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</guid>
+      <description>常见概念 特征分解 奇异值分解 常见概念 标量 向量 矩阵 张量 矩阵加法：C = A + b。表示向量b和矩阵的每一行相加。这种隐式复制的方式，称为广播。boar</description>
+    </item>
+    
+    <item>
+      <title>深度学习计划</title>
+      <link>https://yanyuLinxi.github.io/2021/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Mon, 18 Oct 2021 17:30:09 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid>
+      <description>学习计划 神经网络的学习，我们首先找到一本pdf进行学习，然后我们在学习的过程中持续关注这方面的东西，寻找下一阶段的学习目标。 吴恩达、李宏毅。</description>
+    </item>
+    
+    <item>
+      <title>源代码恶意代码识别</title>
+      <link>https://yanyuLinxi.github.io/2021/10/%E6%BA%90%E4%BB%A3%E7%A0%81%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E8%AF%86%E5%88%AB/</link>
+      <pubDate>Fri, 15 Oct 2021 09:17:12 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/%E6%BA%90%E4%BB%A3%E7%A0%81%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E8%AF%86%E5%88%AB/</guid>
+      <description>现有方案 仅有的一个针对开源代码恶意代码的检测。提供了一个巨大的开源库，但是其是通过检测github库的字段、md文件等信息。 开源代码 恶意代码</description>
+    </item>
+    
+    <item>
+      <title>SourceFinder Finding Malware Source Code From Publiclyu Available Repositories in Github</title>
+      <link>https://yanyuLinxi.github.io/2021/10/sourcefinder-finding-malware-source-code-from-publiclyu-available-repositories-in-github/</link>
+      <pubDate>Fri, 15 Oct 2021 08:28:59 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/sourcefinder-finding-malware-source-code-from-publiclyu-available-repositories-in-github/</guid>
+      <description>目录： 1. 综述翻译 1.1 发表于 2. Tag 3. 任务描述 4. 方法 5. 解决了什么问题（贡献） 6. 实验结果 7. 如何想到该方法 8. 我能否想到该方法 9. 创新点是什么 10. 如何用于本专</description>
+    </item>
+    
+    <item>
+      <title>Python命名规范</title>
+      <link>https://yanyuLinxi.github.io/2021/10/python%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Tue, 12 Oct 2021 10:37:40 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/python%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</guid>
+      <description>从大到小 从大到小 命名规范 样例 包名 全小写 sklearn 模块名 全小写，下划线分割 sklearn.model_selection 类名 首字母大写、驼峰(类名不加下划线) ThisIsMyClass, TruncatedSVD 函数名 全小写、用下划线增加可读性</description>
+    </item>
+    
+    <item>
+      <title>神经网络杂碎知识点记录</title>
+      <link>https://yanyuLinxi.github.io/2021/10/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9D%82%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95lingsui/</link>
+      <pubDate>Sun, 10 Oct 2021 16:30:13 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9D%82%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95lingsui/</guid>
+      <description>标准化和归一化 缩放到均值为0，方差为1（Standardization——StandardScaler()） 缩放到0和1之间（Standar</description>
+    </item>
+    
+    <item>
+      <title>DR特征降维总结</title>
+      <link>https://yanyuLinxi.github.io/2021/10/dr%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sat, 09 Oct 2021 17:51:21 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/dr%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4%E6%80%BB%E7%BB%93/</guid>
+      <description>调研到的降维方法记录： PCA tSNE UMAP 5维的数据使用了300个树？？ mds Multidimensional Scaling (mds),</description>
+    </item>
+    
+    <item>
+      <title>PyOD学习笔记</title>
+      <link>https://yanyuLinxi.github.io/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 09 Oct 2021 15:51:08 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>注意 里面有很多需要其他库的神经网络。比如keras。比如tensorflow。为了避免最后太过复杂，这些自己写最好。 样例 生成污染数据 contamination = 0.1 #</description>
+    </item>
+    
+    <item>
+      <title>Leetcode2_链表</title>
+      <link>https://yanyuLinxi.github.io/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sat, 09 Oct 2021 15:12:27 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/</guid>
+      <description>203 移除链表元素 头节点是什么呢。头节点就是一个空的节点但指向第一个节点。保证了在处理其他节点的时候保持操作一致。返回的时候返回头节点的下一个节</description>
+    </item>
+    
+    <item>
+      <title>Progress in Outlier Detection Techniques a Survey</title>
+      <link>https://yanyuLinxi.github.io/2021/10/progress-in-outlier-detection-techniques-a-survey/</link>
+      <pubDate>Thu, 07 Oct 2021 16:20:04 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/10/progress-in-outlier-detection-techniques-a-survey/</guid>
+      <description>目录： 1. 综述翻译 1.1 发表于 2. Tag 3. 任务描述 4. 方法 基于密度的方法 基于统计的方法 基于参数的 GAUSSIAN MIXTURE MODEL METHODS REGRESSION METHODS 非参数方法 其他统计方法 优缺点 基于距离的方法 基于</description>
+    </item>
+    
+    <item>
+      <title>Seaborn学习笔记</title>
+      <link>https://yanyuLinxi.github.io/2021/09/seaborn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 30 Sep 2021 08:51:28 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/09/seaborn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>seaborn结合pandas来画好看的图。 最后网页显示的统计图，可以用seaborn画。 基本使用 seaborn中两种函数，第一种返回当前设</description>
+    </item>
+    
+    <item>
+      <title>常用其他python库</title>
+      <link>https://yanyuLinxi.github.io/2021/09/%E5%B8%B8%E7%94%A8%E5%85%B6%E4%BB%96python%E5%BA%93/</link>
+      <pubDate>Thu, 30 Sep 2021 08:41:46 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/09/%E5%B8%B8%E7%94%A8%E5%85%B6%E4%BB%96python%E5%BA%93/</guid>
+      <description>常用库 yellowbrick 用来可视化画图的。 seaborn高端matplotlib画图的。 prettyplotlib 配合seaborn来画漂亮的图。 plotly Express 可视化。 tqdm进度条。 lin</description>
+    </item>
+    
+    <item>
+      <title>Outlier异常值检测技术记录</title>
+      <link>https://yanyuLinxi.github.io/2021/09/outlier%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 29 Sep 2021 20:06:48 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/09/outlier%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/</guid>
+      <description>Tag: 异常值检测; 离群值检测; Outlier; 低维特征 Numeric Outlier Z-score 基于高斯分布（正态分布）外的值标记为异常 https://mp.weixin.qq.com/s?__biz=MzIzODExMDE5MA==&amp;amp;mid=2694182460&amp;amp;idx=1&amp;amp;sn=a4842775394946bb643006e2e7c67be9#rd 多维高斯特征离群点检测 使用 Mahalanobis 距离检测多元离群点 使用 $x^2$ 统计</description>
+    </item>
+    
+    <item>
+      <title>Matplotlib学习笔记</title>
+      <link>https://yanyuLinxi.github.io/2021/09/matplotlib%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 29 Sep 2021 10:20:26 +0800</pubDate>
+      
+      <guid>https://yanyuLinxi.github.io/2021/09/matplotlib%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>概览 setting 不同风格 plt.style.available 打印样式列表 plt.style.use(&amp;lsquo;seaborn&amp;rsquo;) 使用seaborn风格的图。 参数color可选项： b:blue c:cyan g:green k:black m:magenta r:red w:white y:yellow 结束时 plt.legend() 在图上放置图例。 设置坐标轴 plt.xlim(-1, 3.5) #设置</description>
+    </item>
+    
+  </channel>
+</rss>

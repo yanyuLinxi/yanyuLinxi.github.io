@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>
+        信息安全技术大赛两个项目汇报 - Pure theme for Hugo
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="DeepVuler 面向开源社区的漏洞挖掘平台 目标 通过社区对代码漏洞的讨论进行分析，完成以下几个任务： 发现社区讨论的新漏洞情报，使用神经网络对漏洞讨论内容进行" />
+    <meta name="generator" content="Hugo 0.81.0 with theme pure" />
+    <title>信息安全技术大赛两个项目汇报 - Pure theme for Hugo</title>
+    
+    
+    <link rel="stylesheet" href="https://yanyuLinxi.github.io/css/style.min.b4b742918d33349bb411274c2c6de779fe2fda4d2101d2703f6bc0fc0a19edf2.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="信息安全技术大赛两个项目汇报" />
+<meta property="og:description" content="DeepVuler 面向开源社区的漏洞挖掘平台 目标 通过社区对代码漏洞的讨论进行分析，完成以下几个任务： 发现社区讨论的新漏洞情报，使用神经网络对漏洞讨论内容进行" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yanyuLinxi.github.io/2021/09/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E5%A4%A7%E8%B5%9B%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-05T14:49:07&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-05T14:49:07&#43;08:00" />
+
+<meta itemprop="name" content="信息安全技术大赛两个项目汇报">
+<meta itemprop="description" content="DeepVuler 面向开源社区的漏洞挖掘平台 目标 通过社区对代码漏洞的讨论进行分析，完成以下几个任务： 发现社区讨论的新漏洞情报，使用神经网络对漏洞讨论内容进行"><meta itemprop="datePublished" content="2021-09-05T14:49:07&#43;08:00" />
+<meta itemprop="dateModified" content="2021-09-05T14:49:07&#43;08:00" />
+<meta itemprop="wordCount" content="2503">
+<meta itemprop="keywords" content="论文阅读笔记," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="信息安全技术大赛两个项目汇报"/>
+<meta name="twitter:description" content="DeepVuler 面向开源社区的漏洞挖掘平台 目标 通过社区对代码漏洞的讨论进行分析，完成以下几个任务： 发现社区讨论的新漏洞情报，使用神经网络对漏洞讨论内容进行"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">主页</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">所有文章</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">分类</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">标签</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">关于</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/09/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E5%A4%A7%E8%B5%9B%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5/"
+    >信息安全技术大赛两个项目汇报</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://yanyuLinxi.github.io/2021/09/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E5%A4%A7%E8%B5%9B%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5/" class="article-date">
+  <time datetime="2021-09-05 14:49:07 &#43;0800 CST" itemprop="datePublished">2021-09-05</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"> 论文阅读笔记 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"> 论文阅读笔记 </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E5%A4%A7%E8%B5%9B%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2503字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="deepvuler-面向开源社区的漏洞挖掘平台">DeepVuler 面向开源社区的漏洞挖掘平台</h1>
+<h2 id="目标">目标</h2>
+<p>通过社区对代码漏洞的讨论进行分析，完成以下几个任务：</p>
+<ol>
+<li>发现社区讨论的新漏洞情报，使用神经网络对漏洞讨论内容进行分析，并对漏洞进行评级和分类。</li>
+<li>发现社区讨论的漏洞，已经被厂家安全更新，但是没有收录为CVE条目的。提醒厂家更新版本。</li>
+<li>关注漏洞情报挖掘者和易损仓库，及时发现新的漏洞情报。</li>
+</ol>
+<h2 id="方法">方法</h2>
+<ol>
+<li>使用神经网络对漏洞讨论内容进行检测，用于区分讨论内容是普通内容还是漏洞讨论内容。
+<ol>
+<li>数据采集和标注
+<ol>
+<li>采集Github讨论内容数据。通过Github的Commits和Security采集漏洞讨论内容。</li>
+</ol>
+</li>
+<li>特征分析和元特征抽取
+<ol>
+<li>提取60个元特征分为五类。文本、行为、用户、仓库、会话。
+<ol>
+<li>行为：帖子链接数量，帖子正向表情、负面表情</li>
+<li>绘画：发帖时间，字数等。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>PTFT深层特征提取模块
+<ol>
+<li>在每个空间特征内，五大特则会那个组选择处的特征进一步构建具有时空概念的三维特征。（本子原话，但是根本没说怎么组合的）
+<ol>
+<li>每一个帖子的特征向量按时间顺序送入注意力LSTM。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>轻量级幻影残差网络。
+<ol>
+<li>进一步将特征送入卷积网络进行分类。目标是判断这是漏洞事件还是普通事件。</li>
+<li>幻影网络来自华为2020CVPR:GhostNet: More Features from Cheap Operations。 主要贡献是通过线性操作来减少运算代价，加速网络。就是一种加速CNN。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>使用FGA对差异性代码判断代码更新是普通更新还是安全性更新。
+<ol>
+<li>数据获取，从commit获取代码更新签后的代码和针对代码更新的描述
+<ol>
+<li>设计统计特征组，分别对代码描述和代码提取相关特征。共计40多个特征。</li>
+<li>针对代码描述，先去除停用词，词形还原等预处理方式，送入word2vec获取100维特征。</li>
+<li>针对代码，将代码的函数名、变量名进行替换，然后word2vec获取200维特征。</li>
+<li>将这些特征先后拼接在一起。</li>
+</ol>
+</li>
+<li>使用神经网络进行学习
+<ol>
+<li>送入FCN(MLP)+BiGRU(BiLSTM)</li>
+<li>进行二分类，判断是普通更新还是安全性更新。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>使用知识图谱对漏洞挖掘者和易损仓库进行识别
+<ol>
+<li>老东西了，也不是擅长领域。粗略看了后也没有什么革新。略。</li>
+</ol>
+</li>
+</ol>
+<h2 id="数据收集">数据收集</h2>
+<ol>
+<li>根据CVE,NVD 收集数据。</li>
+<li>github中监听Security模块。</li>
+</ol>
+<h2 id="亮点">亮点</h2>
+<p>设计方面：</p>
+<ol>
+<li>立意足够有趣。通过commit判断代码是否为漏洞，并进行漏洞挖掘。是实用且有趣的思路。</li>
+<li>跨模型种类的模型组合：RNN结合CNN。这是一种比较新颖的模型缝合方式。</li>
+</ol>
+<p>模型方面：</p>
+<ol>
+<li>设计了非常多的统计特征。</li>
+<li>将统计特征和神经网络训练得到的特征连接起来共同训练。增加可解释性，也增加效果。</li>
+<li>将文本特征和代码特征共同作为判断依据。</li>
+</ol>
+<h2 id="评价">评价</h2>
+<ol>
+<li>立意新颖。</li>
+<li>本子看似内容多，实则结构非常混乱，读的很糟心。比如序号1），a），I）混用，无法分清层级关系</li>
+<li>很多重点内容关键内容模糊带过，无法理解。</li>
+</ol>
+<h1 id="白泽反诈骗网站智能侦察取证研判系统">“白泽”反诈骗网站智能侦察取证研判系统</h1>
+<h2 id="目标-1">目标</h2>
+<p>设计一个系统，完成以下目标：</p>
+<ol>
+<li>根据已有的数据，在互联网中发掘诈骗网站</li>
+<li>针对一个网页，判断其是否为诈骗网站</li>
+</ol>
+<h2 id="方法-1">方法</h2>
+<ol>
+<li>根据警方提供的3000个诈骗网站，通过下面原理找出其他诈骗网站：
+<ol>
+<li>网站内容分析。各个诈骗网站会互相创建友情链接，或者调用相同的静态文件（同一个模板制作的诈骗网站）。</li>
+<li>网站证书加密。很多诈骗网站使用证书加密。且大多使用多域名证书加密，即一个证书加密多个域名（250个），根据证书注册信息可以挖掘出其他网站</li>
+<li>网站域名分析。网站域名简单且相似，大多为字母和数字的排列组合，如 <a href="https://www.40939b.com/">https://www.40939b.com/</a>  等。根据所有域名生成词典，然后排列组合可以发掘其他域名。</li>
+<li>网站注册。
+<ol>
+<li>网站集中注册。如果服务商某短时间内收到大量注册信息，其中一个是诈骗网站，其他可能都是</li>
+<li>统一身份注册。同一注册人注册的其他网站大多为诈骗网站。</li>
+</ol>
+</li>
+<li>DNS解析。根据动态DNS技术，一个域名可以对应多个IP，通过PDNS（DNS反向解析）技术找出一个诈骗网站域名下的其他IP</li>
+<li>IP解析。为了节约成本，常常多个域名指向一个IP，通过被动DNS，可以找到指向同一个IP的多个不同域名</li>
+<li>IP子网技术。诈骗分子往往大批量部署服务器。一个IP网段的子网段窝藏诈骗网站的概率往往很大。</li>
+<li>使用域名生成器挖掘
+<ol>
+<li>根据遗传变异算法生成新的潜在网站域名集合。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>使用TextCNN分析网站内容。
+<ol>
+<li>脚本访问IP获取网页HTML内容。</li>
+<li>过滤出关键信息、链接等。</li>
+<li>通过语义信息和结构信息分别提取出特征向量后组合，送入分类器判断，输出为诈骗网站的分数。</li>
+</ol>
+</li>
+</ol>
+<h2 id="数据收集-1">数据收集</h2>
+<ol>
+<li>由警方提供</li>
+<li>根据已有数据集挖掘。</li>
+</ol>
+<h2 id="亮点-1">亮点</h2>
+<ol>
+<li>立意新颖。核心的两个功能，一个通过遗传算法生成域名合集，二通过TextCNN判断网站内容。两个功能都非常实用。</li>
+<li>通过已有IP域名挖掘其他域名，然后使用神经网络进行检查。是传统安全和人工智能的比较好的结合。</li>
+</ol>
+<h2 id="评价-1">评价</h2>
+<ol>
+<li>涉及的神经网络技术并不复杂，主要是有目标需求，然后针对需求进行分析并完成项目。</li>
+<li>通过已有IP域名发掘其他诈骗网站IP，需要对诈骗网站进行详尽的分析、调查。本项目工作调查准备的时间可能会比项目实现的时间更多。</li>
+<li>本子过于简洁，且章节之间没有逻辑。详细技术没有阐明。</li>
+</ol>
+<h1 id="遗传算法">遗传算法</h1>
+<p>设定：</p>
+<ol>
+<li>染色体：问题的一组解，由若干基因组成（基因即为基础元素，变量）</li>
+<li>适应度函数：遗传算法迭代N次，每次迭代生成若干染色体。判断染色体的适应度。淘汰适应度低的染色体，保留适应度高的染色体。</li>
+<li>交叉：每次迭代生成的染色体的生成方式：
+<ol>
+<li>从上一代中选择两条染色体，选择爸爸的某一个位置切断，选择妈妈的某一个位置切断，拼接成新的染色体。</li>
+<li>选择哪些染色体由轮盘赌注决定：
+<ol>
+<li>染色体i被选择的概率 = 染色体i的适应度/ 所有染色体的适应度之和。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>变异：每次生成了一条新的染色体后，在新染色体上随机选择若干基因然后修改基因的值。</li>
+<li>复制：每次保留上一代中适应度最高的几条染色体，原封不动传给下一代。</li>
+</ol>
+<p>整体流程：</p>
+<ol>
+<li>在算法初始阶段，它会随机生成一组可行解，也就是第一代染色体。</li>
+<li>然后采用适应度函数分别计算每一条染色体的适应程度，并根据适应程度计算每一条染色体在下一次进化中被选中的概率</li>
+<li>下面正式进入“进化”过程。
+<ol>
+<li>通过“交叉”，生成N-M条染色体；</li>
+<li>再对交叉后生成的N-M条染色体进行“变异”操作；</li>
+<li>然后使用“复制”的方式生成M条染色体；</li>
+</ol>
+</li>
+<li>到此为止，N条染色体生成完毕！紧接着分别计算N条染色体的适应度和下次被选中的概率。这就是一次进化的过程，紧接着进行新一轮的进化。</li>
+</ol>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://yanyuLinxi.github.io/2021/09/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E5%A4%A7%E8%B5%9B%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5/" title="信息安全技术大赛两个项目汇报" target="_blank" rel="external">https://yanyuLinxi.github.io/2021/09/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E5%A4%A7%E8%B5%9B%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yanyuLinxi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://yanyuLinxi.github.io/linxiIcon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yanyuLinxi" target="_blank"><span class="text-dark">yanyuLinxi</span><small class="ml-1x">打工人</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://yanyuLinxi.github.io/2021/08/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/" title="EnglishLearning"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://yanyuLinxi.github.io/2021/09/vue%E5%AD%A6%E4%B9%A0/"
+                    title="Vue学习"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://yanyuLinxi.github.io/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://yanyuLinxi.github.io/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
+            CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://yanyuLinxi.github.io/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>
+        Leetcode2_链表 - Pure theme for Hugo
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="203 移除链表元素 头节点是什么呢。头节点就是一个空的节点但指向第一个节点。保证了在处理其他节点的时候保持操作一致。返回的时候返回头节点的下一个节" />
+    <meta name="generator" content="Hugo 0.81.0 with theme pure" />
+    <title>Leetcode2_链表 - Pure theme for Hugo</title>
+    
+    
+    <link rel="stylesheet" href="https://yanyuLinxi.github.io/css/style.min.b4b742918d33349bb411274c2c6de779fe2fda4d2101d2703f6bc0fc0a19edf2.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="Leetcode2_链表" />
+<meta property="og:description" content="203 移除链表元素 头节点是什么呢。头节点就是一个空的节点但指向第一个节点。保证了在处理其他节点的时候保持操作一致。返回的时候返回头节点的下一个节" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yanyuLinxi.github.io/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-09T15:12:27&#43;08:00" />
+<meta property="article:modified_time" content="2021-10-09T15:12:27&#43;08:00" />
+
+<meta itemprop="name" content="Leetcode2_链表">
+<meta itemprop="description" content="203 移除链表元素 头节点是什么呢。头节点就是一个空的节点但指向第一个节点。保证了在处理其他节点的时候保持操作一致。返回的时候返回头节点的下一个节"><meta itemprop="datePublished" content="2021-10-09T15:12:27&#43;08:00" />
+<meta itemprop="dateModified" content="2021-10-09T15:12:27&#43;08:00" />
+<meta itemprop="wordCount" content="914">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode2_链表"/>
+<meta name="twitter:description" content="203 移除链表元素 头节点是什么呢。头节点就是一个空的节点但指向第一个节点。保证了在处理其他节点的时候保持操作一致。返回的时候返回头节点的下一个节"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">主页</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">所有文章</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">分类</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">标签</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">关于</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/"
+    >Leetcode2_链表</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://yanyuLinxi.github.io/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/" class="article-date">
+  <time datetime="2021-10-09 15:12:27 &#43;0800 CST" itemprop="datePublished">2021-10-09</time>
+</a>
+</span>
+
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 914字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="203-移除链表元素">203 移除链表元素</h1>
+<p>头节点是什么呢。头节点就是一个空的节点但指向第一个节点。保证了在处理其他节点的时候保持操作一致。返回的时候返回头节点的下一个节点。</p>
+<p>头指针是指向第一个节点</p>
+<h1 id="707-设计链表">707 设计链表</h1>
+<p>基本功题目</p>
+<ol>
+<li>用好头指针</li>
+<li>不要重复造轮子</li>
+<li>可以在leetcode中自己定义类。</li>
+</ol>
+<h1 id="206-反转链表">206 反转链表</h1>
+<p>写的越来越得心应手了。目前看来没什么问题。在纸上思考好后再写就行。</p>
+<p>可以使用临时变量存储部分值。</p>
+<h1 id="24-交换两个节点">24 交换两个节点</h1>
+<p>想清楚一点。尽量想快一点。</p>
+<p>多用头节点。
+即使没传进来头节点。可以凭空创造一个头节点。</p>
+<h1 id="19-删除链表的倒数第n个节点">19 删除链表的倒数第N个节点</h1>
+<p>使用虚拟头节点。想清楚就行。</p>
+<h1 id="160-intersection-of-two-linked-lists">160 intersection of two Linked Lists</h1>
+<p>想清楚已经有的条件是什么。就从已经有的条件中进行分析。</p>
+<p>这道题将尾部进行对齐。然后判断是否相同。</p>
+<p>当然你投机取巧使用赋值也是不会做时的办法了。</p>
+<p>这道题的解法真的非常有意思</p>
+<p>网上存在的解法差异就是抵消差异，然后开始遍历。
+有一种解法非常有意思：
+<a href="https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!">https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!</a>
+我们可以使用两次迭代来做到这一点。在第一次迭代中，我们将一个链表的指针在到达尾节点后重置到另一个链表的头部。在第二次迭代中，我们将移动两个指针，直到它们指向同一个节点。我们在第一次迭代中的操作将帮助我们抵消差异。所以如果两个链表相交，那么第二次迭代的交点一定是交点。如果两个链表根本没有交集，那么第二次迭代的相遇指针一定是两个链表的尾节点，为空。
+//if a &amp; b have different len, then we will stop the loop after second iteration
+while( a != b){
+//for the end of first iteration, we just reset the pointer to the head of another linkedlist
+a = a == null? headB : a.next;
+b = b == null? headA : b.next; <br>
+}
+真的非常棒。</p>
+<h1 id="142-linked-list-cycle">142 linked list cycle</h1>
+<p>这题非常有意思。判断链表是否有环。就要考虑有环的情况下会发生什么。</p>
+<p>如果有环，我们会在里面绕圈圈。所以我们可以设置两个指针。一个快指针。一个慢指针。</p>
+<p>快指针走两步。慢指针走一步。这样如果有环，两个指针一定会相遇。链表中能用到的就是指针。应该善用指针。</p>
+<p>现在就需要找到环入口。</p>
+<p>这里就要用到数学知识。这里的数学知识虽然比较简单但是很巧妙。最终得到的结论也是：
+从入口到循环节点的距离等于相遇节点的距离到循环节点的距离。所以可以设置两个指针，同时出发。相遇时就找到了循环节点了。</p>
+<p>可以说非常巧妙。</p>
+<p>能学到的东西就是，善用指针。善用已知条件构造合理的等式。</p>
+<ol>
+<li>如果有环，则龟兔赛跑一定会相遇。类似于分针和秒针。</li>
+<li>根据条件设立实验条件。</li>
+</ol>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://yanyuLinxi.github.io/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/" title="Leetcode2_链表" target="_blank" rel="external">https://yanyuLinxi.github.io/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yanyuLinxi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://yanyuLinxi.github.io/linxiIcon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yanyuLinxi" target="_blank"><span class="text-dark">yanyuLinxi</span><small class="ml-1x">打工人</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://yanyuLinxi.github.io/2021/10/progress-in-outlier-detection-techniques-a-survey/" title="Progress in Outlier Detection Techniques a Survey"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://yanyuLinxi.github.io/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                    title="PyOD学习笔记"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://yanyuLinxi.github.io/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://yanyuLinxi.github.io/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
+            CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://yanyuLinxi.github.io/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

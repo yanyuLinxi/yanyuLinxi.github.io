@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>
+        随即森林和决策树 - Pure theme for Hugo
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="https://easyai.tech/ai-definition/decision-tree/ https://zhuanlan.zhihu.com/p/85731206 决策树更详细点。 https://blog.csdn.net/zjsghww/article/details/51638126 c4.5 什么是决策树？ 决策树算法采用树形结构，使用层层推理来实现最终的分类。决策树由下面几种元素构成： 根节点：包含样本的全集" />
+    <meta name="generator" content="Hugo 0.81.0 with theme pure" />
+    <title>随即森林和决策树 - Pure theme for Hugo</title>
+    
+    
+    <link rel="stylesheet" href="https://yanyuLinxi.github.io/css/style.min.b4b742918d33349bb411274c2c6de779fe2fda4d2101d2703f6bc0fc0a19edf2.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="随即森林和决策树" />
+<meta property="og:description" content="https://easyai.tech/ai-definition/decision-tree/ https://zhuanlan.zhihu.com/p/85731206 决策树更详细点。 https://blog.csdn.net/zjsghww/article/details/51638126 c4.5 什么是决策树？ 决策树算法采用树形结构，使用层层推理来实现最终的分类。决策树由下面几种元素构成： 根节点：包含样本的全集" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yanyuLinxi.github.io/2021/11/%E9%9A%8F%E5%8D%B3%E6%A3%AE%E6%9E%97%E5%92%8C%E5%86%B3%E7%AD%96%E6%A0%91/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-17T16:10:22&#43;08:00" />
+<meta property="article:modified_time" content="2021-11-17T16:10:22&#43;08:00" />
+
+<meta itemprop="name" content="随即森林和决策树">
+<meta itemprop="description" content="https://easyai.tech/ai-definition/decision-tree/ https://zhuanlan.zhihu.com/p/85731206 决策树更详细点。 https://blog.csdn.net/zjsghww/article/details/51638126 c4.5 什么是决策树？ 决策树算法采用树形结构，使用层层推理来实现最终的分类。决策树由下面几种元素构成： 根节点：包含样本的全集"><meta itemprop="datePublished" content="2021-11-17T16:10:22&#43;08:00" />
+<meta itemprop="dateModified" content="2021-11-17T16:10:22&#43;08:00" />
+<meta itemprop="wordCount" content="3506">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="随即森林和决策树"/>
+<meta name="twitter:description" content="https://easyai.tech/ai-definition/decision-tree/ https://zhuanlan.zhihu.com/p/85731206 决策树更详细点。 https://blog.csdn.net/zjsghww/article/details/51638126 c4.5 什么是决策树？ 决策树算法采用树形结构，使用层层推理来实现最终的分类。决策树由下面几种元素构成： 根节点：包含样本的全集"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">主页</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">所有文章</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">分类</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">标签</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">关于</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/11/%E9%9A%8F%E5%8D%B3%E6%A3%AE%E6%9E%97%E5%92%8C%E5%86%B3%E7%AD%96%E6%A0%91/"
+    >随即森林和决策树</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://yanyuLinxi.github.io/2021/11/%E9%9A%8F%E5%8D%B3%E6%A3%AE%E6%9E%97%E5%92%8C%E5%86%B3%E7%AD%96%E6%A0%91/" class="article-date">
+  <time datetime="2021-11-17 16:10:22 &#43;0800 CST" itemprop="datePublished">2021-11-17</time>
+</a>
+</span>
+
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/11/%E9%9A%8F%E5%8D%B3%E6%A3%AE%E6%9E%97%E5%92%8C%E5%86%B3%E7%AD%96%E6%A0%91/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3506字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 7分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><a href="https://easyai.tech/ai-definition/decision-tree/">https://easyai.tech/ai-definition/decision-tree/</a>
+<a href="https://zhuanlan.zhihu.com/p/85731206">https://zhuanlan.zhihu.com/p/85731206</a> 决策树更详细点。
+<a href="https://blog.csdn.net/zjsghww/article/details/51638126">https://blog.csdn.net/zjsghww/article/details/51638126</a> c4.5</p>
+<h1 id="什么是决策树">什么是决策树？</h1>
+<p>决策树算法采用树形结构，使用层层推理来实现最终的分类。决策树由下面几种元素构成：</p>
+<p><strong>根节点</strong>：包含样本的全集
+<strong>内部节点</strong>：对应特征属性测试
+<strong>叶节点</strong>：代表决策的结果</p>
+<p>预测时，在树的内部节点处用<strong>某一属性值</strong>进行判断，根据判断结果决定进入<strong>哪个分支节点</strong>，<strong>直到到达叶节点处</strong>，得到<strong>分类结果</strong>。</p>
+<h1 id="决策树学习的-3-个步骤">决策树学习的 3 个步骤</h1>
+<h2 id="特征选择">特征选择。</h2>
+<p>特征选择决定了使用哪些特征来做判断。在训练数据集中，每个样本的属性可能有很多个，不同属性的作用有大有小。因而特征选择的作用就是筛选出跟分类结果相关性较高的特征，也就是<strong>分类能力较强的特征</strong>。在特征选择中通常使用的准则是：<strong>信息增益</strong>。</p>
+<h2 id="决策树生成">决策树生成</h2>
+<p>选择好特征后，就从根节点触发，对节点计算所有特征的信息增益，选择信息增益最大的特征作为节点特征，根据该特征的不同取值建立子节点；对每个子节点使用相同的方式生成新的子节点，直到信息增益很小或者没有特征可以选择为止。</p>
+<h2 id="决策树剪枝">决策树剪枝</h2>
+<p>剪枝的主要目的是对抗「过拟合」，通过主动去掉部分分支来降低过拟合的风险。</p>
+<h1 id="3-种典型的决策树算法">3 种典型的决策树算法</h1>
+<h2 id="id3-算法">ID3 算法</h2>
+<p>ID3 是最早提出的决策树算法，他就是利用信息增益来选择特征的。
+ID3 计算信息增益来对特征进行划分。信息增益基于信息熵。如果选取了这个特征，针对分类的信息熵减小了，则认为这个信息增益增大了。</p>
+<p>ID3 步骤：</p>
+<ol>
+<li>初始化特征集合、数据集合。</li>
+<li>计算信息熵和所有特征的条件熵（在选取这个特征进行分类后，每一个子树的信息熵）。信息增益=信息熵-条件熵。选取特征。</li>
+<li>根据信息增益对子节点进行划分</li>
+<li>重复2-3直至子集包含纯的标签。则为分支叶子节点。</li>
+</ol>
+<p>ID3弊端：</p>
+<ol>
+<li>只能处理离散值。</li>
+<li>更倾向于选择特征种类多的特征。特征种类多的特征，信息增益会更大。<strong>特征种类多，分类就多</strong>，每个分类数据就越少，分类标签的<strong>纯度就容易越高</strong>。信息熵显然会低，<strong>信息增益会更大。</strong></li>
+<li>无法处理缺失值</li>
+<li>没有剪枝，容易过拟合。</li>
+</ol>
+<h2 id="c45">c4.5</h2>
+<p>我自己总结一下。c4.5是为了解决ID3的一些弊端：</p>
+<ol>
+<li>对于连续值，进行离散化后排序，取相邻值进行平均并进行分节点。将<strong>连续特征离散化</strong>，假设 n 个样本的<strong>连续特征 A 有 m 个取值</strong>，C4.5 将其排序并取<strong>相邻两样本值的平均数共 m-1 个划分点</strong>，分别计算以该划分点作为二元分类点时的信息增益，并选择信息增益最大的点作为该连续特征的二元离散分类点；</li>
+<li>选择使用信息增益率来代替信息增益。信息增益率=信息增益/信息内在信息。信息内在信息是指信息本身所拥有的信息。信息熵越大，信息越不确定。所以信息增益率越低。越不选它。
+<ol>
+<li>当叶子节点是纯的时候，就停止划分叶子节点。</li>
+</ol>
+</li>
+<li>对于缺失值。
+<ol>
+<li>在缺失特征下选择样本？使用没有缺失的样本子集</li>
+<li>对于缺失特征的样本，按不同概率划分到不同的子节点。</li>
+</ol>
+</li>
+<li>剪枝采用悲观后剪枝。
+<ol>
+<li>后剪枝：
+<ol>
+<li>训练完成后，进行剪枝，如果这个减去这个子树，效果保持或者不下降，则可以替换这个子树。后剪枝欠拟合风险小很多，泛化性能会优于预剪枝。但是时间开销大。</li>
+<li>悲观后剪枝更麻烦点，优势就是只使用训练集。不使用测试集。</li>
+</ol>
+</li>
+<li>预剪枝：三种
+<ol>
+<li>节点数据比例低于某一阈值</li>
+<li>节点特征都已经分裂。</li>
+<li>节点划分前准确率比划分后准确率高。</li>
+</ol>
+</li>
+<li>预剪枝可以减少过拟合，减少训练时间。但容易带来欠拟合。</li>
+</ol>
+</li>
+</ol>
+<p>C4.5 算法最大的特点是克服了 ID3 对特征数目的偏重这一缺点</p>
+<p>C4.5 缺点：</p>
+<ol>
+<li>c4.5包括ID3用的都是多叉树。</li>
+<li>c4.5只能用于分类。</li>
+<li>对于连续值，需要排序。对内存需求很大。数据不足以放进内存的时候，无法进行运行。</li>
+<li>熵模型有大量的耗时的对数运算。</li>
+</ol>
+<h1 id="cart">CART</h1>
+<p>CART针对前面的缺点的提升：</p>
+<ol>
+<li>采用二叉树运算快
+<ol>
+<li>正是因为CART树是二叉树，所以对于样本的有N&gt;=3个取值的离散特征的处理时也只能有两个分支，这就要通过组合人为的创建二取值序列并取GiniGain最小者作为树分叉决策点</li>
+<li>所以cart是不停的二分离散特征。若没有停止准则，则树会一直增长。</li>
+<li>叶子节点的标签也可能有多个标签分类。</li>
+</ol>
+</li>
+<li>CART可以用于分类或者回归</li>
+<li>CART使用Gini作为变量的不纯度量。减少对数运算。CART采用Gini系数来代替熵模型。基尼指数约等于熵模型的一阶泰勒展开。公式Gini = 1 - \sum p^2。 p为选择这个节点后的，标签选择概率的分类。
+<ol>
+<li>Gini越小，不纯度越低。</li>
+</ol>
+</li>
+<li>CART 采用代理测试来估计缺失值，而 C4.5 以不同概率划分到不同节点中；
+<ol>
+<li>如何在特征值缺失的情况下进行划分特征的选择？
+<ol>
+<li>一开始只使用没有缺失的数据。后来如果缺失是20％，则惩罚20%的权重</li>
+</ol>
+</li>
+<li>选定该划分特征，模型对于缺失该特征值的样本该进行怎样处理？
+<ol>
+<li>CART 算法的机制是为树的每个节点都找到代理分裂器。无论在训练数据上得到的树是否有缺失值都会这样做。在代理分裂器中，特征的分值必须超过默认规则的性能才有资格作为代理。</li>
+</ol>
+</li>
+<li>代理分裂：
+<ol>
+<li>一个分裂使用另一个预测属性。满足与主分裂最相似，切有着正的关联一簇额度量。来对缺失值分到哪一类进行判别。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>CART 采用“基于代价复杂度剪枝”方法进行剪枝，而 C4.5 采用悲观剪枝方法。
+<ol>
+<li>采用一种“基于代价复杂度的剪枝”方法进行后剪枝，这种方法会生成一系列树，每个树都是通过将前面的树的某个或某些子树替换成一个叶节点而得到的，这种方法需要使用一个单独的测试数据集来评估所有的树，根据它们在测试数据集熵的分类性能选出最佳的树。</li>
+<li>在所有的子树中，找出那些使用<strong>了较多节点，<strong>却使</strong>错误率下降最低的子树</strong>，把这些子树剪裁掉。</li>
+</ol>
+</li>
+<li>对于连续值，与C4.5思想相同，<strong>都是将连续的特征离散化</strong>。区别在选择划分点时，<strong>C4.5是信息增益率，CART是基尼系数。</strong>。注意的是，与ID3、C4.5处理离散属性不同的是，如果当前节点为连续属性，<strong>则该属性在后面还可以参与子节点的产生选择过程。</strong></li>
+</ol>
+<p>运行过程：</p>
+<ol>
+<li>分裂：分裂过程是一个二叉递归划分过程，其输入和预测特征既可以是连续型的也可以是离散型的，CART 没有停止准则，会一直生长下去；</li>
+<li>剪枝：采用代价复杂度剪枝，从最大树开始，每次选择训练数据熵对整体性能贡献最小的那个分裂节点作为下一个剪枝对象，直到只剩下根节点。CART 会产生一系列嵌套的剪枝树，需要从中选出一颗最优的决策树；</li>
+<li>树选择：用单独的测试集评估每棵剪枝树的预测性能（也可以用交叉验证）。</li>
+</ol>
+<p>优点:
+1.</p>
+<p>CART（Classification and Regression Tree）</p>
+<p>这种算法即可以用于分类，也可以用于回归问题。CART 算法使用了基尼系数取代了信息熵模型。
+CART是“Classification and Regression Tree”的缩写。</p>
+<h3 id="cart-1">cart</h3>
+<ol>
+<li>cart既是分类也是回归树</li>
+<li>cart分类时，采用基尼值。是回归时，采用最小方差作为分类依据</li>
+<li>依然是二叉树。</li>
+</ol>
+<p>基尼值:GINI = 1-\sum p^2.
+节点不纯（0,1标签相同，则gini最大为1/2.如果只有一个类别就是0。选择jini值作为分裂依据。</p>
+<p>方差：方差越大，表示该节点的数据越分散，预测的效果就越差。如果一个节点的所有数据都相同，那么方差就为0,此时可以很肯定得认为该节点的输出值；如果节点的数据相差很大，那么输出的值有很大的可能与实际值相差较大。因此，无论是分类树还是回归树，CART都要选择使子节点的GIN值或者回归方差最小的属性作为分裂的方案。</p>
+<p><a href="https://www.bilibili.com/video/BV1Pk4y1C7m9">https://www.bilibili.com/video/BV1Pk4y1C7m9</a></p>
+<h1 id="决策树的优缺点">决策树的优缺点</h1>
+<h2 id="优点">优点</h2>
+<p>决策树易于理解和解释，可以可视化分析，容易提取出规则；
+可以同时处理标称型和数值型数据；
+比较适合处理有缺失属性的样本；
+能够处理不相关的特征；
+测试数据集时，运行速度比较快；
+在相对短的时间内能够对大型数据源做出可行且效果良好的结果。</p>
+<h2 id="缺点">缺点</h2>
+<p>容易发生过拟合（随机森林可以很大程度上减少过拟合）；
+容易忽略数据集中属性的相互关联；
+对于那些各类别样本数量不一致的数据，在决策树中，进行属性划分时，<strong>不同的判定准则会带来不同的属性选择倾向</strong>；信息增益准则对可取数目较多的属性有所偏好（典型代表ID3算法），而增益率准则（CART）则对可取数目较少的属性有所偏好，但CART进行属性划分时候不再简单地直接利用增益率尽心划分，而是采用一种启发式规则）（只要是使用了信息增益，都有这个缺点，如RF）。
+ID3算法计算信息增益时结果偏向数值比较多的特征。</p>
+<h1 id="随机森林">随机森林</h1>
+<p>随机森林属于bagging</p>
+<h2 id="构造随机森林的-4-个步骤">构造随机森林的 4 个步骤</h2>
+<p>一个样本容量为N的样本，有放回的抽取N次，每次抽取1个，最终形成了N个样本。这选择好了的N个样本用来训练一个决策树，作为决策树根节点处的样本。
+当每个样本有M个属性时，在决策树的每个节点需要分裂时，随机从这M个属性中选取出m个属性，满足条件m &laquo; M。然后从这m个属性中采用某种策略（比如说信息增益）来选择1个属性作为该节点的分裂属性。
+决策树形成过程中每个节点都要按照步骤2来分裂（很容易理解，如果下一次该节点选出来的那一个属性是刚刚其父节点分裂时用过的属性，则该节点已经达到了叶子节点，无须继续分裂了）。一直到不能够再分裂为止。注意整个决策树形成过程中没有进行剪枝。
+按照步骤1~3建立大量的决策树，这样就构成了随机森林了。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://yanyuLinxi.github.io/2021/11/%E9%9A%8F%E5%8D%B3%E6%A3%AE%E6%9E%97%E5%92%8C%E5%86%B3%E7%AD%96%E6%A0%91/" title="随即森林和决策树" target="_blank" rel="external">https://yanyuLinxi.github.io/2021/11/%E9%9A%8F%E5%8D%B3%E6%A3%AE%E6%9E%97%E5%92%8C%E5%86%B3%E7%AD%96%E6%A0%91/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yanyuLinxi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://yanyuLinxi.github.io/linxiIcon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yanyuLinxi" target="_blank"><span class="text-dark">yanyuLinxi</span><small class="ml-1x">打工人</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://yanyuLinxi.github.io/2021/11/%E6%AF%94%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%BD%91%E5%9D%80%E6%88%96%E5%B7%A5%E5%85%B7/" title="比赛学习网址或工具"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://yanyuLinxi.github.io/2021/11/bagging%E5%92%8Cboostingadaboostxgboost/"
+                    title="Bagging和Boosting,adboost,xgboost"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://yanyuLinxi.github.io/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://yanyuLinxi.github.io/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
+            CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://yanyuLinxi.github.io/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

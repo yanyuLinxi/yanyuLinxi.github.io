@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>
+        3 数值统计 - Pure theme for Hugo
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="机器学习算法通常需要大量的数值计算。这通常是指通过迭代过程更新解的估 计值来解决数学问题的算法，而不是通过解析过程推导出公式来提供正确解的方法" />
+    <meta name="generator" content="Hugo 0.81.0 with theme pure" />
+    <title>3 数值统计 - Pure theme for Hugo</title>
+    
+    
+    <link rel="stylesheet" href="https://yanyuLinxi.github.io/css/style.min.b4b742918d33349bb411274c2c6de779fe2fda4d2101d2703f6bc0fc0a19edf2.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="3 数值统计" />
+<meta property="og:description" content="机器学习算法通常需要大量的数值计算。这通常是指通过迭代过程更新解的估 计值来解决数学问题的算法，而不是通过解析过程推导出公式来提供正确解的方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yanyuLinxi.github.io/2021/11/3-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-09T08:37:32&#43;08:00" />
+<meta property="article:modified_time" content="2021-11-09T08:37:32&#43;08:00" />
+
+<meta itemprop="name" content="3 数值统计">
+<meta itemprop="description" content="机器学习算法通常需要大量的数值计算。这通常是指通过迭代过程更新解的估 计值来解决数学问题的算法，而不是通过解析过程推导出公式来提供正确解的方法"><meta itemprop="datePublished" content="2021-11-09T08:37:32&#43;08:00" />
+<meta itemprop="dateModified" content="2021-11-09T08:37:32&#43;08:00" />
+<meta itemprop="wordCount" content="4049">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="3 数值统计"/>
+<meta name="twitter:description" content="机器学习算法通常需要大量的数值计算。这通常是指通过迭代过程更新解的估 计值来解决数学问题的算法，而不是通过解析过程推导出公式来提供正确解的方法"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">主页</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">所有文章</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">分类</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">标签</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">关于</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/11/3-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/"
+    >3 数值统计</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://yanyuLinxi.github.io/2021/11/3-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/" class="article-date">
+  <time datetime="2021-11-09 08:37:32 &#43;0800 CST" itemprop="datePublished">2021-11-09</time>
+</a>
+</span>
+
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/11/3-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4049字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>机器学习算法通常需要大量的数值计算。这通常是指通过<strong>迭代过程更新解的估 计值来解决数学问题的算法</strong>，而不是通过解析过程推导出公式来提供正确解的方法</p>
+<h1 id="上溢下溢">上溢下溢</h1>
+<ol>
+<li><strong>连续数学在数字计算机上的根本困难</strong>是，我们需要通过有限数量的位模式来<strong>表 示无限多的实数</strong>。意味着我们在计算机中表示实数时，几乎总会引入一些<strong>近似误 差。</strong></li>
+<li>一种极具毁灭性的舍入误差是<strong>下溢（underflow）</strong>。当接近零的数被四舍五入为 零时发生下溢。</li>
+<li>另一个极具破坏力的数值错误形式是<strong>上溢（overflow）</strong>。当大量级的数被近似为 ∞ 或 −∞ 时发生上溢。进一步的运算通常会导致这些无限值变为非数字。</li>
+<li>上溢和下溢进行数值稳定的一个例子是softmax 函数</li>
+<li>Theano (Bergstra et al., 2010a; Bastien et al., 2012a) 就是这样软件包的一个例子，它能自动检测并稳定深度学习中许多常见的数值不稳定的表达式。</li>
+</ol>
+<h1 id="病态条件">病态条件</h1>
+<ol>
+<li>考虑函数 f(x) = A−1x。当 A ∈ Rn×n 具有特征值分解时，其条件数为$max_{i,j} |\frac{\lambda_i}{\lambda_j}|$。这是最大和最小特征值的模之比1。当**该数很大**时，矩阵求逆对输入的**误差特别敏感**。</li>
+</ol>
+<h1 id="基于梯度的优化方法">基于梯度的优化方法</h1>
+<ol>
+<li>
+<p>我们把要最小化或最大化的函数称为<strong>目标函数（objective function）<strong>或</strong>准则 （criterion）</strong>。</p>
+<ol>
+<li>当我们对其进行最小化时，我们也把它称为<strong>代价函数（cost function）</strong>、<strong>损失函数（loss function）<strong>或</strong>误差函数（error function）。</strong></li>
+<li>我们通常使用一个<strong>上标 ∗</strong>表示最小化或最大化函数的 x 值。如我们记 x∗ = arg min f(x)。</li>
+</ol>
+</li>
+<li>
+<p>这个函数的导数（derivative） 记为 f′(x) 或 dy/dx。导数 f′(x) 代表 f(x) 在点 x 处的斜率。</p>
+</li>
+<li>
+<p>因此<strong>导数</strong>对于最小化一个函数很有用，因为它告诉我们如何更改 x 来略微地改 善 y。这种技术被称为<strong>梯度下降</strong> （gradient descent）(Cauchy, 1847)。</p>
+</li>
+<li>
+<p>f′(x) = 0 的点称为<strong>临界 点</strong>（critical point）或驻点（stationary point）。</p>
+<ol>
+<li>f′(x) = 0 的点称为<strong>临界 点</strong>（critical point）或<strong>驻点</strong>（stationary point）。</li>
+<li>f′(x) = 0 的点称为<strong>临界 点</strong>（critical point）或<strong>驻点</strong>（stationary point）。</li>
+<li>有些临界点既不是最小点也不是最大点。这些点被称为<strong>鞍点</strong>（saddle point）。</li>
+</ol>
+</li>
+<li>
+<p>因此，我们通常寻找使 f 非常小的 点，但这在任何形式意义下并不一定是最小。</p>
+</li>
+<li>
+<p>我们需要用到<strong>偏导数</strong>（partial derivative）的概念</p>
+</li>
+<li>
+<p>**梯度（gradient）**是相对一个向量求导的导数:f 的导数是包含所有偏导数的向量，记为 ∇xf(x)。梯度的第i 个元素是 f 关于 xi 的偏导数。</p>
+</li>
+<li>
+<p>在 u（单位向量）方向的<strong>方向导数</strong>（directional derivative）是函数 f 在 u 方向 的斜率。</p>
+</li>
+<li>
+<p>负梯度向量指向下坡。我们在负梯度方向上移动可以减小 f。这被称为<strong>最速下降法</strong> (method of steepest descent) 或<strong>梯度下降</strong>（gradient descent）。</p>
+</li>
+<li>
+<p>最速下降建议新的点为 x′ = x− ϵ∇xf(x) (4.5)其中 ϵ 为<strong>学习率</strong>（learning rate），是一个确定步长大小的正标量</p>
+<ol>
+<li>最速下降在梯度的每一个元素为零时收敛（或在实践中，很接近零时）</li>
+<li>但不断向更好的情况移动一小 步（即近似最佳的小移动）的一般概念可以推广到离散空间。递增带有离散参数的目标函数被称为<strong>爬山</strong>（hill climbing）算法 (Russel and Norvig, 2003)</li>
+</ol>
+</li>
+<li>
+<p>有时我们需要计算输入和输出都为向量的函数的所有偏导数。包含所有这样的 偏导数的矩阵被称为 <strong>Jacobian 矩阵</strong></p>
+<ol>
+<li>二阶导数告诉我们，一阶导数将如何随着输入 的变化而改变。它表示只基于梯度信息的梯度下降步骤是否会产生如我们预期的那样大的改善，因此它是重要的。我们可以认为，二阶导数是对曲率的衡量</li>
+<li>如果这样的函数具有零二阶导数，那就没有曲率。也就是一条完全 平坦的线，仅用梯度就可以预测它的值。我们使用沿负梯度方向大小为 ϵ 的下降步， 当该梯度是 1 时，代价函数将下降 ϵ。如果二阶导数是负的，函数曲线向下凹陷 (向 上凸出)，因此代价函数将下降的比 ϵ 多。如果二阶导数是正的，函数曲线是向上凹陷 (向下凸出)，因此代价函数将下降的比 ϵ 少</li>
+</ol>
+</li>
+<li>
+<p>当我们的函数具有多维输入时，二阶导数也有很多。我们可以将这些导数合并 成一个矩阵，称为 <strong>Hessian 矩阵</strong></p>
+</li>
+<li>
+<p>Hessian <strong>等价于</strong>梯度的 Jacobian 矩阵。</p>
+</li>
+<li>
+<p>微分算子在任何二阶偏导连续的点处可交换，也就是它们的顺序可以互换：这意味着 Hi,j = Hj,i，因此 Hessian 矩阵在这些点上是对称的。因为 Hessian 矩阵是实对 称的，我们可以将其分解成一组实特征值和一组特征向量的正交基。在特定方向 d上的二阶导数可以写成 d⊤Hd。这个方向的二阶导 数就是对应的特征值。对于其他的方向 d，方向二阶导数是所有特征值的加权平均， 权重在 0 和 1 之间，且与 d 夹角越小的特征向量的权重越大。最大特征值确定最大二阶导数，最小特征值确定最小二阶导数。</p>
+<ol>
+<li>Hessian 的特征值决定了<strong>学 习率的量级</strong></li>
+</ol>
+</li>
+<li>
+<p>当 f′(x) = 0 且 f′′(x) &gt; 0 时，x 是一个<strong>局 部极小点</strong>。同样，当 f′(x) = 0 且 f′′(x) &lt; 0 时，x 是一个<strong>局部极大点</strong>。这就是所谓的<strong>二阶导数测试（second derivative test）。</strong></p>
+</li>
+<li>
+<p>在临界点处（∇xf(x) = 0），我们通 <strong>过检测 Hessian 的特征值来判断该临界点是一个局部极大点、局部极小点还是鞍点。</strong> 当 Hessian 是<strong>正定</strong>的（所有特征值都是正的），则该临界点是<strong>局部极小点</strong>。因为方 向二阶导数在任意方向都是正的，参考单变量的二阶导数测试就能得出此结论。同 样的，当 Hessian 是<strong>负定的</strong>（所有特征值都是负的），这个点就是<strong>局部极大点</strong>。在多 维情况下，实际上我们可以找到确定该点是否为鞍点的积极迹象（某些情况下）。如 果 Hessian 的特征值中<strong>至少一个是正的且至少一个是负的</strong>，那么 x 是 f <strong>某个横截面 的局部极大点</strong>，却是<strong>另一个横截面的局部极小点</strong>。见图4.5中的例子。最后，多维二 阶导数测试可能像单变量版本那样是不确定的。<strong>当所有非零特征值是同号的且至少 有一个特征值是 0 时</strong>，这个检测就是<strong>不确定的</strong>。这是因为单变量的二阶导数测试在<strong>零特征值对应的横截面上是不确定的。</strong></p>
+</li>
+<li>
+<p>维度多于一个时，鞍点不一定要具有 0 特征值：仅需要同时具有正特征值和负特征值。我 们可以想象这样一个鞍点（具有正负特征值）在一个<strong>横截面内是局部极大</strong>点，而在另一个<strong>横截面内是局部极小点。</strong></p>
+</li>
+<li>
+<p>中期稍微总结一下：</p>
+<ol>
+<li>jacobian矩阵是梯度矩阵，表明了下一步权重下降的方向。Hessian衡量梯度下降的速率。如果hessian值正定，则权重是局部极小点。如果hessian负定，则权重是局部极大点。当涉及多维的时候条件更苛刻一点。有非零特征值时，这个检测是不确定的。根据梯度下降的方向进行下降，就是梯度下降。证明需要看书。大约就是二阶导，高中学的那一套。</li>
+</ol>
+</li>
+<li>
+<p>在<strong>多维情况下</strong>，单个点在每个方向上的二阶导数时不同的，Hessian 的条件数衡量 这些二阶导数的变化范围。<strong>当 Hessian 的条件数很差时</strong>，梯度下降法也会表现得很差。<strong>这是因为一个方向上的导数增加得很快，而在另一个方向上增加得很慢</strong>。</p>
+<ol>
+<li>梯度下降把时间浪费于在峡谷壁反复下 降，因为它们是最陡峭的特征。由于步长有点大，有超过函数底部的趋势，因此需要在下一次迭代时在对面的峡谷壁下降</li>
+</ol>
+</li>
+<li>
+<p>我们可以使用 <strong>Hessian 矩阵的信息</strong>来指导搜索，以解决这个问题。其中最简单 的方法是<strong>牛顿法</strong>（Newton’s method）。</p>
+<ol>
+<li>当 f 是一个正定二次函数时，牛顿法只要应用一次式(4.12)就能直接跳到函数的最 小点。如果 f 不是一个真正二次但能在局部近似为正定二次，牛顿法则需要多次迭代应用式。</li>
+<li>如式(8.2.3)所讨论的，当附近的临界点是最小点（Hessian 的所有特征值 都是正的）时牛顿法才适用，而梯度下降不会被吸引到鞍点(除非梯度指向鞍点)。</li>
+</ol>
+</li>
+<li>
+<p>仅使用梯度信息的优化算法被称为<strong>一阶优化算法</strong> (first-order optimization algorithms)，<strong>如梯度下降</strong>。使用 <strong>Hessian 矩阵的优化算法被称为二阶最优化算法</strong>(second-order optimization algorithms)(Nocedal and Wright, 2006)，<strong>如牛顿法</strong></p>
+</li>
+<li>
+<p>在深度学习的背景下，限制<strong>函数满足Lipschitz 连续</strong>（Lipschitz continuous）或 其导数Lipschitz连续可以获得一些保证。最成功的特定优化领域或许是<strong>凸优化</strong>（Convex optimization）。凸优化通过更强 的限制提供更多的保证。凸优化算法只对凸函数适用，即 Hessian 处处半正定的函数。</p>
+</li>
+</ol>
+<h1 id="约束优化">约束优化</h1>
+<ol>
+<li>在 x 的所有可能值下最大化或最小化一个函数 f(x) 不是我们所希望 的。相反，我们可能希望在 x 的某些集合 S 中找 f(x) 的最大值或最小值。这被称为<strong>约束优化</strong>（constrained optimization）。集合 S 内的点 x 被称可行（feasible）点。</li>
+<li>我们常常希望找到在<strong>某种意义上小的解。</strong></li>
+<li>约束优化的一个简单方法是将约束考虑在内后简单地对梯度下降进行修改。
+<ol>
+<li>如 果我们**使用一个小的恒定步长 ϵ，**我们可以先取梯度下降的单步结果，然后将结果投影回 S。</li>
+<li>如果我们使用线搜索，我们只能在<strong>步长为 ϵ 范围内搜索</strong>可行的新 x 点</li>
+<li>或者 我们可以将线上的<strong>每个点投影到约束区域</strong>。</li>
+<li>在梯度下降或线搜索前 将梯度投影到可行域的切空间会更高效 (Rosen, 1960)。</li>
+</ol>
+</li>
+<li>一个更复杂的方法是设计一个不同的、无约束的优化问题，其解可以转化成原 始约束优化问题的解**Karush–Kuhn–Tucker（KKT）**方法2是针对约束优化非常通用的解决方案。</li>
+<li>我们引入一个称为<strong>广义 Lagrangian</strong>（generalized Lagrangian） 或<strong>广义 Lagrange 函数</strong>（generalized Lagrange function）的新函数。</li>
+<li>那么 S 可以表示为 S = {x | ∀i, g(i)(x) = 0 and ∀j, h(j)(x) ≤ 0}。其中涉及 g(i) 的等式称为等式约束（equality constraint），涉及 h(j) 的不等式称为不等式约束（inequality constraint）。
+<ol>
+<li>这是因为当约束满足时，广义lagrangian函数的值为f(x)的值。</li>
+<li>当约束不满足时，广义lagrangian为无穷大。</li>
+</ol>
+</li>
+<li>我们可以使用一组简单的性质来描述约束优化问题的最优点。这些性质称 为Karush–Kuhn–Tucker（KKT）条件
+<ol>
+<li>广义 Lagrangian 的梯度为零</li>
+<li>所有关于 x 和 KKT 乘子的约束都满足。</li>
+<li>不等式约束显示的 ‘‘互补松弛性’’：α⊙ h(x) = 0。</li>
+</ol>
+</li>
+</ol>
+<h1 id="实例分析线性最小二乘法">实例分析：线性最小二乘法</h1>
+<p>没看懂</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://yanyuLinxi.github.io/2021/11/3-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/" title="3 数值统计" target="_blank" rel="external">https://yanyuLinxi.github.io/2021/11/3-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yanyuLinxi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://yanyuLinxi.github.io/linxiIcon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yanyuLinxi" target="_blank"><span class="text-dark">yanyuLinxi</span><small class="ml-1x">打工人</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://yanyuLinxi.github.io/2021/11/mysql_21mins_tutorial/" title="Mysql_21mins_tutorial"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://yanyuLinxi.github.io/2021/11/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/"
+                    title="4 机器学习基础"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://yanyuLinxi.github.io/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://yanyuLinxi.github.io/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
+            CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://yanyuLinxi.github.io/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

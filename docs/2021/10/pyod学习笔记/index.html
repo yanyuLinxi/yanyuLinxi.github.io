@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>
+        PyOD学习笔记 - Pure theme for Hugo
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="注意 里面有很多需要其他库的神经网络。比如keras。比如tensorflow。为了避免最后太过复杂，这些自己写最好。 样例 生成污染数据 contamination = 0.1 #" />
+    <meta name="generator" content="Hugo 0.81.0 with theme pure" />
+    <title>PyOD学习笔记 - Pure theme for Hugo</title>
+    
+    
+    <link rel="stylesheet" href="https://yanyuLinxi.github.io/css/style.min.b4b742918d33349bb411274c2c6de779fe2fda4d2101d2703f6bc0fc0a19edf2.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="PyOD学习笔记" />
+<meta property="og:description" content="注意 里面有很多需要其他库的神经网络。比如keras。比如tensorflow。为了避免最后太过复杂，这些自己写最好。 样例 生成污染数据 contamination = 0.1 #" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yanyuLinxi.github.io/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-09T15:51:08&#43;08:00" />
+<meta property="article:modified_time" content="2021-10-09T15:51:08&#43;08:00" />
+
+<meta itemprop="name" content="PyOD学习笔记">
+<meta itemprop="description" content="注意 里面有很多需要其他库的神经网络。比如keras。比如tensorflow。为了避免最后太过复杂，这些自己写最好。 样例 生成污染数据 contamination = 0.1 #"><meta itemprop="datePublished" content="2021-10-09T15:51:08&#43;08:00" />
+<meta itemprop="dateModified" content="2021-10-09T15:51:08&#43;08:00" />
+<meta itemprop="wordCount" content="429">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PyOD学习笔记"/>
+<meta name="twitter:description" content="注意 里面有很多需要其他库的神经网络。比如keras。比如tensorflow。为了避免最后太过复杂，这些自己写最好。 样例 生成污染数据 contamination = 0.1 #"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">主页</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">所有文章</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">分类</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">标签</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">关于</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+    >PyOD学习笔记</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://yanyuLinxi.github.io/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2021-10-09 15:51:08 &#43;0800 CST" itemprop="datePublished">2021-10-09</time>
+</a>
+</span>
+
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 429字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="注意">注意</h1>
+<p>里面有很多需要其他库的神经网络。比如keras。比如tensorflow。为了避免最后太过复杂，这些自己写最好。</p>
+<h1 id="样例">样例</h1>
+<h2 id="生成污染数据">生成污染数据</h2>
+<pre><code class="language-python">contamination = 0.1  # percentage of outliers
+n_train = 200  # number of training points
+n_test = 100  # number of testing points
+
+X_train, y_train, X_test, y_test = generate_data(
+    n_train=n_train, n_test=n_test, contamination=contamination)
+
+</code></pre>
+<p>X_train (numpy array of shape (n_train, n_features)) – Training data.</p>
+<p>X_test (numpy array of shape (n_test, n_features)) – Test data.</p>
+<p>y_train (numpy array of shape (n_train,)) – Training ground truth.</p>
+<p>y_test (numpy array of shape (n_test,)) – Test ground truth.</p>
+<h2 id="一般模式">一般模式</h2>
+<p>clf = models()</p>
+<p>clf.fit(X_train)</p>
+<p>y_train_scores = clf.decision_scores_
+y_test_scores = clf.decision_function(X_test)</p>
+<h1 id="api">API</h1>
+<ol>
+<li>fit(X) 填充检测器。y 在无监督方法中被忽略。用以训练网络</li>
+<li>decision_function() 输出Y的异常分数</li>
+<li>predict() 用来拟合 Y</li>
+<li>predict_proba() 用来输出Y的异常概率。</li>
+</ol>
+<h2 id="attribute">attribute</h2>
+<ol>
+<li>decision_scores_ 训练数据的异常值。值越高越不正常。</li>
+<li>labels_  训练数据的二进制标签。0表示正常。1代表异常。</li>
+</ol>
+<h2 id="其他api">其他API</h2>
+<h3 id="metrics">metrics</h3>
+<ol>
+<li>from pyod.utils.data import evaluate_print
+<ol>
+<li>evaluate_print(clf_name, y_train, y_train_scores)</li>
+<li>输出ROC和precision值。</li>
+</ol>
+</li>
+<li>可视化
+<ol>
+<li>visualize(clf_name, X_train, y_train, X_test, y_test, y_train_pred,y_test_pred, show_figure=True, save_figure=False)</li>
+<li></li>
+</ol>
+</li>
+</ol>
+<h3 id="combination">combination</h3>
+<ol>
+<li>四种模型组合 最大值平均，平均值最大。最大值。平均值。
+<ol>
+<li>先获取每一个样本所有点的异常分数</li>
+<li>然后进行归一化 utils.utility.standardizer</li>
+<li>然后进行计算分数 average maximization aom moa等</li>
+</ol>
+</li>
+</ol>
+<h1 id="保存">保存</h1>
+<pre><code class="language-py">from joblib import dump, load
+
+# save the model
+dump(clf, 'clf.joblib')
+# load the model
+clf = load('clf.joblib')
+</code></pre>
+<h1 id="fast-train-with-suod">Fast Train with SUOD</h1>
+<pre><code class="language-python">from pyod.models.suod import SUOD
+
+# initialized a group of outlier detectors for acceleration
+detector_list = [LOF(n_neighbors=15), LOF(n_neighbors=20),
+                 LOF(n_neighbors=25), LOF(n_neighbors=35),
+                 COPOD(), IForest(n_estimators=100),
+                 IForest(n_estimators=200)]
+
+# decide the number of parallel process, and the combination method
+# then clf can be used as any outlier detection model
+clf = SUOD(base_estimators=detector_list, n_jobs=2, combination='average', verbose=False)
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://yanyuLinxi.github.io/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="PyOD学习笔记" target="_blank" rel="external">https://yanyuLinxi.github.io/2021/10/pyod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yanyuLinxi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://yanyuLinxi.github.io/linxiIcon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yanyuLinxi" target="_blank"><span class="text-dark">yanyuLinxi</span><small class="ml-1x">打工人</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://yanyuLinxi.github.io/2021/10/leetcode2_%E9%93%BE%E8%A1%A8/" title="Leetcode2_链表"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://yanyuLinxi.github.io/2021/10/dr%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4%E6%80%BB%E7%BB%93/"
+                    title="DR特征降维总结"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://yanyuLinxi.github.io/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://yanyuLinxi.github.io/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
+            CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://yanyuLinxi.github.io/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

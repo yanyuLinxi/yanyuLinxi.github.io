@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>
+        4 机器学习基础 - Pure theme for Hugo
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="深度学习是机器学习的一个特定分支。我们要想充分理解深度学习，必须对机器 学习的基本原理有深刻的理解。 机器学习本质上属于应用统计学，更多地关注于" />
+    <meta name="generator" content="Hugo 0.81.0 with theme pure" />
+    <title>4 机器学习基础 - Pure theme for Hugo</title>
+    
+    
+    <link rel="stylesheet" href="https://yanyuLinxi.github.io/css/style.min.b4b742918d33349bb411274c2c6de779fe2fda4d2101d2703f6bc0fc0a19edf2.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="4 机器学习基础" />
+<meta property="og:description" content="深度学习是机器学习的一个特定分支。我们要想充分理解深度学习，必须对机器 学习的基本原理有深刻的理解。 机器学习本质上属于应用统计学，更多地关注于" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yanyuLinxi.github.io/2021/11/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-12T09:06:45&#43;08:00" />
+<meta property="article:modified_time" content="2021-11-12T09:06:45&#43;08:00" />
+
+<meta itemprop="name" content="4 机器学习基础">
+<meta itemprop="description" content="深度学习是机器学习的一个特定分支。我们要想充分理解深度学习，必须对机器 学习的基本原理有深刻的理解。 机器学习本质上属于应用统计学，更多地关注于"><meta itemprop="datePublished" content="2021-11-12T09:06:45&#43;08:00" />
+<meta itemprop="dateModified" content="2021-11-12T09:06:45&#43;08:00" />
+<meta itemprop="wordCount" content="11401">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="4 机器学习基础"/>
+<meta name="twitter:description" content="深度学习是机器学习的一个特定分支。我们要想充分理解深度学习，必须对机器 学习的基本原理有深刻的理解。 机器学习本质上属于应用统计学，更多地关注于"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">主页</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">所有文章</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">分类</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">标签</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">关于</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/11/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/"
+    >4 机器学习基础</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://yanyuLinxi.github.io/2021/11/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-11-12 09:06:45 &#43;0800 CST" itemprop="datePublished">2021-11-12</time>
+</a>
+</span>
+
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/11/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 11401字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 23分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><strong>深度学习</strong>是<strong>机器学习</strong>的一个特定分支。我们要想充分理解深度学习，必须对机器 学习的基本原理有深刻的理解。</p>
+<p><strong>机器学习</strong>本质上属于<strong>应用统计学</strong>，更多地关注于如何用 计算机统计地估计复杂函数，不太关注为这些函数提供<strong>置信区间</strong>。因此我们会探讨 两种统计学的主要方法：<strong>频率派估计</strong>和<strong>贝叶斯推断。</strong></p>
+<h1 id="学习算法">学习算法</h1>
+<ol>
+<li>我们所谓的 ‘‘学习’’ 是什 么意思呢？Mitchell (1997) 提供了一个简洁的定义：‘‘<strong>对于某类任务 T</strong> 和<strong>性能度量 P</strong>，一个计算机程序被认为可以从<strong>经验 E</strong>中学习是指，通过经验 E 改进后，它在任务 T 上由性能度量 P 衡量的性能<strong>有所提升</strong>。</li>
+<li><strong>样本</strong>是 指我们从某些希望机器学习系统处理的<strong>对象</strong>或事件中收集到的<strong>已经量化的特征（feature）的集合</strong></li>
+<li>一些非常常见的<strong>机器学习任务</strong>列举如下
+<ol>
+<li>分类
+<ol>
+<li>学习算法通常会返回一个函数 f : Rn → {1, . . . , k}。当 y = f(x) 时，模型将向量 x 所代表的输入分类到数字码 y 所代表的类别。</li>
+</ol>
+</li>
+<li>输入缺失分类
+<ol>
+<li>学习算法只需要定义一个从输入向量映射到输出类别的函数。当一些输入可能丢失时，学习算法必须学习一组函数，而不是 单个分类函数。</li>
+<li>有 效地定义这样一个大集合函数的方法是学习所有<strong>相关变量的概率分布</strong>，然后通 <strong>过边缘化缺失变量</strong>来解决分类任务。使用 n 个输入变量，我们现在可以获得每 个可能的缺失输入集合所需的所有 2n 个不同的分类函数，但是计算机程序仅需要学习一个描述<strong>联合概率分布的函数</strong>。</li>
+</ol>
+</li>
+<li>回归
+<ol>
+<li>在这类任务中，计算机程序需要对给定输入预测数值。学习算法需要输出函数 f : Rn → R。除了返回结果的形式不一样外，这类 问题和分类问题是很像的</li>
+</ol>
+</li>
+<li>转录
+<ol>
+<li>机器学习系统观测一些相对非结构化表示的数据，并转 录信息为离散的文本形式。</li>
+<li>深度学习是现代语音识别系统的重要组成部分</li>
+</ol>
+</li>
+<li>机器翻译
+<ol>
+<li>在机器翻译任务中，输入是一种语言的符号序列，计算机程序必须 将其转化成另一种语言的符号序列</li>
+</ol>
+</li>
+<li>结构化输出
+<ol>
+<li>结构化输出任务的输出是向量或者其他包含多个值的数据结构， <strong>并且构成输出的这些不同元素间具有重要关系</strong></li>
+<li>这类任务被称为结构化输出任务是因为输出值之 间内部紧密相关。例如，为图片添加标题的程序输出的单词必须组合成一个<strong>通顺的句子。</strong></li>
+</ol>
+</li>
+<li>异常检测
+<ol>
+<li>计算机程序在一组事件或对象中筛选，并标记不正 常或非典型的个体。</li>
+<li>异常检测任务的一个示例是信用卡欺诈检测。</li>
+</ol>
+</li>
+<li>合成和采样
+<ol>
+<li>机器学习程序生成一些和训练数据相似的新样本。 通过机器学习，合成和采样可能在媒体应用中非常有用</li>
+<li>例如，视频游戏可以自动生成大型物体或风景 的纹理，而不是让艺术家手动标记每个像素 (Luo et al., 2013)。</li>
+<li>我们提供书写的句子，要求程序输出这个句子语音的音频 波形。这是一类结构化输出任务，但是多了每个输入并非只有一个正确输出的 条件，并且我们明确希望输出有很多变化，这可以使结果看上去更加自然和真实</li>
+</ol>
+</li>
+<li>缺失值填补：
+<ol>
+<li>在这类任务中，机器学习算法给定一个新样本 x ∈ Rn，x 中某些 元素 xi 缺失。算法必须填补这些缺失值。</li>
+</ol>
+</li>
+<li>去噪：
+<ol>
+<li>干净样本 x ∈ Rn 经过未知损 坏过程后得到的损坏样本 ˜x ∈ Rn。</li>
+</ol>
+</li>
+<li>密度估计或概率质量函数估计：
+<ol>
+<li>在密度估计问题中，机器学习算法学习函数 pmodel : Rn → R，其中 pmodel(x) 可以解释成样本采样空间的概率密度函数（如果 x 是连续的）或者概率质量函数（如果 x 是离散的）。</li>
+<li>算法必须知道什么情况下样本聚集出现。例如，如果我们通过密度估计得到了概率分布 p(x)， 我们可以用该分布解决缺失值填补任务。如果 xi 的值是缺失的，但是其他的变量值 x−i 已知，那么我们可以得到条件概率分布 p(xi | x−i)。因为在很多情况下 p(x) 是难以计算的。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="性能度量p">性能度量p</h2>
+<ol start="4">
+<li>性能度量 P。我们通常度量模型的<strong>准确率</strong>（accuracy）。们也可以通过<strong>错误率</strong>（error rate）得到相同的信息</li>
+<li>我们通常把错 误率称为 0 − 1损失的期望。在一个特定的样本上，如果结果是对的，那么 0 − 1损失是 0；否则是 1。
+<ol>
+<li>但是对于密度估计这类任务而言，度量准确率，错误率或者其他 类型的 0 − 1损失是没有意义的。最常用的方法是输出模型在一些样本上概率对 数的平均值</li>
+</ol>
+</li>
+<li>在某些情况下，这是因为很难确定应该度量什么。这些设计的选择取决 于<strong>应用</strong>.在这些情况下，我们必须设计 一个仍然对应于设计对象的替代标准，或者设计一个理想标准的良好近似。</li>
+</ol>
+<h2 id="经验e">经验E</h2>
+<ol>
+<li>机器学习算法可以大致分类为<strong>无监督</strong>（unsupervised）算法和<strong>监督（supervised）算法。</strong></li>
+<li>本书中的大部分学习算法可以被理解为在<strong>整个数据集（dataset）<strong>上获取经验。有时我们也将样本称为</strong>数 据点（data point）</strong></li>
+<li><strong>无监督学习算法</strong>。我们通常要学习生<strong>成数据集的整个概率分布</strong>，显式地，比如密度估计，或是隐式地，比如合成或去噪。还有一些其他类型的无监督学习任务，例如<strong>聚类</strong>，将数据集分成相似样本的集合。
+<ol>
+<li>无监督学习算法的三个特性：
+<ol>
+<li>没有标签</li>
+<li>没有目的</li>
+<li>无法量化效果。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>监督学习算法</strong>。训练含有很多特征的数据集，不过数据集中的样本都有一个标签（label）或目标（target）。</li>
+<li>大致说来，<strong>无监督学习</strong>涉及到观察随机向量 x 的好几个样本，试图显式或隐式 地学习出<strong>概率分布 p(x)</strong>。而<strong>监督学习</strong>包含观察随 机向量 x 及其相关联的值或向量 y，然后从 x 预测 y，通常是<strong>估计 p(y | x)</strong></li>
+<li>无监督学习和监督学习不是严格定义的术语。例如，概率的链式法则表明对于向量 x ∈ Rn， 联合分布可以分解成p(x) = ∏n i=1p(xi | x1, . . . , xi−1).该分解意味着我们可以将其拆分成 n 个监督学习问题</li>
+<li>尽管无监督学习和监督学习并非完全没有交集的正式概念，传统地，人们将<strong>回归、分类或者结构化输出问题称为监督学习</strong>。支持其他任务的<strong>密度估计</strong>通常被称为<strong>无监督学习。</strong></li>
+<li>有些机器学习算法并不是训练于一个固定的数据集上。例如，**强化学习（reinforcement learning）**算法会和环境进行交互，所以学习系统和它的训练过程会有反馈回路。</li>
+<li>在所有的情况下，<strong>数据集</strong>都是样本的集合，而<strong>样本是特征的集合。</strong></li>
+<li>示例：线性回归
+<ol>
+<li>理解如何进行梯度下降的。对于一个目标值y，建立函数y=f(x)=ax+b。其中a、b为权重。每次得到一个loss值。比如loss = min (y-y_label)^2计算得到。则根据loss求每一个权重的偏导数，并进行梯度下降。为的是知道，在权重取什么值的时候，y能够取到最小值。</li>
+<li>在更复杂的情况下，我们最简单的方法是使用牛顿法来计算得到最小点。如果f不是真正二次，而是局部近似为正定二次，则需要多次迭代应用式子。使用梯度下降是一阶优化算法。使用Hessian矩阵是二阶优化算法。如牛顿法。</li>
+</ol>
+</li>
+</ol>
+<h1 id="容量过拟合和欠拟合">容量、过拟合和欠拟合</h1>
+<ol>
+<li>机器学习的主要挑战就是能够在先前未观测的新输入上表现良好。在先前未观测的输入上表现良好称为<strong>泛化。</strong></li>
+<li>机器学习的目的希望泛化误差（也被称为测试误差）很低。</li>
+<li>统计学理论可以让我们通过训练集影响测试集。
+<ol>
+<li>训练集和测试被<strong>数据生成过程</strong>的概率分布生成。</li>
+<li>会进行独立同分布的假设。该假设是说，每个数据集中的样本都是彼此<strong>相互独立的（independent）</strong>，并且训练集和测试集是<strong>同分布的（identically distributed）</strong>，</li>
+<li>我们将这个共享的潜在 分布称为<strong>数据生成分布</strong>（data generating distribution），记作 pdata。</li>
+<li>我们能观察到训练误差和测试误差之间的直接联系是，<strong>随机模型训练误差的期 望和该模型测试误差的期望是一样的</strong>。假设我们有概率分布 p(x, y)，</li>
+</ol>
+</li>
+<li>以下是决定机器 学习算法效果是否好的因素：
+<ol>
+<li>. 降低训练误差。</li>
+<li>缩小训练误差和测试误差的差距。</li>
+</ol>
+</li>
+<li>这两个因素对应机器学习的两个主要挑战：<strong>欠拟合（underfitting）和过拟合 （overfitting）</strong>。欠拟合是指模型不能在训练集上获得足够低的误差。而过拟合是指训练误差和和测试误差之间的差距太大。</li>
+<li>通过调整<strong>模型的容量（capacity）</strong>，我们可以控制模型是否偏向于过拟合或者欠 拟合。
+<ol>
+<li>通俗地，<strong>模型的容量是指其拟合各种函数的能力</strong>。容量低的模型可能很难拟 合训练集。容量高的模型可能会过拟合，因为记住了不适用于测试集的训练集性质。</li>
+</ol>
+</li>
+<li>一种控制训练算法容量的方法是<strong>选择假设空间（hypothesis space）</strong>，即学习算 法可以选择为解决方案的函数集</li>
+<li>我们探讨了通过改变输入特征的数目和加入这些特征对应的参数，改 变模型的容量
+<ol>
+<li>模型增加特征是：增加特征的维数。这里从x变成了x+x^2学习参数是，y=wx+b不变，通过学习w,b来学习y。增加特征是增加x来拟合y，学习参数是学习权重来拟合y</li>
+<li>网上查到的解释：
+<ol>
+<li>参数模型，对目标函数有一个假设，如y=ax+b。通过最小二乘法来拟合目标函数的参数</li>
+<li>非参数模型：不对目标函数有一个确定的假设。通过训练来拟合学习某种函数。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>容量不足的模型不能解决复杂任务。容量高的模型能够解决 复杂的任务，但是当其容量高于任务所需时，有可能会过拟合。</li>
+<li>模型规定了调整参数降低训练目标时，学习算法可以从哪些函数族中选择函数。这被称为模型的<strong>表示容量（representational capacity）.</strong></li>
+<li>额外的限制因素，比如 优化算法的不完美，意味着学习算法的**有效容量（effective capacity）**可能小于模型族的表示容量</li>
+<li>现在广泛被称为**奥卡姆剃刀（Occam’s razor）（c. 1287-1387）。**该原则指出，在同样能够解释已知观测现象的假设中，我们应该挑选 <strong>‘‘最简单’’</strong> 的那一个。</li>
+<li>统计学习理论提供了量化模型容量的不同方法。在这些中，最有名的是<strong>VapnikChervonenkis 维度（Vapnik-Chervonenkis dimension, VC）。</strong> VC维定义为该分类器能够分类的训练样本的最大数目。假设存在 m 个 不同 x 点的训练集，分类器可以任意地标记该 m 个不同的 x 点，VC维被定义为 m的最大可能值。</li>
+<li>统计学习理论中<strong>最重要 的结论</strong>阐述了训练误差和泛化误差之间差异的上界随着模型容量增长而增长，但随着训练样本增多而下降</li>
+<li>但是它们<strong>很少应用于</strong>实际中的深度学习算法。
+<ol>
+<li>一部分原因是边界太松，</li>
+<li>另一部分原因是很难确定深度学习算法的容量。</li>
+<li>由于<strong>有效容量受限于优化算法的能力</strong>， 确定深度学习模型容量的问题特别困难。而且对于深度学习中的一般非凸优化问题，我们只有很少的<strong>理论分析</strong></li>
+</ol>
+</li>
+<li>为考虑容量任意高的极端情况，我们介绍非参数（non-parametric）模型的概 念。
+<ol>
+<li>参数模型学习的函数在观测到新 数据前，参数向量的分量个数是有限且固定的。非参数模型没有这些限制</li>
+<li>非参数模型典例：决策树。最近邻回归。</li>
+</ol>
+</li>
+<li><strong>理想模型</strong>假设我们能够预先知道生成数据的真实概率分布。然而这样的模型仍 然会在很多问题上发生一些错误，因为分布中仍然会有一些噪声。从预先知道的真实分布 p(x, y) 预测而出现的误差被称为<strong>贝叶斯误差（Bayes error）</strong>。知道测试集的分布，仍然产生的误差就是贝叶斯误差。</li>
+<li><strong>训练误差和泛化误差</strong>会随训练集的大小发生变化。
+<ol>
+<li><strong>泛化误差的期望</strong>从不会因训 练样本数目的增加而增加。</li>
+<li>对于<strong>非参数模型</strong>而言，<strong>更多的数据</strong>会得到<strong>更好的泛化能 力</strong>，直到达到最佳可能的泛化误差。</li>
+<li><strong>任何模型容量小于最优容量</strong>的固定参数模型会渐近到<strong>大于贝叶斯误差</strong>的误差值。</li>
+</ol>
+</li>
+<li><strong>归纳推理</strong>，或是从一组有限的样本中推断一般的规则，在 逻辑上不是很有效。为了逻辑地推断一个规则去描述集合中的元素，我们必须具有集合中每个元素的信息。<strong>上升到哲学。</strong></li>
+<li>机器学习保证找到一个在所关注的大多数样本上可能正 确的规则</li>
+<li>机器学习的<strong>没有免费午餐定理（no free lunch theorem）表明 (Wolpert, 1996)</strong>，每 一个分类算法在未事先观测的点上都有相同的错误率。换言之，在某种意义上，<strong>没有一个机器学习算法总是比其他的要好。<strong>我们能够设想的最先进的算法和简单地将所有点归为同一类的简单算法有</strong>着相同的平均性能（在所有可能的任务上）。</strong></li>
+<li>反之，我们的目标是理解什么样的分布与人工智能获取经验的 ‘‘真实世界’’ 相 关，什么样的学习算法在我们关注的数据生成分布上效果最好。</li>
+<li>最小二乘法：h = X$\theta$。损失函数定义为h = 1/2(X$\theta$-Y)^T(X$\theta$-Y) 和最小均方差公式很类似。。</li>
+</ol>
+<h2 id="正则化">正则化</h2>
+<ol>
+<li>没有免费午餐定理暗示我们必须在特定任务上设计性能良好的机器学习算法。没有一个设计可满足所有的任务。</li>
+<li>算法的效果不仅很大程度上受影响于假设空间的<strong>函数数量</strong>，也取决于这些<strong>函数 的具体形式</strong>。在假设空间中，相比于某一个学习算法，我们可能<strong>更偏好</strong>另一个学习算法。只有<strong>非偏好函数比偏 好函数</strong>在训练数据集上效果明显好很多时，我们才会考虑非偏好函数。</li>
+<li>例如，我们可以加入<strong>权重衰减（weight decay）<strong>来修改线性回归的训练标准。带</strong>权重衰减</strong>的线性回归最小化训练集上的<strong>均方误差</strong>和<strong>正则项的和 J(w)</strong>，其偏好于平方<strong>L2 范数较小的权重</strong>
+<ol>
+<li>J(w) = MSE_{train} + λw⊤w,</li>
+<li>其中 λ 是提前挑选的值，控制我们偏好小范数权重的程度。<strong>越大的 λ</strong>偏好<strong>范数越小的权</strong>重.或是将权重放在较少 的特征上。</li>
+<li>常用的惩罚项是所有<strong>权重的平方乘以一个衰减常量之和</strong>。其用来惩罚大的权值。</li>
+<li>所以W^T W 就是权重的乘积。表现为如果权重大的话，这个值也大。损失函数的目的让这个数变小。所以加入这个可以惩罚权重大的值。</li>
+</ol>
+</li>
+<li>更一般地，正则化一个学习函数 f(x; θ) 的模型，我们可以给代价函数添加被称为正则化项（regularizer）的惩罚。在权重衰减的例子中，正则化项是 Ω(w) = w⊤w。</li>
+<li>正则化是指我们 修改学习算法，使其<strong>降低泛化误差</strong>而非训练误差。<strong>正则化是机器学习领域的中心问题之一</strong>，只有优化能够与其重要性相媲。这些不同的方法都被称为<strong>正则化（regularization）。</strong></li>
+</ol>
+<h1 id="超参数和验证集">超参数和验证集</h1>
+<ol>
+<li>有时一个选项被设为学习算法不用学习的<strong>超参数</strong>，是因为它太难优化了。更多 的情况是，<strong>该选项必须是超参数，因为它不适合在训练集上学习</strong></li>
+<li>如果在训练集上学习超参数，这些<strong>超参数总是趋向于最大可 能</strong>的模型容量，导致过拟合。例如，相比低次多项式和正的权重衰减 设定，更高次的多项式和权重衰减参数设定 λ = 0 总能在训练集上更好地拟合。</li>
+<li>其重点在于测试样本不能以任何形式参与到 模型的选择中，包括设定超参数。测试集中的样本不能用于验证集。 因此，我们总是从训练数据中构建验证集。
+<ol>
+<li>特别地，我们将<strong>训练数据分成两个不相 交的子集</strong>。其中一个用于学习参数。另一个作为验证集，用于挑选超参数的数据子集被称为<strong>验 证集（validation set）</strong>。通常，80% 的训练数据用于训练，20% 用于验证。</li>
+</ol>
+</li>
+<li><strong>交叉验证</strong>。这些过程是基于在原始数据上随机采样或分离出的不同数据集上重复训练和 测试的想法。最常见的是 <strong>k-折交叉验证过程，</strong></li>
+</ol>
+<h1 id="估计偏差和方差">估计、偏差和方差</h1>
+<p>Notes: 估计这一章理论性较强，可以说你只看懂了概念，其他都没看懂。</p>
+<p>参数估计、偏差和方差，用于正式的刻画泛化、欠拟合和过拟合。</p>
+<p>点估计、函数估计，就是利用已知的样本结果信息，反推导致这些样本结果出现的模型参数值！通过已知的数据分布推断样本出现结果的模型的参数。</p>
+<h2 id="点估计">点估计。</h2>
+<ol>
+<li>点估计试图为一些感兴趣的量提供单个 ‘‘最优’’ 预测</li>
+<li>为了区分<strong>参数估计和真实值</strong>，我们习惯将<strong>参数 θ</strong> 的<strong>点估计</strong>表示为 <strong>ˆθ</strong>。</li>
+<li>令 {x(1), . . . , x(m)} 是 m 个独立同分布（i.i.d.）的数据点。点估计（point estimator）或统计量（statistics）是这些数据的任意函数：</li>
+<li><strong>点估计</strong>也可以指输入和目标变量之间关系的估计。我们将这种类型的点估计称 为<strong>函数估计</strong>。</li>
+<li>函数估计 有时我们会关注函数估计（或函数近似）。我们假设有一个函数 f(x) 表示 y 和 x 之间的近似关系。例如，我们可能 假设 y = f(x) + ϵ，其中 ϵ 是 y 中未能从 x 预测的一部分。</li>
+<li>理解统计量和真实值。统计量是统计出来的，和真实的值是存在差异的。真实值\theta, 统计量就是\theta的计算公式的出来的值，这两个值是有差距的。估计量是从统计量中计算得到的。</li>
+<li>函数估计，就是通过输入向量算出来的值。基于观测数据推断一个已知量的的估计值。如y=f(x)+e, 用模型估计去近似f。</li>
+<li>无偏估计就是，函数估计的均值减去这个值为0.那这个估计就是无偏的。那这个估计量是优良的。通过这个估计评价的估计函数是没有理论上的偏差的。</li>
+</ol>
+<h2 id="偏差">偏差</h2>
+<p>我们通过偏差来衡量一个估计是否合理。</p>
+<ol>
+<li>估计的偏差被定义为：bias( ˆθm) = E( ˆθm) − θ,如果<strong>bias( ˆθm) = 0</strong>，那么估计量 ˆθm 被称为是<strong>无偏 （unbiased</strong>），这意味着 E( ˆθm) = θ。如果 limm→∞ bias( ˆθm) = 0，那么估计量 ˆθm 被 称为是渐近无偏（asymptotically unbiased），这意味着 limm→∞ E( ˆθm) = θ。</li>
+<li>均值的高斯分布估计是无偏的。高斯分布方差估计是有偏估计。无偏样本方差（unbiased sample variance）估计是无偏的。</li>
+<li>一个是有偏的，另一个是无偏的。尽管无偏估计显然是令 人满意的，但它并不总是 ‘‘最好’’ 的估计。</li>
+<li>估计量的**方差（variance）<strong>就是一个方差Var(ˆθ)方差的平方根被称为</strong>标准差（**standard error），记作 SE(ˆθ)。</li>
+<li>样本方差的平方根和 方差无偏估计的平方根都不是<strong>标准差的无偏估计</strong>。这两种计算方法都倾向于低估真实的标准差，但仍用于实际中。相较而言，<strong>方差无偏估计的平方根较少被低估</strong>。</li>
+<li>均值的标准差在机器学习实验中非常有用。测试集中样本的数量决定了这个估计的精确度。中心极限定理告 诉我们均值会接近一个高斯分布，我们可以用标准差计算出真实期望落在选定区间
+的概率。例如，以均值 ˆµm 为中心的 95% 置信区间是。在机器学习实验中，我们通 常说算法 A 比算法 B 好，是指算法 A 的误差的 95% 置信区间的上界小于算法 B的误差的 95% 置信区间的下界。</li>
+</ol>
+<h2 id="均方误差">均方误差</h2>
+<ol>
+<li><strong>偏差和方差</strong>度量着估计量的两个不同误差来源。<strong>偏差度量着偏离真实函数或参 数的误差期望</strong>。而方差度量着数据上任意特定采样可能导致的<strong>估计期望的偏差</strong></li>
+<li>当我们可以在一个偏差更大的估计和一个方差更大的估计中进行选择时，会发 生什么呢？我们该如何选择？判断这种权衡最常用的方法是交叉验证。</li>
+<li>另外，我们也可以比较这些估计的均方误差。MSE度量着估计和真实参数 θ 之间平方误差的总体期望偏差。MSE=E(Var(x)) 方差的总体期望偏差。</li>
+<li>使用MSE度量泛化误差时，增加容量会增加方差，降低偏差。</li>
+</ol>
+<h1 id="最大似然估计">最大似然估计</h1>
+<p><strong>概率函数</strong> f(x|o)，已知o，来预测x。看x出现的概率是多少
+<strong>似然函数</strong> f(x|o), 已知x，来预测o。在知道数据分布的情况下，推断数据分布o。对不同的o，x出现的概率是多少。</p>
+<p>似然函数和条件概率函数从不同的视角来看的。
+最大似然估计，就是在所有可能的o中取一个值，<strong>使得出现x这种分布的可能性最大</strong>。即最大似然估计。</p>
+<ol>
+<li>考虑一组含有 m 个样本的数据集 X = {x(1), . . . , x(m)}，独立地由未知的真实数 据生成分布 pdata(x) 生成。令 pmodel(x; θ) 是一族由 θ 确定在相同空间上的概率分布。</li>
+<li>对 θ 的<strong>最大似然估计</strong>被定义为。$\theta = argmax_{\theta} p_{model}(X;\theta)=argmax_{\theta}\prod_{i=1}^m p_{model}(x^i;\theta)$</li>
+<li>一种解释最大似然估计的观点是将它看作最小化训练集上的经验分布 ˆpdata 和模型分布之间的差异。就是通过模型参数训练出来的分布和真实分布之间的差异，通过最大似然估计来减少这个差异。</li>
+<li>两者之间的差异程度可以通过 KL 散度度量。KL 散度被定义为：分布交叉熵的均值。
+<ol>
+<li>任何一个由负对数<strong>似然</strong>组成的损失都是定义在训练集上的经验分布和定义在模型上的概率
+分布之间的交叉熵。</li>
+</ol>
+</li>
+<li>最大似然估计很容易扩展到估计条件概率 P(y | x; θ)，从而给定 x 预测 y。实 际上这是最常见的情况，因为这构成了大多数监督学习的基础。</li>
+<li>最大似然估计最吸引人的地方在于，<strong>它被证明当样本数目 m → ∞ 时，就收敛 率而言是最好的渐近估计。</strong></li>
+<li>因为这些原因（一致性和统计效率），<strong>最大似然通常是机器学习中的首选估计</strong>。 当样本数目小到会发生过拟合时，正则化策略如权重衰减可用于获得训练数据有限时方差较小的最大似然有偏版本。</li>
+</ol>
+<h1 id="贝叶斯统计">贝叶斯统计</h1>
+<ol>
+<li>至此我们已经讨论了<strong>频率派统计</strong>（frequentist statistics）方法和<strong>基于估计单一 值 θ 的方法，<strong>然后基于该估计作所有的预测。另一种方法是在做预测时</strong>会考虑所有可能的 θ</strong>。后者属于<strong>贝叶斯统计（Bayesian statistics）的范畴</strong>。</li>
+<li>频率派的视角是<strong>真实参数 θ</strong>是未知的定值，而<strong>点估计 θˆ</strong>是考虑数据集上<strong>函数</strong>（可以看作是随机的）的随机变量。贝叶斯统计的视角完全不同。<strong>贝叶斯用概率</strong>反映知识状态的确定性程度</li>
+<li>我们将 θ 的已知知识表示成<strong>先验概率分布</strong>。在贝叶斯估计常用的情景下，<strong>先验开始是相对均匀的分布或高熵的高斯分布</strong>，观测 数据通常会使<strong>后验的熵下降</strong>，并集中在参数的几个可能性很高的值。</li>
+<li>相对于最大似然估计，贝叶斯估计有两个重要区别。
+<ol>
+<li>第一，不像最大似然方法预 测时使用 θ 的点估计，<strong>贝叶斯方法使用 θ 的全分布。</strong></li>
+<li>贝叶斯方法和最大似然方法的第二个最大区别是由<strong>贝叶斯先验分布造成的</strong>。先 验能够影响概率质量密度朝<strong>参数空间中偏好先验的区域偏移。</strong></li>
+</ol>
+</li>
+<li>当训练数据很有限时，贝叶斯方法通常泛化得更好，但是当训练样本数目很大 时，通常会有很大的计算代价。</li>
+<li>检查此<strong>后验分布</strong>可以让我们获得贝<strong>叶斯推断效果的一些直觉。</strong>。我们不能将贝叶斯学习过程初始化为一个无限宽的 w 先验。更重 要的区别是<strong>贝叶斯估计会给出一个协方差矩阵</strong>，表示 <strong>w 所有不同值的可能范围</strong>，而不仅是估计 µm。</li>
+</ol>
+<h1 id="最大后验估计map">最大后验估计MAP</h1>
+<ol>
+<li>希望使用点估计的一个常见原因是，对于大多数有意义的模型而 言，大多数涉及到贝叶斯后验的计算是非常棘手的，点估计提供了一个可行的近似解。我们仍然可以<strong>让先验影响点估计的选择</strong>来<strong>利用贝叶斯方法</strong>的优点，而不是简单 地回到最大似然估计。一种能够做到这一点的合理方式是选择<strong>最大后验点估计</strong></li>
+<li></li>
+</ol>
+<h1 id="监督学习算法">监督学习算法</h1>
+<ol>
+<li>在许多情况下，输出 y 很难自动收集，必须由人来 提供 ‘‘监督’’，不过该术语<strong>仍然适用于</strong>训练集目标可以被自动收集的情况。</li>
+<li>本书的大部分监督学习算法都是基于<strong>估计概率分布</strong> p(y | x) 的。我们可以使用最 大似然估计找到对于<strong>有参分布族</strong>p(y | x; θ) 最好的参数向量 θ。</li>
+<li><strong>逻辑回归</strong>（logistic regression），一种方法是使用 logistic sigmoid 函数将线性函数的输出压缩进区间 (0, 1)。该值可以解释为概率。</li>
+<li><strong>支持向量机</strong>（support vector machine, SVM）是监督学习中最有影响力的方法 之一 支持向量机不输出概率，只输 出类别。**当 w⊤x+ b 为正时，支持向量机预测属于正类。**类似地，当 w⊤x+ b 为负时，支持向量机预测属于负类。
+<ol>
+<li>支持向量机二分类。</li>
+</ol>
+</li>
+<li>支持向量机的一个重要创新是<strong>核技巧（kernel trick）</strong>。</li>
+<li>学习算法重写为这种形式允许我们将 x 替 换为特征函数 ϕ(x) 的输出，点积替换为被称为<strong>核函数</strong>（kernel function）的函数k(x, x(i)) = ϕ(x) · ϕ(x(i))。就是说通过将点积替换为核函数可以让这种算法能过够有非线性的表达能力。<strong>核函数完全等价于</strong>用 <strong>ϕ(x) 预处理所有的输入</strong>，然后在<strong>新的转换空间学习线性模 型。</strong></li>
+<li>核技巧十分强大有两个原因
+<ol>
+<li>首先，它使我们能够使用保证<strong>有效收敛的凸优化 技术</strong>来学习非线性模型（关于 x 的函数）</li>
+<li>其二，核 函数 k 的实现方法通常有比<strong>直接构建 ϕ(x) 再算点积高效很多</strong></li>
+</ol>
+</li>
+<li>在很多情况下，即使 ϕ(x) 是难算的<strong>k(x, x′) 却会是一个关于 x 非线性的、易算的函数</strong>.假设这个映射返回一个由开头 x 个 1，随后是无限个 0 的向量。我们可以写一个核函数 k(x, x(i)) = min(x, x(i))，完全等价于对应的无限维点积。
+<ol>
+<li>这种简单的比喻非常容易理解为什么自定义核函数可以比点积更有效。就是因为核函数可以自定义，根据特征的性值对函数进行自定义。</li>
+</ol>
+</li>
+<li>最常用的核函数是<strong>高斯核</strong>（Gaussian kernel），</li>
+<li>我们可以认为<strong>高斯核</strong>在执行一种<strong>模板匹配</strong>(template matching)。训练标签 y 相 关的训练样本 x 变成了类别 y 的模版。当测试点 x′ 到 x 的欧几里得距离很小，对应的高斯核响应很大时，表明 x′ 和模版 x 非常相似。</li>
+<li>。使用核技巧的算法类别被称为核机器（kernel machine） 或核方法（kernel method）</li>
+<li>核机器的一个主要缺点是计算决策函数的成本关于<strong>训练样本的数目是线性的</strong>。 因为第 i 个样本贡献 αik(x, x(i)) 到决策函数。</li>
+<li><strong>支持向量机能够通过学习主要包含零 的向量 α</strong>，以缓和这个缺点。那么判断新样本的类别仅需要计算非零 αi 对应的训练样本的核函数。<strong>这些训练样本被称为支持向量</strong></li>
+<li>带通用核的核机器致力于泛化得更好</li>
+<li>当前深度学习的复兴始于 Hinton et al. (2006b) 表明神经网络能够在 MNIST 基准数据上胜过 RBF 核的支持向量机。</li>
+<li>其他简单的监督学习算法
+<ol>
+<li>更一般地，<strong>k-最 近邻</strong>是一类可用于分类或回归的技术</li>
+<li>训练过程：反之，在 测试阶段我们希望在新的测试输入 x 上产生 y，我们需要在训练数据 X上找到 x 的k-最近邻。然后我们返回训练集上对应的 y 值的平均值</li>
+<li>k-最近邻的高容 量使其在训练样本数目大时能够获取较高的精度。然而，<strong>它的计算成本很高</strong>，另外 在训练集较小时泛化能力很差。k-最近邻的一个<strong>弱点</strong>是它不能学习出<strong>哪一个特征比其他更具识别力。</strong></li>
+<li><strong>决策树</strong>（decision tree）及其变种是另一类将输入空间分成不同的区域，每个区 域有独立参数的算法 (Breiman et al., 1984)</li>
+</ol>
+</li>
+</ol>
+<h1 id="无监督学习算法">无监督学习算法</h1>
+<ol>
+<li>无监督算法只处理 &ldquo;特征&rdquo;，<strong>不操作监督信号</strong>。无监督学习的大多数尝试是指从不需要人为注释的样 本的<strong>分布中抽取信息</strong>。该术语通常与<strong>密度估计</strong>相关。一个经典的无监督学习任务是找到数据的 **‘‘最佳’’**表示。但是一般来说，是指该表示在比本身表示的信息更简单或更易访问而受到一 些惩罚或限制的情况下，<strong>尽可能地保存关于 x 更多的信息。</strong></li>
+<li>最常见的三种包括<strong>低维表示</strong>、<strong>稀疏表示</strong>和<strong>独立 表示</strong>。低维表示尝试将 x 中的信息尽可能压缩在一个较小的表示中。稀疏表示通常用于需要增加表示维数的情况，使得 大部分为零的表示不会丢失很多信息。独立表示试图分开数据分布中变化的来源，使得表示的维 度是统计独立的。</li>
+</ol>
+<h2 id="主成分分析">主成分分析</h2>
+<p>PCA通过线性变换找到一个 Var[z] 是对角矩阵的表示 z =W⊤x。
+主成分也可以通过奇异值分解 (SVD) 得 到。假设 W是奇异值分解 X= UΣW⊤ 的右奇异向量。以W作为特征向量基，我们可以得到原来的特征向量。以上分析指明当我们通过线性变换 W将数据 x 投影到 z 时，得到的数据表示 的协方差矩阵是对角的（即 Σ2），立刻可得 z 中的元素是彼此无关的。
+<strong>见p157。</strong>
+PCA这种将数据变换为元素之间彼此不相关表示的能力是PCA的一个重要性 质。它是消除数据中未知变化因素的简单表示示例</p>
+<h2 id="k-均值据类">K-均值据类</h2>
+<ol>
+<li><strong>k-均值聚类</strong>提供的 <strong>one-hot 编码</strong>也是一种<strong>稀疏表示</strong>,因为每个输入的表示中大 部分元素为零。one-hot 编码是稀疏表示的一个极端示例，<strong>丢失 了很多分布式表示的优点</strong>。one-hot 编码仍然有一些<strong>统计优点</strong>（自然地传达了相同聚类中的样本彼此相似的观点）,也具有计算上的优势，因为整个表示可以用一个单独 的整数表示.</li>
+<li><strong>k-均值聚类</strong>初始化 <strong>k 个不同的中心点</strong> {µ(1), . . . , µ(k)}，然后迭代交换两个不同 的步骤直到收敛。<strong>步骤一</strong>，每个训练样本分配到最近的中心点 µ(i) 所代表的聚类 i。<strong>步骤二</strong>，每一个中心点 µ(i) 更新为聚类 i 中所有训练样本 x(j) 的均值。</li>
+<li>关于聚类的一个问题是聚类问题本身是病态的。这是说没有<strong>单一的标准</strong>去度量 聚类的数据在真实世界中效果如何。</li>
+<li>然而我们不知道聚类的性质是否很好地对应到真实世界的性质.我们可能希望找到和 <strong>一个特征相关的聚类</strong>，但是得到了<strong>一个和任务无关的，同样是合理的不同聚类</strong>。我们只知道它们是不同的。</li>
+<li>这些问题说明了一些我们可能更偏好于分布式表示（相对于 one-hot 表示而言） 的原因。分布式表示可以对每个车辆赋予两个属性——一个表示它颜色，一个表示它是汽车还是卡车。但是多个属性减少了算法去猜我们关心哪一个属性的负担.</li>
+</ol>
+<h1 id="随机梯度下降">随机梯度下降</h1>
+<ol>
+<li>几乎所有的深度学习算法都用到了一个非常重要的算法：随机梯度下降 （stochastic gradient descent, SGD）。</li>
+<li>机器学习中反复出现的一个问题是好的泛化需要大的训练集，但大的训练集的 计算代价也更大。<strong>机器学习算法中</strong>的代价函数通常可以分解成<strong>每个样本的代价函数的总和。</strong>. <strong>这个运算的计算代价是 O(m)</strong>。随着训练集规模增长为数十亿的样本，计算一步梯度 也<strong>会消耗相当长的时间。</strong></li>
+<li><strong>随机梯度下降</strong>的核心是，<strong>梯度是期望</strong>。期望可使用<strong>小规模的样本近似估计.<strong>在算法的每一步，我们从训练集中均匀抽出一</strong>小批量（minibatch）样本</strong>.使用来自小批量 B 的样本。然后，随机梯度下降算法使用如下的梯度下降估计：θ ← θ − ϵg,其中，ϵ 是学习率。</li>
+<li>它是在大规模数据上训练大 型线性模型的主要方法。对于固定大小的模型，每一步随机梯度下降更新的计算量<strong>不取决于</strong>训练集的大小 m。而，当 m 趋向于无穷大时，该模型最终会在<strong>随机梯度下降抽样完训练</strong>集上的所有样本之前收敛到可能的最优测试误差。我们可以认为用SGD训练模型的渐近代价 是<strong>关于 m 的函数的 O(1) 级别。</strong></li>
+<li>在深度学习兴起之前，<strong>学习非线性模型的主要方法</strong>是结合<strong>核技巧</strong>的<strong>线性模型</strong>。 很多核学习算法需要构建一个 m×m 的矩阵.
+<ol>
+<li>深度学习从 2006 年开始受到关注的原因是，在数以万计样本的中等规模数据集上， <strong>深度学习在新样本上比当时很多热门算法泛化得更好。<strong>不久后，深度学习在工业界受到了更多的关注，因为其提供了一种</strong>训练大数据集上的非线性模型的可扩展方式。</strong></li>
+</ol>
+</li>
+</ol>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://yanyuLinxi.github.io/2021/11/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" title="4 机器学习基础" target="_blank" rel="external">https://yanyuLinxi.github.io/2021/11/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yanyuLinxi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://yanyuLinxi.github.io/linxiIcon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yanyuLinxi" target="_blank"><span class="text-dark">yanyuLinxi</span><small class="ml-1x">打工人</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://yanyuLinxi.github.io/2021/11/3-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/" title="3 数值统计"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://yanyuLinxi.github.io/2021/11/shap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                    title="Shap学习笔记"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://yanyuLinxi.github.io/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://yanyuLinxi.github.io/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
+            CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://yanyuLinxi.github.io/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <title>
         Pure theme for Hugo</title>
@@ -56,16 +56,16 @@
     <div class="slimContent">
       <div class="navbar-header">
         <div class="profile-block text-center">
-          <a id="avatar" href="https://github.com/xiaoheiAh" target="_blank">
-            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/avatar.png" width="200" height="200">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">xiaoheiAh</h2>
-          <h3 id="title" class="hidden-xs hidden-sm hidden-md">author title</h3>
-          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Shanghai, China</small>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
         </div><div class="search" id="search-form-wrap">
     <form class="search-form sidebar-form">
         <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
             <span class="input-group-btn">
                 <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
                         class="icon icon-search"></i></button>
@@ -75,7 +75,7 @@
             <div class="ins-search-mask"></div>
             <div class="ins-search-container">
                 <div class="ins-input-wrapper">
-                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
                         x-webkit-speech />
                     <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
                         aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -99,31 +99,31 @@
             <li class="menu-item menu-item-home">
                 <a href="/">
                     <i class="icon icon-home-fill"></i>
-                  <span class="menu-title">Home</span>
+                  <span class="menu-title">主页</span>
                 </a>
             </li>
             <li class="menu-item menu-item-archives">
                 <a href="/posts/">
                     <i class="icon icon-archives-fill"></i>
-                  <span class="menu-title">Archives</span>
+                  <span class="menu-title">所有文章</span>
                 </a>
             </li>
             <li class="menu-item menu-item-categories">
                 <a href="/categories/">
                     <i class="icon icon-folder"></i>
-                  <span class="menu-title">Categories</span>
+                  <span class="menu-title">分类</span>
                 </a>
             </li>
             <li class="menu-item menu-item-tags">
                 <a href="/tags/">
                     <i class="icon icon-tags"></i>
-                  <span class="menu-title">Tags</span>
+                  <span class="menu-title">标签</span>
                 </a>
             </li>
             <li class="menu-item menu-item-about">
                 <a href="/about/">
                     <i class="icon icon-cup-fill"></i>
-                  <span class="menu-title">About</span>
+                  <span class="menu-title">关于</span>
                 </a>
             </li>
         </ul>
@@ -131,218 +131,37 @@
     </div>
   </header>
 
-<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-      <div class="widget">
-    <h3 class="widget-title">Board</h3>
-    <div class="widget-body">
-        <div id="board">
-            <div class="content"><p>enjoy~</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-      <div class="widget">
-    <h3 class="widget-title"> Tags</h3>
-    <div id="tag-cloud-list" class="widget-body">
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/css/" class="tag-list-link" rel="1">css<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/emoji/" class="tag-list-link" rel="1">emoji<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/html/" class="tag-list-link" rel="1">html<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/index/" class="tag-list-link" rel="1">index<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/markdown/" class="tag-list-link" rel="2">markdown<span
-               class="tag-list-count">2</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/privacy/" class="tag-list-link" rel="1">privacy<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/shortcodes/" class="tag-list-link" rel="1">shortcodes<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/text/" class="tag-list-link" rel="1">text<span
-               class="tag-list-count">1</span></a>
-            
-            
-            <a href="https://yanyuLinxi.github.io/tags/themes/" class="tag-list-link" rel="1">themes<span
-               class="tag-list-count">1</span></a>
-            
-    </div>
-<script>
-document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    tagCloud('#tag-cloud-list a',  8 ,  20 );
-  }
-};
-
-function tagCloud(where, min, max) {
-  let iMax = 0;
-  let iMin = 0;
-  $(where).each(function() {
-    let weight = Number($(this).attr("rel"));
-    if(iMax < weight) iMax = weight;
-    if(iMin > weight || iMin == 0) iMin = weight;
-  });
-  let step = (max - min)/(iMax - iMin);
-  $(where).each(function() {
-    let weight = $(this).attr("rel") - iMin;
-    $(this).css({"font-size": min + (weight * step) + 'px'});
-  });
-};
-</script>
-</div>
-
-      <div class="widget">
-    <h3 class="widget-title"> Categories</h3>
-    <div class="widget-body">
-        <ul class="category-list">
-            <li class="category-list-item"><a href="https://yanyuLinxi.github.io/categories/syntax/" class="category-list-link">syntax</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://yanyuLinxi.github.io/categories/themes/" class="category-list-link">themes</a><span class="category-list-count">1</span></li>
-        </ul>
-    </div>
-</div>
-      <div class="widget">
-    <h3 class="widget-title"> Tags</h3>
-    <div class="widget-body">
-        <ul class="tag-list">
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/css/" class="tag-list-link">css</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/emoji/" class="tag-list-link">emoji</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/html/" class="tag-list-link">html</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/index/" class="tag-list-link">index</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/markdown/" class="tag-list-link">markdown</a><span
-                    class="tag-list-count">2</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/privacy/" class="tag-list-link">privacy</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/shortcodes/" class="tag-list-link">shortcodes</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/text/" class="tag-list-link">text</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://yanyuLinxi.github.io/tags/themes/" class="tag-list-link">themes</a><span
-                    class="tag-list-count">1</span></li>
-            
-        </ul>
-
-    </div>
-</div>
-      
-<div class="widget">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget-body">
-        <ul class="recent-post-list list-unstyled no-thumbnail">
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/markdown-syntax/" class="title">Markdown Syntax Guide</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/rich-content/" class="title">Rich Content</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/placeholder-text/" class="title">Placeholder Text</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-09</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/math-typesetting/" class="title">Math Typesetting</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-08</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://yanyuLinxi.github.io/2019/03/emoji-support/" class="title">Emoji Support</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2019-03-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-05</time>
-                    </p>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-  </div>
-</aside>
-
-    
     
 <main class="main" role="main">
     <article class="content article article-tags post-type-list" itemscope="">
         <header class="article-header">
             <h1 itemprop="name" class="hidden-xs">index</h1>
-            <p class="text-muted hidden-xs">Total 9 tags</p>
+            <p class="text-muted hidden-xs">共 21 个标签</p>
             <nav role="navigation" id="nav-main" class="okayNav">
                 <ul>
                     <li><a href="https://yanyuLinxi.github.io/tags">All</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/tags/css/">css</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/tags/emoji/">emoji</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/tags/html/">html</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/cnn/">CNN</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/doc2vec/">Doc2Vec</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/gnn/">GNN</a></li>
                     <li><a href="https://yanyuLinxi.github.io/tags/index/">index</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/tags/markdown/">markdown</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/tags/privacy/">privacy</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/tags/shortcodes/">shortcodes</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/tags/text/">text</a></li>
-                    <li><a href="https://yanyuLinxi.github.io/tags/themes/">themes</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/insider-threat/">Insider Threat</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/other-study/">other study</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/rnn/">RNN</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/survey/">survey</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/unsupervised/">Unsupervised</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E5%8E%A8%E8%89%BA%E5%AD%A6%E4%B9%A0/">厨艺学习</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E5%A5%87%E6%80%9D%E5%A6%99%E6%83%B3/">奇思妙想</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E5%BC%82%E5%B8%B8%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90/">异常行为分析</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E9%A2%84%E6%B5%8B/">用户行为预测</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">科研学习笔记</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/">科研工具</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E7%A7%91%E7%A0%94%E8%AE%B0%E5%BD%95/">科研记录</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E7%BB%8F%E9%AA%8C/">经验</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E8%87%AA%E5%AD%A6/">自学</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">论文阅读笔记</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E9%92%A2%E7%90%B4%E5%AD%A6%E4%B9%A0/">钢琴学习</a></li>
+                    <li><a href="https://yanyuLinxi.github.io/tags/%E9%9F%B3%E4%B9%90%E5%AD%A6%E4%B9%A0/">音乐学习</a></li>
                 </ul>
             </nav>
         </header>
@@ -351,8 +170,8 @@ function tagCloud(where, min, max) {
             <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="panel-body">
         <div class="article-meta">
-            <time datetime="2019-03-11 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2019-03-11</time>
+            <time datetime="2021-11-27 09:07:30 &#43;0800 CST"
+                itemprop="datePublished">2021-11-27</time>
         </div>
         <h3 class="article-title" itemprop="name">
             <a class="article-link" href="https://yanyuLinxi.github.io/posts/">Posts</a>
@@ -367,13 +186,15 @@ function tagCloud(where, min, max) {
     </article>
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
-    <li><a href="https://github.com/xiaoheiAh" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
     <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
             <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
 </ul>
   <div class="copyright">
-    &copy;2017  -
+    &copy;2020  -
     2021
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
@@ -413,11 +234,11 @@ function tagCloud(where, min, max) {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
             },
             ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
             CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',

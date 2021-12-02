@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>
+        Seaborn学习笔记 - Pure theme for Hugo
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="seaborn结合pandas来画好看的图。 最后网页显示的统计图，可以用seaborn画。 基本使用 seaborn中两种函数，第一种返回当前设" />
+    <meta name="generator" content="Hugo 0.81.0 with theme pure" />
+    <title>Seaborn学习笔记 - Pure theme for Hugo</title>
+    
+    
+    <link rel="stylesheet" href="https://yanyuLinxi.github.io/css/style.min.b4b742918d33349bb411274c2c6de779fe2fda4d2101d2703f6bc0fc0a19edf2.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="Seaborn学习笔记" />
+<meta property="og:description" content="seaborn结合pandas来画好看的图。 最后网页显示的统计图，可以用seaborn画。 基本使用 seaborn中两种函数，第一种返回当前设" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yanyuLinxi.github.io/2021/09/seaborn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-30T08:51:28&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-30T08:51:28&#43;08:00" />
+
+<meta itemprop="name" content="Seaborn学习笔记">
+<meta itemprop="description" content="seaborn结合pandas来画好看的图。 最后网页显示的统计图，可以用seaborn画。 基本使用 seaborn中两种函数，第一种返回当前设"><meta itemprop="datePublished" content="2021-09-30T08:51:28&#43;08:00" />
+<meta itemprop="dateModified" content="2021-09-30T08:51:28&#43;08:00" />
+<meta itemprop="wordCount" content="2197">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Seaborn学习笔记"/>
+<meta name="twitter:description" content="seaborn结合pandas来画好看的图。 最后网页显示的统计图，可以用seaborn画。 基本使用 seaborn中两种函数，第一种返回当前设"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/yanyuLinxi" target="_blank">
+            <img class="img-circle img-rotate" src="https://yanyuLinxi.github.io/linxiIcon.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">yanyuLinxi</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">打工人</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Wuhan, Hubei, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">主页</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">所有文章</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">分类</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">标签</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">关于</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/09/seaborn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+    >Seaborn学习笔记</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://yanyuLinxi.github.io/2021/09/seaborn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2021-09-30 08:51:28 &#43;0800 CST" itemprop="datePublished">2021-09-30</time>
+</a>
+</span>
+
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/seaborn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2197字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>seaborn结合pandas来画好看的图。</p>
+<p>最后网页显示的统计图，可以用seaborn画。</p>
+<h1 id="基本使用">基本使用</h1>
+<ol>
+<li>seaborn中两种函数，第一种返回当前设置，第二种设置</li>
+</ol>
+<h2 id="管理图表样式">管理图表样式</h2>
+<p>axes_style, set_style 返回样式、设置样式</p>
+<h3 id="主题">主题</h3>
+<h4 id="darkgrid">darkgrid</h4>
+<p>白线灰底。不影响数据表示</p>
+<h4 id="whitegrid">whitegrid</h4>
+<p>白底，简洁大方，数据元素较大使用。</p>
+<h4 id="dark">dark</h4>
+<p>没有格子的灰底</p>
+<h4 id="white">white</h4>
+<p>没有格子的白底</p>
+<h4 id="ticks">ticks</h4>
+<p>给轴线分割线段</p>
+<h3 id="布局">布局</h3>
+<p>使用plotting_context()返回布局。set_context来设置布局。</p>
+<p>布局按相对大小排序分别是：paper, notebook, talk,和poster</p>
+<p>影响标题、线型等。默认时notebook。</p>
+<p>临时设置布局
+with sns.plotting_context()</p>
+<h3 id="配色方案">配色方案</h3>
+<ol>
+<li>使用color_palette()和set_palette()建立配色方案</li>
+</ol>
+<p>color_palette()可以接受的颜色参数形式</p>
+<ul>
+<li>
+<p>HTML十六进制字符串（hex color codes）</p>
+<ul>
+<li>color = &lsquo;#eeefff&rsquo;</li>
+</ul>
+</li>
+<li>
+<p>合法的HTML颜色名字（HTML color names）</p>
+<ul>
+<li>color = &lsquo;red&rsquo;/&lsquo;chartreuse&rsquo;</li>
+</ul>
+</li>
+<li>
+<p>归一化到[0, 1]的RGB元组（RGB tuples）</p>
+<ul>
+<li>color = (0.3, 0.3, 0.4)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>色环
+<ol>
+<li>共用API：
+<ol>
+<li>sns.palplot(色环) 显示色环</li>
+<li>sns.color_palette(色环) 获取色环</li>
+<li>sns.set_palette(色环) 设置色环， 和color_palette同参数</li>
+<li>每个色环有自己的专门设置的函数，比如hsl: sns.hsl_palette()</li>
+</ol>
+</li>
+<li>Qualitative color palettes  <strong>当需要区分离散的数据集，且数据集之间没有内在的顺序</strong>
+<ol>
+<li>使用色环代码：
+<ol>
+<li>sns.color_palette(&ldquo;hls&rdquo;, 10)  <strong>hls最为常用</strong>, husl 在亮度和饱和度上更平均
+<ol>
+<li>第一个参数是色环，第二个参数是颜色个数。</li>
+<li>l 亮度</li>
+<li>s 饱和度。</li>
+</ol>
+</li>
+<li>或者使用sns.huso_palette()函数来调用，两个函数类似。
+<ol>
+<li>参数 start 开始</li>
+<li>rot number of rotations</li>
+<li>as_cmap=True 返回colormap对象。</li>
+<li>dark, light 控制亮度。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>sns.hls_palette(8, l=.3, s=.8) # l是亮度（lightness），s是饱和度（saturation） 使用hls循环配色 最为常用。</li>
+</ol>
+</li>
+<li>Color Brewer颜色循环。 在某些情况下颜色会循环重复 某些颜色循环系统对色盲比较友好（尤其是红绿色盲）
+<ol>
+<li>Paired</li>
+<li>Set2</li>
+</ol>
+</li>
+<li>sequential color palettes <strong>当数据集的范围从相对低值（不感兴趣）到相对高值（很感兴趣）</strong>
+<ol>
+<li>&ldquo;Blues&rdquo;</li>
+<li>&ldquo;BuGn_r&rdquo; 添加r倒置，逆序。绿色。</li>
+<li>&ldquo;GnBu_d&rdquo; 添加后缀d，则颜色加深</li>
+<li>&ldquo;cubehelix&rdquo; 颜色线性变化，打印后也能区分不同颜色，对色盲友好。
+<ol>
+<li>cubehelix专属函数: sns.cubehelix_palette可以进一步设置这个色环的更多参数
+<ol>
+<li>可以通过dark, light控制亮度、暗度。</li>
+<li>通过reverse参数控制是否reverse</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>sns.light_palette(&ldquo;green&rdquo;) 从明亮向暗产生渐变。 返回可以通过set_palette()设置的颜色</li>
+<li>sns.dark_palette(&ldquo;purple&rdquo;)从暗向明产生渐变</li>
+</ol>
+</li>
+<li>Diverging color palettes。<strong>当数据集的低值和高值都很重要，且数据集中有明确定义的中点时</strong>
+<ol>
+<li>BrBG  两端的颜色应该具有相似的亮度和饱和度，中间点的颜色不应该喧宾夺主</li>
+<li>coolwarm  常用的diverging 调色
+<ol>
+<li>center=&ldquo;dark&rdquo; 将中间设置为黑色。</li>
+<li>sep参数controls the width of the separation between the two ramps in the middle region of the palette</li>
+</ol>
+</li>
+<li>diverging_palette 函数使用&rsquo;husl&rsquo;颜色系统，需要在函数中设置两个hue参数，也可以选择设置两端颜色的亮度和饱和度</li>
+</ol>
+</li>
+<li>color_palette()与set_palette()的关系，类似于axes_style()和set_style()的关系  set_palette()的参数与color_palette()相同。 区别在于，set_palette()会改变配色方案的默认设置，从而应用于之后所有的图表。总之就这两个函数来选择配色方案。</li>
+<li>临时设置配色方案: with sns.color_palette(&ldquo;PuBuGn_d&rdquo;):</li>
+</ol>
+</li>
+<li>sns.choose_colorbrewer_palette()能够以互动的方式测试、修改不同的参数
+只能用于Jupyter Notebook</li>
+</ol>
+<h1 id="绘图">绘图</h1>
+<h1 id="绘制单变量分布图">绘制单变量分布图</h1>
+<ol>
+<li>sns.displot()绘制分布图
+<ol>
+<li>kind=&ldquo;hist&quot;直方图 kind=&ldquo;kde&quot;核密度图， kind=&ldquo;ecdf&rdquo;</li>
+<li>rug=True为每个观察值添加一个tick</li>
+<li>kde=True 打印核密度</li>
+</ol>
+</li>
+<li>sns.histplot()函数，绘制直方图，</li>
+<li>sns.kdeplot()
+<ol>
+<li>相对于sns.distplot()能够设置更多选项</li>
+<li>设置shade参数，填充核密度线下方区域</li>
+<li>bw_method 确定要使用的平滑带宽的方法</li>
+<li>bw_adjust 参数和bin很像。乘法缩放使用 选择的值的因子</li>
+<li>cut 正如您在上面看到的，高斯 KDE 过程的性质意味着估计超出了数据集中的最大值和最小值。可以使用 <code>cut</code> 参数控制绘制曲线超过极值的距离。但是，这仅影响曲线的绘制方式，而不影响曲线的拟合方式。</li>
+<li>ax参数选择图表绘制在哪个坐标系内</li>
+<li>n_levels=60 通过n_levels参数，增加轮廓线的数量，达到连续化核密度图的效果</li>
+</ol>
+</li>
+<li>rugplot() 绘制出现点</li>
+</ol>
+<h1 id="绘制双变量分布图">绘制双变量分布图</h1>
+<ol>
+<li>sns.jointplot
+<ol>
+<li>散点图  默认绘制散点图
+<ol>
+<li>(x=&ldquo;x&rdquo;, y=&ldquo;y&rdquo;, data=df)</li>
+<li>注意Seaborn与DataFrame联合使用，data参数指定DataFrame，x、y参数指定列名</li>
+</ol>
+</li>
+<li>六边形图（hexbin plot）
+<ol>
+<li>六边形颜色的深浅，代表落入该六边形区域内观测点的数量，常应用于大数据集，与white主题结合使用效果最好</li>
+<li>sns.jointplot(x=x, y=y, kind=&ldquo;hex&rdquo;, color=&ldquo;k&rdquo;) # kind参数设置六边形图</li>
+</ol>
+</li>
+<li>核密度图（kernel density estimation）
+<ol>
+<li>kind=&ldquo;kde&rdquo;</li>
+</ol>
+</li>
+<li>而sns.jointplot()只能单独绘制，无法添加在其他图表之上</li>
+<li>sns.jointplot()绘制后返回JointGrid对象对象，可以通过JointGrid对象来修改图表，例如添加图层或修改其他效果
+<ol>
+<li>g = sns.jointplot</li>
+<li>g.plot_joint(plt.scatter, c=&ldquo;w&rdquo;, s=30, linewidth=1, marker=&quot;+&quot;)</li>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="其他画图api">其他画图api</h1>
+<ol>
+<li>FacetGrid
+<ol>
+<li>一次花多个图。</li>
+</ol>
+</li>
+</ol>
+<h1 id="可视化数据集的成对关系">可视化数据集的成对关系</h1>
+<ol>
+<li>sns.pairplot()</li>
+<li>PairGrid对象
+<ol>
+<li>g = sns.PairGrid(iris)</li>
+</ol>
+</li>
+</ol>
+<h1 id="api">API</h1>
+<ol>
+<li>despine()移除右侧上方的横线
+<ol>
+<li>默认上右。传入left等参数控制哪边被移除</li>
+</ol>
+</li>
+<li>临时设置主题：with sns.axes_style()</li>
+</ol>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://yanyuLinxi.github.io/2021/09/seaborn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Seaborn学习笔记" target="_blank" rel="external">https://yanyuLinxi.github.io/2021/09/seaborn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yanyuLinxi" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://yanyuLinxi.github.io/linxiIcon.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yanyuLinxi" target="_blank"><span class="text-dark">yanyuLinxi</span><small class="ml-1x">打工人</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://yanyuLinxi.github.io/2021/09/%E5%B8%B8%E7%94%A8%E5%85%B6%E4%BB%96python%E5%BA%93/" title="常用其他python库"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://yanyuLinxi.github.io/2021/10/progress-in-outlier-detection-techniques-a-survey/"
+                    title="Progress in Outlier Detection Techniques a Survey"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/yanyuLinxi" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://yanyuLinxi.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="http://weibo.com/%7byourid%7d" target="_blank" title="weibo" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-weibo"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://yanyuLinxi.github.io/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://yanyuLinxi.github.io/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/yanyuLinxi.github.io\/',
+            CONTENT_URL: 'https:\/\/yanyuLinxi.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://yanyuLinxi.github.io/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
