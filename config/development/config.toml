@@ -1,4 +1,4 @@
-BaseUrl = "http://localhost:1313/"
+BaseUrl = "https://yanyulinxi.github.io/"
 
 [minify]
   disableCSS = false
