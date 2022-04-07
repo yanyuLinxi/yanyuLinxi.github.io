@@ -1,0 +1,144 @@
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>Mysql_21mins_tutorial - 希望至美，永不凋零</title><meta name=keywords content="博客,程序员,思考,读书,笔记,技术,分享"><meta name=author content="烟雨临溪"><meta property="og:title" content="Mysql_21mins_tutorial"><meta property="og:site_name" content="希望至美，永不凋零"><meta property="og:image" content="/img/author.jpg"><meta name=title content="Mysql_21mins_tutorial - 希望至美，永不凋零"><meta name=description content="欢迎来到临溪的博客站，个人主要专注于机器学习、深度学习的相关研究。在这里分享自己的学习心得。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span><span class=toggle-line></span><span class=toggle-line></span></div></div><div class=site-meta><div class=multi-lang-switch><i class="fa fa-fw fa-language" style=margin-right:5px></i><a class=lang-link id=zh-cn href=#>中文</a></div><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span><span class=site-title>希望至美，永不凋零</span>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>让我们消除隔阂的，不是无所不知的脑袋，而是手拉手，坚决不放弃的那颗心</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class=menu-item><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class=menu-item><a href=/404.html rel=section><i class="menu-item-icon fa fa-fw fa-heartbeat"></i><br>公益404</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span><span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=http://next.lisenhui.cn/post/study/server%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/mysql/mysql_21mins_tutorial/ itemprop=url>Mysql_21mins_tutorial</a></h1><div class=post-meta><span class=post-time><i class="fa fa-calendar-o fa-fw"></i><span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="8080-11-08">8080-11-08</time></span>
+<span class=post-category>&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i><span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a href=/categories/%E5%AD%A6%E4%B9%A0 itemprop=url rel=index style=text-decoration:underline><span itemprop=name>学习</span></a>
+&nbsp;</span></span>
+<span>|
+<i class="fa fa-file-word-o fa-fw"></i><span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>2931 字</span></span>
+<span>|
+<i class="fa fa-eye fa-fw"></i><span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>6分钟</span></span>
+<span id=/post/study/server%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/mysql/mysql_21mins_tutorial/ class=leancloud_visitors data-flag-title=Mysql_21mins_tutorial>|
+<i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><h1 id=快速入门>快速入门</h1><p>MySQL 为关系型数据库(Relational Database Management System)，一个关系型数据库由一个或数个表格组成</p><p>表头(header): 每一列的名称;
+列(col): 具有相同数据类型的数据的集合;
+行(row): 每一行用来描述某个人/物的具体信息;
+值(value): 行的具体信息, 每个值必须与该列的数据类型相同;
+键(key): 表中用来识别某个特定的人\物的方法, 键的值在当前列中具有唯一性。</p><h1 id=登录mysql>登录MySQL</h1><p>mysql -h 127.0.0.1 -u 用户名 -p
+mysql -D 所选择的数据库名 -h 主机名 -u 用户名 -p
+mysql> exit # 退出 使用 “quit;” 或 “\q;” 一样的效果
+mysql> status; # 显示当前mysql的version的各种信息
+mysql> select version(); # 显示当前mysql的version信息
+mysql> show global variables like &lsquo;port&rsquo;; # 查看MySQL端口号</p><h1 id=创建数据库>创建数据库</h1><p>&ndash; 创建一个名为 samp_db 的数据库，数据库字符编码指定为 gbk
+create database samp_db character set gbk;
+drop database samp_db; &ndash; 删除 库名为samp_db的库
+show databases; &ndash; 显示数据库列表。
+use samp_db; &ndash; 选择创建的数据库samp_db
+show tables; &ndash; 显示samp_db下面所有的表名字
+describe 表名; &ndash; 显示数据表的结构
+delete from 表名; &ndash; 清空表中记录</p><h1 id=创建数据库表>创建数据库表</h1><p>使用 create table 语句可完成对表的创建, create table 的常见形式: 语法：create table 表名称(列声明);</p><p>&ndash; 如果数据库中存在user_accounts表，就把它从数据库中drop掉
+DROP TABLE IF EXISTS <code>user_accounts</code>;
+CREATE TABLE <code>user_accounts</code> (
+<code>id</code> int(100) unsigned NOT NULL AUTO_INCREMENT primary key,
+<code>password</code> varchar(32) NOT NULL DEFAULT '' COMMENT &lsquo;用户密码&rsquo;,
+<code>reset_password</code> tinyint(32) NOT NULL DEFAULT 0 COMMENT &lsquo;用户类型：0－不需要重置密码；1-需要重置密码&rsquo;,
+<code>mobile</code> varchar(20) NOT NULL DEFAULT '' COMMENT &lsquo;手机&rsquo;,
+<code>create_at</code> timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+<code>update_at</code> timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+&ndash; 创建唯一索引，不允许重复
+UNIQUE INDEX idx_user_mobile(<code>mobile</code>)
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8
+COMMENT=&lsquo;用户表信息&rsquo;;</p><p>数据类型的属性解释:
+NULL：数据列可包含NULL值；
+NOT NULL：数据列不允许包含NULL值；
+DEFAULT：默认值；
+PRIMARY KEY：主键；
+AUTO_INCREMENT：自动递增，适用于整数类型；
+UNSIGNED：是指数值类型只能为正数；
+CHARACTER SET name：指定一个字符集；
+COMMENT：对表或者字段说明；</p><h1 id=增删改查>增删改查</h1><p>SELECT
+SELECT 语句用于从表中选取数据。
+语法：SELECT 列名称 FROM 表名称
+语法：SELECT * FROM 表名称</p><p>&ndash; 表station取个别名叫s，表station中不包含 字段id=13或者14 的，并且id不等于4的 查询出来，只显示id
+SELECT s.id from station s WHERE id in (13,14) and id not in (4);</p><p>&ndash; 从表 Persons 选取 LastName 列的数据
+SELECT LastName FROM Persons</p><p>&ndash; 从表 users 选取 id=3 的数据，并只拉一条数据(据说能优化性能)
+SELECT * FROM users where id=3 limit 1</p><p>&ndash; 结果集中会自动去重复数据
+SELECT DISTINCT Company FROM Orders
+&ndash; 表 Persons 字段 Id_P 等于 Orders 字段 Id_P 的值，
+&ndash; 结果集显示 Persons表的 LastName、FirstName字段，Orders表的OrderNo字段
+SELECT p.LastName, p.FirstName, o.OrderNo FROM Persons p, Orders o WHERE p.Id_P = o.Id_P</p><p>&ndash; gbk 和 utf8 中英文混合排序最简单的办法
+&ndash; ci是 case insensitive, 即 “大小写不敏感”
+SELECT tag, COUNT(tag) from news GROUP BY tag order by convert(tag using gbk) collate gbk_chinese_ci;
+SELECT tag, COUNT(tag) from news GROUP BY tag order by convert(tag using utf8) collate utf8_unicode_ci;</p><h1 id=update>UPDATE</h1><p>Update 语句用于修改表中的数据。
+语法：UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值</p><p>&ndash; update语句设置字段值为另一个结果取出来的字段
+update user set name = (select name from user1 where user1 .id = 1 )
+where id = (select id from user2 where user2 .name=&lsquo;小苏&rsquo;);
+&ndash; 更新表 orders 中 id=1 的那一行数据更新它的 title 字段
+UPDATE <code>orders</code> set title=&lsquo;这里是标题&rsquo; WHERE id=1;</p><h1 id=insert>Insert</h1><p>INSERT INTO 语句用于向表格中插入新的行。
+语法：INSERT INTO 表名称 VALUES (值1, 值2,&mldr;.)
+语法：INSERT INTO 表名称 (列1, 列2,&mldr;) VALUES (值1, 值2,&mldr;.)</p><h2 id=insert-into-meeting-set-a1b2>&ndash; 向表 Persons 插入一条字段 LastName = JSLite 字段 Address = shanghai
+INSERT INTO Persons (LastName, Address) VALUES (&lsquo;JSLite&rsquo;, &lsquo;shanghai&rsquo;);
+&ndash; 向表 meeting 插入 字段 a=1 和字段 b=2
+INSERT INTO meeting SET a=1,b=2;</h2><p>&ndash; SQL实现将一个表的数据插入到另外一个表的代码
+&ndash; 如果只希望导入指定字段，可以用这种方法：
+&ndash; INSERT INTO 目标表 (字段1, 字段2, &mldr;) SELECT 字段1, 字段2, &mldr; FROM 来源表;
+INSERT INTO orders (user_account_id, title) SELECT m.user_id, m.title FROM meeting m where m.id=1;</p><p>&ndash; 向表 charger 插入一条数据，已存在就对表 charger 更新 <code>type</code>,<code>update_at</code> 字段；
+INSERT INTO <code>charger</code> (<code>id</code>,<code>type</code>,<code>create_at</code>,<code>update_at</code>) VALUES (3,2,&lsquo;2017-05-18 11:06:17&rsquo;,&lsquo;2017-05-18 11:06:17&rsquo;) ON DUPLICATE KEY UPDATE <code>id</code>=VALUES(<code>id</code>), <code>type</code>=VALUES(<code>type</code>), <code>update_at</code>=VALUES(<code>update_at</code>);</p><h1 id=delete>DELETE</h1><p>DELETE 语句用于删除表中的行。
+语法：DELETE FROM 表名称 WHERE 列名称 = 值</p><p>&ndash; 在不删除table_name表的情况下删除所有的行，清空表。
+DELETE FROM table_name
+&ndash; 或者
+DELETE * FROM table_name
+&ndash; 删除 Person表字段 LastName = &lsquo;JSLite&rsquo;
+DELETE FROM Person WHERE LastName = &lsquo;JSLite&rsquo;
+&ndash; 删除 表meeting id 为2和3的两条数据
+DELETE from meeting where id in (2,3);</p><h1 id=and-和-or>AND 和 OR</h1><p>AND - 如果第一个条件和第二个条件都成立；
+OR - 如果第一个条件和第二个条件中只要有一个成立；</p><p>AND
+&ndash; 删除 meeting 表字段
+&ndash; id=2 并且 user_id=5 的数据 和
+&ndash; id=3 并且 user_id=6 的数据
+DELETE from meeting where id in (2,3) and user_id in (5,6);</p><p>&ndash; 使用 AND 来显示所有姓为 &ldquo;Carter&rdquo; 并且名为 &ldquo;Thomas&rdquo; 的人：
+SELECT * FROM Persons WHERE FirstName=&lsquo;Thomas&rsquo; AND LastName=&lsquo;Carter&rsquo;;
+OR
+&ndash; 使用 OR 来显示所有姓为 &ldquo;Carter&rdquo; 或者名为 &ldquo;Thomas&rdquo; 的人：
+SELECT * FROM Persons WHERE firstname=&lsquo;Thomas&rsquo; OR lastname=&lsquo;Carter&rsquo;</p><h1 id=order-by>ORDER BY</h1><p>语句默认按照升序对记录进行排序。
+ORDER BY - 语句用于根据指定的列对结果集进行排序。
+DESC - 按照降序对记录进行排序。
+ASC - 按照顺序对记录进行排序。</p><p>&ndash; Company在表Orders中为字母，则会以字母顺序显示公司名称
+SELECT Company, OrderNumber FROM Orders ORDER BY Company</p><p>&ndash; 后面跟上 DESC 则为降序显示
+SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC</p><p>&ndash; Company以降序显示公司名称，并OrderNumber以顺序显示
+SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC, OrderNumber ASC</p><h1 id=in>IN</h1><p>IN - 操作符允许我们在 WHERE 子句中规定多个值。
+IN - 操作符用来指定范围，范围中的每一条，都进行匹配。IN取值规律，由逗号分割，全部放置括号中。 语法：SELECT &ldquo;字段名"FROM &ldquo;表格名"WHERE &ldquo;字段名&rdquo; IN (&lsquo;值一&rsquo;, &lsquo;值二&rsquo;, &mldr;);</p><p>&ndash; 从表 Persons 选取 字段 LastName 等于 Adams、Carter
+SELECT * FROM Persons WHERE LastName IN (&lsquo;Adams&rsquo;,&lsquo;Carter&rsquo;)</p><h1 id=not>NOT</h1><p>NOT - 操作符总是与其他操作符一起使用，用在要过滤的前面。</p><p>SELECT vend_id, prod_name FROM Products WHERE NOT vend_id = &lsquo;DLL01&rsquo; ORDER BY prod_name;</p><h1 id=union>UNION</h1><p>UNION - 操作符用于合并两个或多个 SELECT 语句的结果集。</p><p>&ndash; 列出所有在中国表（Employees_China）和美国（Employees_USA）的不同的雇员名
+SELECT E_Name FROM Employees_China UNION SELECT E_Name FROM Employees_USA</p><p>&ndash; 列出 meeting 表中的 pic_url，
+&ndash; station 表中的 number_station 别名设置成 pic_url 避免字段不一样报错
+&ndash; 按更新时间排序
+SELECT id,pic_url FROM meeting UNION ALL SELECT id,number_station AS pic_url FROM station ORDER BY update_at;
+&ndash; 通过 UNION 语法同时查询了 products 表 和 comments 表的总记录数，并且按照 count 排序
+SELECT &lsquo;product&rsquo; AS type, count(<em>) as count FROM <code>products</code> union select &lsquo;comment&rsquo; as type, count(</em>) as count FROM <code>comments</code> order by count;</p><h1 id=as>AS</h1><p>as - 可理解为：用作、当成，作为；别名
+一般是重命名列名或者表名。
+语法：select column_1 as 列1,column_2 as 列2 from table as 表</p><p>SELECT * FROM Employee AS emp
+&ndash; 这句意思是查找所有Employee 表里面的数据，并把Employee表格命名为 emp。
+&ndash; 当你命名一个表之后，你可以在下面用 emp 代替 Employee.
+&ndash; 例如 SELECT * FROM emp.</p><p>SELECT MAX(OrderPrice) AS LargestOrderPrice FROM Orders
+&ndash; 列出表 Orders 字段 OrderPrice 列最大值，
+&ndash; 结果集列不显示 OrderPrice 显示 LargestOrderPrice</p><p>&ndash; 显示表 users_profile 中的 name 列
+SELECT t.name from (SELECT * from users_profile a) AS t;</p><p>&ndash; 表 user_accounts 命名别名 ua，表 users_profile 命名别名 up
+&ndash; 满足条件 表 user_accounts 字段 id 等于 表 users_profile 字段 user_id
+&ndash; 结果集只显示mobile、name两列
+SELECT ua.mobile,up.name FROM user_accounts as ua INNER JOIN users_profile as up ON ua.id = up.use</p><h1 id=join>JOIN</h1><p>用于根据两个或多个表中的列之间的关系，从这些表中查询数据。</p><p>JOIN: 如果表中有至少一个匹配，则返回行
+INNER JOIN:在表中存在至少一个匹配时，INNER JOIN 关键字返回行。
+LEFT JOIN: 即使右表中没有匹配，也从左表返回所有的行
+RIGHT JOIN: 即使左表中没有匹配，也从右表返回所有的行
+FULL JOIN: 只要其中一个表中存在匹配，就返回行(MySQL 是不支持的，通过 LEFT JOIN + UNION + RIGHT JOIN 的方式 来实现)
+SELECT Persons.LastName, Persons.FirstName, Orders.OrderNo
+FROM Persons
+INNER JOIN Orders
+ON Persons.Id_P = Orders.Id_P
+ORDER BY Persons.LastName;</p></div><footer class=post-footer><div class=post-tags><a href=/tags/mysql rel=tag title=mysql>#mysql#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class=article-copyright><div class=article-copyright-img><img src=/img/qq_qrcode.png width=129px height=129px><div style=text-align:center>QQ扫一扫交流</div></div><div class=article-copyright-info><p><span>声明：</span>Mysql_21mins_tutorial</p><p><span>链接：</span>http://next.lisenhui.cn/post/study/server%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/mysql/mysql_21mins_tutorial/</p><p><span>作者：</span>烟雨临溪</p><p><span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！</p></div></div><div class=clear></div></div><div class=reward-qr-info><div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div><button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span></button><div id=QR style=display:none><div id=wechat style=display:inline-block><img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay"><p>微信打赏</p></div><div id=alipay style=display:inline-block><img id=alipay_qr src=/img/ali-pay.png alt=Alipay><p>支付宝打赏</p></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=http://next.lisenhui.cn/post/study/deeplearning/3-%E6%95%B0%E5%80%BC%E7%BB%9F%E8%AE%A1/ rel=next title="3 数值统计"><i class="fa fa-chevron-left"></i>3 数值统计</a></div><div class="post-nav-prev post-nav-item"><a href=http://next.lisenhui.cn/post/journey/%E8%A5%BF%E5%AE%89/%E8%A5%BF%E5%AE%89%E6%94%BB%E7%95%A51/ rel=prev title=西安攻略>西安攻略
+<i class="fa fa-chevron-right"></i></a></div></div><div id=wcomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/linxi_icon.png alt=烟雨临溪><p class=site-author-name itemprop=name>烟雨临溪</p><p class="site-description motion-element" itemprop=description>再平凡的人也有属于他自己的梦想!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>112</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>6</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>31</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/yanyuLinxi target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>GitHub</a></span>
+<span class=links-of-author-item><a href=https://space.bilibili.com/19237450 target=_blank title=哔哩哔哩><i class="fa fa-fw fa-globe"></i>哔哩哔哩</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class=links-of-blogroll-title><i class="fa fa-fw fa-globe"></i>友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.liaoxuefeng.com/ title=廖雪峰 target=_blank>廖雪峰</a></li></ul></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0>论文阅读笔记</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%BC%82%E5%B8%B8%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90>异常行为分析</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/python%E7%9B%B8%E5%85%B3%E5%BA%93%E5%AD%A6%E4%B9%A0>Python相关库学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E5%BA%93>机器学习相关库</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/java%E5%AD%A6%E4%B9%A0>Java学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/insider-threat>Insider threat</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/leetcode%E5%AD%A6%E4%B9%A0>Leetcode学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BE%8E%E9%A3%9F%E7%82%B9%E8%AF%84>美食点评</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/rnn>Rnn</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0>科研学习笔记</a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2022</span>
+<span class=with-love><i class="fa fa-heart"></i></span><span class=copyright-author>希望至美，永不凋零</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.81.0</a></span>
+<span class=separator-line>/</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=site-uv><i class="fa fa-user"></i><span class=busuanzi-value id=busuanzi_value_site_uv></span></span><span class=separator-line>/</span>
+<span class=site-pv><i class="fa fa-eye"></i><span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://www.ucloud.cn/ style=font-weight:700 target=_blank>UCloud云存储</a></span>
+<span class=separator-line>/</span>
+<span class=license-num><a href=http://beian.miit.gov.cn target=_blank>未归档</a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i><span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script><script type=text/javascript src=/js/search.js></script><script type=text/javascript src=/js/affix.js></script><script type=text/javascript src=/js/scrollspy.js></script><script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script><script type=text/javascript>$(function(){$('.post-body').viewer()})</script><script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' 欢迎留下您的宝贵建议，请填写您的昵称和邮箱便于后续交流. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"zh-cn"})}):$('#wcomments').html('抱歉，Waline插件不支持IE或Edge，建议使用Chrome浏览器。')})</script><script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script><script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></body></html>

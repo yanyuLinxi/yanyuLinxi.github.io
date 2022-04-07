@@ -1,0 +1,576 @@
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>Vue学习 - 希望至美，永不凋零</title><meta name=keywords content="博客,程序员,思考,读书,笔记,技术,分享"><meta name=author content="烟雨临溪"><meta property="og:title" content="Vue学习"><meta property="og:site_name" content="希望至美，永不凋零"><meta property="og:image" content="/img/author.jpg"><meta name=title content="Vue学习 - 希望至美，永不凋零"><meta name=description content="欢迎来到临溪的博客站，个人主要专注于机器学习、深度学习的相关研究。在这里分享自己的学习心得。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span><span class=toggle-line></span><span class=toggle-line></span></div></div><div class=site-meta><div class=multi-lang-switch><i class="fa fa-fw fa-language" style=margin-right:5px></i><a class=lang-link id=zh-cn href=#>中文</a></div><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span><span class=site-title>希望至美，永不凋零</span>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>让我们消除隔阂的，不是无所不知的脑袋，而是手拉手，坚决不放弃的那颗心</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class=menu-item><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class=menu-item><a href=/404.html rel=section><i class="menu-item-icon fa fa-fw fa-heartbeat"></i><br>公益404</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span><span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=http://next.lisenhui.cn/post/study/wechatdevelopment/vue%E5%AD%A6%E4%B9%A0/ itemprop=url>Vue学习</a></h1><div class=post-meta><span class=post-time><i class="fa fa-calendar-o fa-fw"></i><span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="8080-09-08">8080-09-08</time></span>
+<span class=post-category>&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i><span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a href=/categories/%E5%AD%A6%E4%B9%A0 itemprop=url rel=index style=text-decoration:underline><span itemprop=name>学习</span></a>
+&nbsp;</span></span>
+<span>|
+<i class="fa fa-file-word-o fa-fw"></i><span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>8162 字</span></span>
+<span>|
+<i class="fa fa-eye fa-fw"></i><span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>17分钟</span></span>
+<span id=/post/study/wechatdevelopment/vue%E5%AD%A6%E4%B9%A0/ class=leancloud_visitors data-flag-title=Vue学习>|
+<i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><h1 id=其他>其他</h1><ol><li>使用Vscode写html，一个！号后可以选择模板。</li><li>引入Vue框架<ol><li><code>&lt;script src="https://unpkg.com/vue@next">&lt;/script></code></li></ol></li><li>练手：<ol><li><a href=https://gitee.com/panjiachen/vue-admin-template>https://gitee.com/panjiachen/vue-admin-template</a></li></ol></li></ol><h1 id=基础>基础</h1><h2 id=创建实例-支持链式返回同一个实例>创建实例, 支持链式。返回同一个实例。</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>Vue.createAPP({})
+    .component(<span style=color:#b44>&#34;&#34;</span>)
+    .directive
+</code></pre></div><h2 id=挂载到组件>挂载到组件</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a2f;font-weight:700>const</span> app <span style=color:#666>=</span> Vue.createAPP()
+<span style=color:#a2f;font-weight:700>const</span> vm <span style=color:#666>=</span> app.mount(<span style=color:#b44>&#34;#app&#34;</span>)
+
+<span style=color:#080;font-style:italic>// app 是dom 元素id号. 与id绑定。class是样式。
+</span><span style=color:#080;font-style:italic>// 与大多数应用方法不同的是，mount 不返回应用本身。相反，它返回的是根组件实例k。现在理解为返回实例。
+</span><span style=color:#080;font-style:italic></span>
+<span style=color:#080;font-style:italic>//应该等app所有都建立完成后，再进行绑定到html的组件上。
+</span></code></pre></div><h2 id=钩子>钩子</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#080;font-style:italic>// 存在一些生命周期的钩子是可以绑定在Vue上的
+</span><span style=color:#080;font-style:italic></span>Vue.createApp({
+    data(){
+        <span style=color:#a2f;font-weight:700>return</span> {count<span style=color:#666>:</span> <span style=color:#666>1</span>}
+    },
+    created(){
+        console.log(<span style=color:#b44>&#39;count is: &#39;</span> <span style=color:#666>+</span> <span style=color:#a2f;font-weight:700>this</span>.count)  <span style=color:#080;font-style:italic>// &#34;count is 1&#34;  创建时调用
+</span><span style=color:#080;font-style:italic></span>    }
+    <span style=color:#080;font-style:italic>// 其他的还有 mounted updated unmounted等等
+</span><span style=color:#080;font-style:italic></span>})
+</code></pre></div><p>data是一个函数是返回这个对象的所有预先声明的变量</p><p>data 返回一个字典，字典所以用 :</p><h2 id=插值文本>插值，文本</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#666>&lt;</span>span<span style=color:#666>&gt;</span> Message<span style=color:#666>:</span>{{msg}}<span style=color:#666>&lt;</span><span>/span&gt;</span>
+<span style=color:#080;font-style:italic>// span 中放内容会实时更新
+</span><span style=color:#080;font-style:italic></span><span style=color:#666>&lt;</span>span v<span style=color:#666>-</span>once<span style=color:#666>&gt;</span> 这个里面放的内容不会更新<span style=color:#666>&lt;</span><span>/span&gt;</span>
+<span style=color:#666>&lt;</span>p<span style=color:#666>&gt;</span>Using v<span style=color:#666>-</span>html directive<span style=color:#666>:</span> <span style=color:#666>&lt;</span>span v<span style=color:#666>-</span>html<span style=color:#666>=</span><span style=color:#b44>&#34;rawHtml&#34;</span><span style=color:#666>&gt;&lt;</span><span>/span&gt;&lt;/p&gt;  //这样才能放置html内容</span>
+<span style=color:#080;font-style:italic>//其中javascript脚本中，data[rawHtml]可以赋值为一段html。v-html后面跟的是data id。
+</span></code></pre></div><h2 id=attribute>Attribute</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#080;font-style:italic>//可以绑定属性
+</span><span style=color:#080;font-style:italic>// 绑定属性前，前面一个没有引号，后面的有引号。
+</span><span style=color:#080;font-style:italic></span><span style=color:#666>&lt;</span>div v<span style=color:#666>-</span>bind<span style=color:#666>:</span>id<span style=color:#666>=</span><span style=color:#b44>&#34;dynamicId&#34;</span><span style=color:#666>&gt;&lt;</span><span>/div&gt;</span>
+<span style=color:#080;font-style:italic>//赋值dynamicId在data内可以更改id这个值，如果绑定的是null 或者undefined 则不会包含该attribute。
+</span><span style=color:#080;font-style:italic></span><span style=color:#666>&lt;</span>button v<span style=color:#666>-</span>bind<span style=color:#666>:</span>disabled<span style=color:#666>=</span><span style=color:#b44>&#34;isButtonDisabled&#34;</span><span style=color:#666>&gt;</span>按钮<span style=color:#666>&lt;</span><span>/button&gt;</span>
+<span style=color:#080;font-style:italic>//如果 isButtonDisabled 的值是 truthy[1]，那么 disabled attribute 将被包含在内。如果该值是一个空字符串，它也会被包括在内，与 &lt;button disabled=&#34;&#34;&gt; 保持一致。对于其他 falsy[2] 的值，该 attribute 将被省略
+</span></code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#080;font-style:italic>&lt;!-- html中的{{}} 可以填入data property 或者methods名。如{{name()}}。 同样的可以由v-bind:title=&#34;name()&#34;这样子--&gt;</span>
+
+</code></pre></div><h2 id=使用javascript表达式>使用javascript表达式</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>{{ number <span style=color:#666>+</span> <span style=color:#666>1</span> }}
+
+{{ ok <span style=color:#666>?</span> <span style=color:#b44>&#39;YES&#39;</span> <span style=color:#666>:</span> <span style=color:#b44>&#39;NO&#39;</span> }}
+
+{{ message.split(<span style=color:#b44>&#39;&#39;</span>).reverse().join(<span style=color:#b44>&#39;&#39;</span>) }}
+
+<span style=color:#666>&lt;</span>div v<span style=color:#666>-</span>bind<span style=color:#666>:</span>id<span style=color:#666>=</span><span style=color:#b44>&#34;&#39;list-&#39; + id&#34;</span><span style=color:#666>&gt;&lt;</span><span>/div&gt;</span>
+<span style=color:#080;font-style:italic>//以上都是ok的。表明可以进行简单的运算
+</span><span style=color:#080;font-style:italic></span><span style=color:#080;font-style:italic>&lt;!--</span>  这是语句<span>，</span>不是表达式<span>：</span><span style=color:#666>--&gt;</span>
+{{ <span style=color:#a2f;font-weight:700>var</span> a <span style=color:#666>=</span> <span style=color:#666>1</span> }}
+
+<span style=color:#080;font-style:italic>&lt;!--</span> 流控制也不会生效<span>，</span>请使用三元表达式 <span style=color:#666>--&gt;</span>
+{{ <span style=color:#a2f;font-weight:700>if</span> (ok) { <span style=color:#a2f;font-weight:700>return</span> message } }}
+
+</code></pre></div><h2 id=指令指令-directives-是带有-v--前缀的特殊-attribute指令-attribute-的值预期是单个-javascript-表达式-v-for-和-v-on-是例外情况稍后我们再讨论指令的职责是当表达式的值改变时将其产生的连带影响响应式地作用于-dom>指令。指令 (Directives) 是带有 v- 前缀的特殊 attribute。指令 attribute 的值预期是单个 JavaScript 表达式 (v-for 和 v-on 是例外情况，稍后我们再讨论)。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>p</span> <span style=color:#b44>v-if</span><span style=color:#666>=</span><span style=color:#b44>&#34;seen&#34;</span>&gt;现在你看到我了&lt;/<span style=color:green;font-weight:700>p</span>&gt;
+<span style=color:#080;font-style:italic>&lt;!-- 这里，v-if 指令将根据表达式 seen 的值的真假来插入/移除 &lt;p&gt; 元素。 --&gt;</span>
+
+<span style=color:#080;font-style:italic>&lt;!-- 一些指令能够接收一个“参数”，在指令名称之后以冒号表示。例如，v-bind 指令可以用于响应式地更新 HTML attribute：--&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span style=color:#b44>v-bind:href</span><span style=color:#666>=</span><span style=color:#b44>&#34;url&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+<span style=color:#080;font-style:italic>&lt;!-- 在这里 href 是参数，告知 v-bind 指令将该元素的 href attribute 与表达式 url 的值绑定。--&gt;</span>
+
+
+<span style=color:#080;font-style:italic>&lt;!-- 动态参数  也可以在指令参数中使用 JavaScript 表达式，方法是用方括号括起来： --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span style=color:#b44>v-bind:</span><span>[</span><span style=color:#b44>attributeName</span><span>]=&#34;</span><span style=color:#b44>url</span><span>&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+<span style=color:#080;font-style:italic>&lt;!-- 如果data property中存在attributeName，其值为 &#34;href&#34;，那么这个绑定将等价于 v-bind:href --&gt;</span>
+
+
+<span style=color:#080;font-style:italic>&lt;!-- 修饰符 (modifier) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event. preventDefault() --&gt;</span>
+&lt;<span style=color:green;font-weight:700>form</span> <span style=color:#b44>v-on:submit</span><span>.</span><span style=color:#b44>prevent</span><span style=color:#666>=</span><span style=color:#b44>&#34;onSubmit&#34;</span>&gt;...&lt;/<span style=color:green;font-weight:700>form</span>&gt;
+</code></pre></div><h2 id=缩写>缩写</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#080;font-style:italic>&lt;!-- 完整语法 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span style=color:#b44>v-bind:href</span><span style=color:#666>=</span><span style=color:#b44>&#34;url&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- v-bind 缩写 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span style=color:#b44>:href</span><span style=color:#666>=</span><span style=color:#b44>&#34;url&#34;</span>&gt;
+<span style=color:#080;font-style:italic>&lt;!-- 动态参数的缩写 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span style=color:#b44>:</span><span>[</span><span style=color:#b44>key</span><span>]=&#34;</span><span style=color:#b44>url</span><span>&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 完整语法 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span style=color:#b44>v-on:click</span><span style=color:#666>=</span><span style=color:#b44>&#34;doSomething&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 缩写 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span>@</span><span style=color:#b44>click</span><span style=color:#666>=</span><span style=color:#b44>&#34;doSomething&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 动态参数的缩写 (2.6.0+) --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span>@[</span><span style=color:#b44>event</span><span>]=&#34;</span><span style=color:#b44>doSomething</span><span>&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+</code></pre></div><h2 id=注意>注意</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#080;font-style:italic>&lt;!-- 动态参数表达式有一些语法约束，因为某些字符，如空格和引号，放在 HTML attribute 名里是无效的。例如： --&gt;</span>
+<span style=color:#080;font-style:italic>&lt;!-- 这会触发一个编译警告 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span style=color:#b44>v-bind:</span><span>[&#39;</span><span style=color:#b44>foo</span><span>&#39;</span> <span>+</span> <span style=color:#b44>bar</span><span>]=&#34;</span><span style=color:#b44>value</span><span>&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 在 DOM 中使用模板时 (直接在一个 HTML 文件里撰写模板)，还需要避免使用大写字符来命名键名，因为浏览器会把 attribute 名全部强制转为小写： --&gt;</span>
+<span style=color:#080;font-style:italic>&lt;!--
+</span><span style=color:#080;font-style:italic>在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]`。
+</span><span style=color:#080;font-style:italic>除非在实例中有一个名为“someattr”的 property，否则代码不会工作。
+</span><span style=color:#080;font-style:italic>--&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span style=color:#b44>v-bind:</span><span>[</span><span style=color:#b44>someAttr</span><span>]=&#34;</span><span style=color:#b44>value</span><span>&#34;</span>&gt; ... &lt;/<span style=color:green;font-weight:700>a</span>&gt;
+<span style=color:#080;font-style:italic>&lt;!-- 所有attribute都是小写 --&gt;</span>
+
+</code></pre></div><h2 id=data-property>Data property</h2><p>组件的 data 选项是一个函数。Vue 在创建新组件实例的过程中调用此函数。它应该返回一个对象，然后 Vue 会通过响应性系统将其包裹起来，并以 $data 的形式存储在组</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a2f;font-weight:700>const</span> app <span style=color:#666>=</span> Vue.createApp({
+  data() {
+    <span style=color:#a2f;font-weight:700>return</span> { count<span style=color:#666>:</span> <span style=color:#666>4</span> }
+  }
+})
+
+<span style=color:#a2f;font-weight:700>const</span> vm <span style=color:#666>=</span> app.mount(<span style=color:#b44>&#39;#app&#39;</span>)
+<span style=color:#080;font-style:italic>//  vm变量表示的就是应用实例， 先这么理解把
+</span><span style=color:#080;font-style:italic></span>console.log(vm.$data.count) <span style=color:#080;font-style:italic>// =&gt; 4
+</span><span style=color:#080;font-style:italic></span>console.log(vm.count)       <span style=color:#080;font-style:italic>// =&gt; 4
+</span><span style=color:#080;font-style:italic>// 这些实例 property 仅在实例首次创建时被添加，所以你需要确保它们都在 data 函数返回的对象中。必要时，要对尚未提供所需值的 property 使用 null、undefined 或其他占位的值。
+</span><span style=color:#080;font-style:italic>// 直接将不包含在 data 中的新 property 添加到组件实例是可行的。但由于该 property 不在背后的响应式 $data 对象内，所以 Vue
+</span><span style=color:#080;font-style:italic>// vm.data是响应式的。
+</span></code></pre></div><h2 id=methods>methods</h2><p>这里是methods。打错一个字都不行!!!</p><p>我们用 methods 选项向组件实例添加方法，它应该是一个包含所需方法的对象：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a2f;font-weight:700>const</span> app <span style=color:#666>=</span> Vue.createApp({
+  data() {
+    <span style=color:#a2f;font-weight:700>return</span> { count<span style=color:#666>:</span> <span style=color:#666>4</span> }
+  },
+  methods<span style=color:#666>:</span> {
+    increment() {
+      <span style=color:#080;font-style:italic>// `this` 指向该组件实例
+</span><span style=color:#080;font-style:italic></span>      <span style=color:#a2f;font-weight:700>this</span>.count<span style=color:#666>++</span>
+    }
+  }
+})
+
+<span style=color:#a2f;font-weight:700>const</span> vm <span style=color:#666>=</span> app.mount(<span style=color:#b44>&#39;#app&#39;</span>)
+
+console.log(vm.count) <span style=color:#080;font-style:italic>// =&gt; 4
+</span><span style=color:#080;font-style:italic></span>
+vm.increment()
+
+console.log(vm.count) <span style=color:#080;font-style:italic>// =&gt; 5
+</span></code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#080;font-style:italic>&lt;!-- 这些 methods 和组件实例的其它所有 property 一样可以在组件的模板中被访问。在模板中，它们通常被当做事件监听使用： --&gt;</span>
+&lt;<span style=color:green;font-weight:700>button</span> <span>@</span><span style=color:#b44>click</span><span style=color:#666>=</span><span style=color:#b44>&#34;increment&#34;</span>&gt;Up vote&lt;/<span style=color:green;font-weight:700>button</span>&gt;
+</code></pre></div><h2 id=函数防抖将几次操作合并为一此操作进行--函数节流使得一定时间内只触发一次函数>函数防抖：将几次操作合并为一此操作进行。 &mldr; 函数节流：使得一定时间内只触发一次函数。</h2><p>这里稍微没看懂。后面再看。</p><h2 id=侦听器-watch可以侦测属性变换>侦听器 watch。可以侦测属性变换。</h2><p>watch 会监听属性是否发生变化。发生变化后执行某种操作。最好还是使用计算属性。能用计算属性就别用侦听器。
+watch顾名思义就是监听变量值的变化。</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;watch-example&#34;</span>&gt;
+  &lt;<span style=color:green;font-weight:700>p</span>&gt;
+    Ask a yes/no question:
+    &lt;<span style=color:green;font-weight:700>input</span> <span style=color:#b44>v-model</span><span style=color:#666>=</span><span style=color:#b44>&#34;question&#34;</span> /&gt;
+  &lt;/<span style=color:green;font-weight:700>p</span>&gt;
+  &lt;<span style=color:green;font-weight:700>p</span>&gt;{{ answer }}&lt;/<span style=color:green;font-weight:700>p</span>&gt;
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#666>&lt;</span>script src<span style=color:#666>=</span><span style=color:#b44>&#34;https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js&#34;</span><span style=color:#666>&gt;&lt;</span><span>/script&gt;</span>
+<span style=color:#666>&lt;</span>script<span style=color:#666>&gt;</span>
+  <span style=color:#a2f;font-weight:700>const</span> watchExampleVM <span style=color:#666>=</span> Vue.createApp({
+    data() {
+      <span style=color:#a2f;font-weight:700>return</span> {
+        question<span style=color:#666>:</span> <span style=color:#b44>&#39;&#39;</span>,
+        answer<span style=color:#666>:</span> <span style=color:#b44>&#39;Questions usually contain a question mark. ;-)&#39;</span>
+      }
+    },
+    watch<span style=color:#666>:</span> {
+      <span style=color:#080;font-style:italic>// whenever question changes, this function will run
+</span><span style=color:#080;font-style:italic></span>      question(newQuestion, oldQuestion) {
+        <span style=color:#a2f;font-weight:700>if</span> (newQuestion.indexOf(<span style=color:#b44>&#39;?&#39;</span>) <span style=color:#666>&gt;</span> <span style=color:#666>-</span><span style=color:#666>1</span>) {
+          <span style=color:#a2f;font-weight:700>this</span>.getAnswer()
+        }
+      }
+    },
+    methods<span style=color:#666>:</span> {
+      getAnswer() {
+        <span style=color:#a2f;font-weight:700>this</span>.answer <span style=color:#666>=</span> <span style=color:#b44>&#39;Thinking...&#39;</span>
+        axios
+          .get(<span style=color:#b44>&#39;https://yesno.wtf/api&#39;</span>)
+          .then(response =&gt; {
+            <span style=color:#a2f;font-weight:700>this</span>.answer <span style=color:#666>=</span> response.data.answer
+          })
+          .<span style=color:#a2f;font-weight:700>catch</span>(error =&gt; {
+            <span style=color:#a2f;font-weight:700>this</span>.answer <span style=color:#666>=</span> <span style=color:#b44>&#39;Error! Could not reach the API. &#39;</span> <span style=color:#666>+</span> error
+          })
+      }
+    }
+  }).mount(<span style=color:#b44>&#39;#watch-example&#39;</span>)
+<span style=color:#666>&lt;</span><span>/script&gt;</span>
+
+
+</code></pre></div><h2 id=v-model>v-model</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;font-style:italic>// 你可以用 v-model 指令在表单 &lt;input&gt;、&lt;textarea&gt; 及 &lt;select&gt; 元素上创建双向数据绑定。如：
+</span><span style=color:#080;font-style:italic></span><span style=color:#666>&lt;</span>input v<span style=color:#666>-</span>model<span style=color:#666>=</span><span style=color:#b44>&#34;question&#34;</span> <span style=color:#666>/&gt;</span>
+<span style=color:#080;font-style:italic>// v-model 会忽略所有表单元素的 value、checked、selected attribute 的初始值而总是将当前活动实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data 选项中声明初始值。
+</span><span style=color:#080;font-style:italic>// v-model 绑定的输入表单会始终将数据与Vue实例中的数据。
+</span><span style=color:#080;font-style:italic></span><span style=color:#666>&lt;</span>input v<span style=color:#666>-</span>model<span style=color:#666>=</span><span style=color:#b44>&#34;message&#34;</span> placeholder<span style=color:#666>=</span><span style=color:#b44>&#34;edit me&#34;</span> <span style=color:#666>/&gt;</span>
+<span style=color:#666>&lt;</span>p<span style=color:#666>&gt;</span>Message is<span style=color:#666>:</span> {{ message }}<span style=color:#666>&lt;</span><span>/p&gt;</span>
+</code></pre></div><h2 id=class-和style绑定样式绑定>class 和style绑定。样式绑定</h2><p>对象语法：
+{string: js_var_name}
+意思是js_var_name是truty的时候，string才存在。</p><p>数据类型：变量要么是对象，要么是字典形式的对象，即active 或者 {active:isActive}</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span>
+  <span style=color:#b44>class</span><span style=color:#666>=</span><span style=color:#b44>&#34;static&#34;</span>
+  <span style=color:#b44>:class</span><span style=color:#666>=</span><span style=color:#b44>&#34;{ active: isActive, &#39;text-danger&#39;: hasError }&#34;</span>
+&gt;&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>
+data() {
+  <span style=color:#a2f;font-weight:700>return</span> {
+    isActive<span style=color:#666>:</span> <span style=color:#a2f;font-weight:700>true</span>,
+    hasError<span style=color:#666>:</span> <span style=color:#a2f;font-weight:700>false</span>
+  }
+}
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#080;font-style:italic>&lt;!-- 渲染结果： --&gt;</span>
+&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>class</span><span style=color:#666>=</span><span style=color:#b44>&#34;static active&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+</code></pre></div><p>绑定的数据对象不必内联定义在模板里：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>:class</span><span style=color:#666>=</span><span style=color:#b44>&#34;classObject&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+
+data() {
+  return {
+    classObject: {
+      active: true,
+      &#39;text-danger&#39;: false
+    }
+  }
+}
+
+// 或者用计算属性
+data() {
+  return {
+    isActive: true,
+    error: null
+  }
+},
+computed: {
+  classObject() {
+    return {
+      active: this.isActive <span>&amp;&amp;</span> !this.error,
+      &#39;text-danger&#39;: this.error <span>&amp;&amp;</span> this.error.type === &#39;fatal&#39;
+    }
+  }
+}
+</code></pre></div><h2 id=使用数组>使用数组</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>:class</span><span style=color:#666>=</span><span style=color:#b44>&#34;[activeClass, errorClass]&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>data() {
+  <span style=color:#a2f;font-weight:700>return</span> {
+    activeClass<span style=color:#666>:</span> <span style=color:#b44>&#39;active&#39;</span>,
+    errorClass<span style=color:#666>:</span> <span style=color:#b44>&#39;text-danger&#39;</span>
+  }
+}
+</code></pre></div><p>记住html 的 id位置输送的进去的都是变量名。html中的vue变量用{{}}取值。用"&ldquo;将变量包裹起来。</p><p>数组语法和对象语法可以嵌套：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>:class</span><span style=color:#666>=</span><span style=color:#b44>&#34;[{active:isActive}, errorClass]&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+</code></pre></div><h2 id=条件渲染>条件渲染</h2><p>v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的表达式返回 truthy 值的时候被渲染。</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>h1</span> <span style=color:#b44>v-if</span><span style=color:#666>=</span><span style=color:#b44>&#34;awesome&#34;</span>&gt;Vue is awesome!&lt;/<span style=color:green;font-weight:700>h1</span>&gt;
+&lt;<span style=color:green;font-weight:700>h1</span> <span style=color:#b44>v-else</span>&gt;Oh no 😢&lt;/<span style=color:green;font-weight:700>h1</span>&gt;
+</code></pre></div><p>在 <template>元素上使用 v-if 条件渲染分组
+<template>可以作为常见分组包裹在最外层</p><p>因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换多个元素呢？此时可以把一个 <template>元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含 <template>元素。</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>template</span> <span style=color:#b44>v-if</span><span style=color:#666>=</span><span style=color:#b44>&#34;ok&#34;</span>&gt;
+  &lt;<span style=color:green;font-weight:700>h1</span>&gt;Title&lt;/<span style=color:green;font-weight:700>h1</span>&gt;
+  &lt;<span style=color:green;font-weight:700>p</span>&gt;Paragraph 1&lt;/<span style=color:green;font-weight:700>p</span>&gt;
+  &lt;<span style=color:green;font-weight:700>p</span>&gt;Paragraph 2&lt;/<span style=color:green;font-weight:700>p</span>&gt;
+&lt;/<span style=color:green;font-weight:700>template</span>&gt;
+</code></pre></div><p>你可以使用 v-else 指令来表示 v-if 的“else 块”：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>v-if</span><span style=color:#666>=</span><span style=color:#b44>&#34;Math.random() &gt; 0.5&#34;</span>&gt;
+  Now you see me
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>v-else</span>&gt;
+  Now you don&#39;t
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+
+v-else-if，顾名思义，充当 v-if 的“else-if 块”，并且可以连续使用：
+&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>v-if</span><span style=color:#666>=</span><span style=color:#b44>&#34;type === &#39;A&#39;&#34;</span>&gt;
+  A
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>v-else-if</span><span style=color:#666>=</span><span style=color:#b44>&#34;type === &#39;B&#39;&#34;</span>&gt;
+  B
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>v-else-if</span><span style=color:#666>=</span><span style=color:#b44>&#34;type === &#39;C&#39;&#34;</span>&gt;
+  C
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>v-else</span>&gt;
+  Not A/B/C
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+<span style=color:#080;font-style:italic>&lt;!-- v-else 元素必须紧跟在带 v-if 或者 v-else-if 的元素的后面，否则它将不会被识别。 --&gt;</span>
+</code></pre></div><p>v-show 另一个用于条件性展示元素的选项是 v-show 指令。用法大致一样：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>h1</span> <span style=color:#b44>v-show</span><span style=color:#666>=</span><span style=color:#b44>&#34;ok&#34;</span>&gt;Hello!&lt;/<span style=color:green;font-weight:700>h1</span>&gt;
+<span style=color:#080;font-style:italic>&lt;!-- 不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS property display。 --&gt;</span>
+</code></pre></div><p>注意，v-show 不支持 <template>元素，也不支持 v-else。</p><p>v-if 是“真正”的条件渲染，因为它会确保在切换过程中，条件块内的事件监听器和子组件适当地被销毁和重建。</p><p>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</p><p>相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</p><p>一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。</p><p>切换少量：if。切换多次 show.</p><p>不推荐同时使用 v-if 和 v-for</p><p>当 v-if 与 v-for 一起使用时，v-if 具有比 v-for 更高的优先级</p><h2 id=v-for>v-for</h2><p>v-for 指令需要使用 item in items 形式的特殊语法，其中 items 是源数据数组，而 item 则是被迭代的数组元素的</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>ul</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;array-rendering&#34;</span>&gt;
+  &lt;<span style=color:green;font-weight:700>li</span> <span style=color:#b44>v-for</span><span style=color:#666>=</span><span style=color:#b44>&#34;item in items&#34;</span>&gt;
+    {{ item.message }}
+    <span style=color:#080;font-style:italic>&lt;!-- 使用.访问属性 --&gt;</span>
+  &lt;/<span style=color:green;font-weight:700>li</span>&gt;
+&lt;/<span style=color:green;font-weight:700>ul</span>&gt;
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>Vue.createApp({
+  data() {
+    <span style=color:#a2f;font-weight:700>return</span> {
+      items<span style=color:#666>:</span> [{ message<span style=color:#666>:</span> <span style=color:#b44>&#39;Foo&#39;</span> }, { message<span style=color:#666>:</span> <span style=color:#b44>&#39;Bar&#39;</span> }]
+    }
+  }
+}).mount(<span style=color:#b44>&#39;#array-rendering&#39;</span>)
+</code></pre></div><p>在 v-for 块中，我们可以访问所有父作用域的 property。即和当前list property同一作用域的property</p><p>v-for 还支持一个可选的第二个参数，即当前项的索引。</p><p>list使用[{},{}]这样的语法。</p><p>{{}}只支持访问一个变量。</p><p>当访问对象的时候，可以for (value, name, index) in object</p><p>当访问list的时候 可以 for (value, index) in list</p><p>列表可以添加value, index。访问字典对象时，可以value, name, index</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>ul</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;array-with-index&#34;</span>&gt;
+  &lt;<span style=color:green;font-weight:700>li</span> <span style=color:#b44>v-for</span><span style=color:#666>=</span><span style=color:#b44>&#34;(item, index) in items&#34;</span>&gt;
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
+  &lt;/<span style=color:green;font-weight:700>li</span>&gt;
+&lt;/<span style=color:green;font-weight:700>ul</span>&gt;
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>Vue.createApp({
+  data() {
+    <span style=color:#a2f;font-weight:700>return</span> {
+      parentMessage<span style=color:#666>:</span> <span style=color:#b44>&#39;Parent&#39;</span>,
+      items<span style=color:#666>:</span> [{ message<span style=color:#666>:</span> <span style=color:#b44>&#39;Foo&#39;</span> }, { message<span style=color:#666>:</span> <span style=color:#b44>&#39;Bar&#39;</span> }]
+    }
+  }
+}).mount(<span style=color:#b44>&#39;#array-with-index&#39;</span>)
+</code></pre></div><p>在使用for时使用key。它在更新时，不移动dom元素，而是更新dom的内容。</p><p>嵌套循环可以实时获取父作用域的变量。但要求有上下级关系。如嵌套的<div>.或者<ul><li></li></ul>等。</p><p>v-for 也可以接受整数。在这种情况下，它会把模板重复对应次数</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;range&#34;</span> <span style=color:#b44>class</span><span style=color:#666>=</span><span style=color:#b44>&#34;demo&#34;</span>&gt;
+  &lt;<span style=color:green;font-weight:700>span</span> <span style=color:#b44>v-for</span><span style=color:#666>=</span><span style=color:#b44>&#34;n in 10&#34;</span> <span style=color:#b44>:key</span><span style=color:#666>=</span><span style=color:#b44>&#34;n&#34;</span>&gt;{{ n }} &lt;/<span style=color:green;font-weight:700>span</span>&gt;
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+
+</code></pre></div><p>类似于 v-if，你也可以利用带有 v-for 的 <template>来循环渲染一段包含多个元素的内容。比如：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>ul</span>&gt;
+  &lt;<span style=color:green;font-weight:700>template</span> <span style=color:#b44>v-for</span><span style=color:#666>=</span><span style=color:#b44>&#34;item in items&#34;</span> <span style=color:#b44>:key</span><span style=color:#666>=</span><span style=color:#b44>&#34;item.msg&#34;</span>&gt;
+    &lt;<span style=color:green;font-weight:700>li</span>&gt;{{ item.msg }}&lt;/<span style=color:green;font-weight:700>li</span>&gt;
+    &lt;<span style=color:green;font-weight:700>li</span> <span style=color:#b44>class</span><span style=color:#666>=</span><span style=color:#b44>&#34;divider&#34;</span> <span style=color:#b44>role</span><span style=color:#666>=</span><span style=color:#b44>&#34;presentation&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>li</span>&gt;
+  &lt;/<span style=color:green;font-weight:700>template</span>&gt;
+&lt;/<span style=color:green;font-weight:700>ul</span>&gt;
+</code></pre></div><p>当 Vue 正在更新使用 v-for 渲染的元素列表时，它默认使用“就地更新”的策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序，而是就地更新每个元素，并且确保它们在每个索引位置正确渲染。</p><p>这个默认的模式是高效的，但是只适用于不依赖子组件状态或临时 DOM 状态 (例如：表单输入值) 的列表渲染输出。</p><p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key attribute：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>v-for</span><span style=color:#666>=</span><span style=color:#b44>&#34;item in items&#34;</span> <span style=color:#b44>:key</span><span style=color:#666>=</span><span style=color:#b44>&#34;item.id&#34;</span>&gt;
+  <span style=color:#080;font-style:italic>&lt;!-- content --&gt;</span>
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+</code></pre></div><h2 id=数组操作和渲染相关>数组操作和渲染相关</h2><h3 id=部分方法替换原list>部分方法替换原list</h3><p>push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()</p><h3 id=部分方法返回新数组>部分方法返回新数组</h3><p>如 filter()、concat() 和 slice()</p><p>example1.items = example1.items.filter(item => item.message.match(/Foo/))</p><p>可以用计算属性 或者methods来帮助进行排序什么的。</p><h2 id=事件处理>事件处理</h2><p>然而许多事件处理逻辑会更为复杂，所以直接把 JavaScript 代码写在 v-on 指令中是不可行的。因此 v-on 还可以接收一个需要调用的方法名称。
+除了直接绑定到一个方法，也可以在内联 JavaScript 语句中调用方法：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;inline-handler&#34;</span>&gt;
+  &lt;<span style=color:green;font-weight:700>button</span> <span>@</span><span style=color:#b44>click</span><span style=color:#666>=</span><span style=color:#b44>&#34;say(&#39;hi&#39;)&#34;</span>&gt;Say hi&lt;/<span style=color:green;font-weight:700>button</span>&gt;
+  &lt;<span style=color:green;font-weight:700>button</span> <span>@</span><span style=color:#b44>click</span><span style=color:#666>=</span><span style=color:#b44>&#34;say(&#39;what&#39;)&#34;</span>&gt;Say what&lt;/<span style=color:green;font-weight:700>button</span>&gt;
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+Vue.createApp({
+  methods: {
+    say(message) {
+      alert(message)
+    }
+  }
+}).mount(&#39;#inline-handler&#39;)
+
+有时也需要在内联语句处理器中访问原始的 DOM 事件。可以用特殊变量 $event 把它传入方法：
+&lt;<span style=color:green;font-weight:700>button</span> <span>@</span><span style=color:#b44>click</span><span style=color:#666>=</span><span style=color:#b44>&#34;warn(&#39;Form cannot be submitted yet.&#39;, $event)&#34;</span>&gt;
+  Submit
+&lt;/<span style=color:green;font-weight:700>button</span>&gt;
+
+事件处理程序中可以有多个方法，这些方法由逗号运算符分隔：
+<span style=color:#080;font-style:italic>&lt;!-- 这两个 one() 和 two() 将执行按钮点击事件 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>button</span> <span>@</span><span style=color:#b44>click</span><span style=color:#666>=</span><span style=color:#b44>&#34;one($event), two($event)&#34;</span>&gt;
+  Submit
+&lt;/<span style=color:green;font-weight:700>button</span>&gt;
+</code></pre></div><h2 id=事件修饰符>事件修饰符</h2><p>在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。尽管我们可以在方法中轻松实现这点，但更好的方式是：方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。</p><p>为了解决这个问题，Vue.js 为 v-on 提供了事件修饰符。之前提过，修饰符是由点开头的指令后缀来表示的。</p><p>.stop
+.prevent
+.capture
+.self
+.once
+.passive</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#080;font-style:italic>&lt;!-- 阻止单击事件继续传播 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span>@</span><span style=color:#b44>click</span><span>.</span><span style=color:#b44>stop</span><span style=color:#666>=</span><span style=color:#b44>&#34;doThis&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>a</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 提交事件不再重载页面 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>form</span> <span>@</span><span style=color:#b44>submit</span><span>.</span><span style=color:#b44>prevent</span><span style=color:#666>=</span><span style=color:#b44>&#34;onSubmit&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>form</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 修饰符可以串联 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>a</span> <span>@</span><span style=color:#b44>click</span><span>.</span><span style=color:#b44>stop</span><span>.</span><span style=color:#b44>prevent</span><span style=color:#666>=</span><span style=color:#b44>&#34;doThat&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>a</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 只有修饰符 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>form</span> <span>@</span><span style=color:#b44>submit</span><span>.</span><span style=color:#b44>prevent</span>&gt;&lt;/<span style=color:green;font-weight:700>form</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;</span>
+<span style=color:#080;font-style:italic>&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>div</span> <span>@</span><span style=color:#b44>click</span><span>.</span><span style=color:#b44>capture</span><span style=color:#666>=</span><span style=color:#b44>&#34;doThis&#34;</span>&gt;...&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+
+<span style=color:#080;font-style:italic>&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;</span>
+<span style=color:#080;font-style:italic>&lt;!-- 即事件不是从内部元素触发的 --&gt;</span>
+&lt;<span style=color:green;font-weight:700>div</span> <span>@</span><span style=color:#b44>click</span><span>.</span><span style=color:#b44>self</span><span style=color:#666>=</span><span style=color:#b44>&#34;doThat&#34;</span>&gt;...&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击
+</code></pre></div><h2 id=按键修饰符>按键修饰符</h2><p>在监听键盘事件时，我们经常需要检查详细的按键。Vue 允许为 v-on 或者 @ 在监听键盘事件时添加按键修饰符：</p><p>&lt;input @keyup.enter=&ldquo;submit&rdquo; /></p><p>可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。
+.ctrl
+.alt
+.shift
+.meta</p><p>&lt;input @keyup.alt.enter=&ldquo;clear&rdquo; /></p><div @click.ctrl=doSomething>Do something</div><p>.exact 修饰符允许你控制由精确的系统修饰符组合触发的事件。</p><p>.left
+.right
+.middle
+这些修饰符会限制处理函数仅响应特定的鼠标按钮</p><h2 id=表单输入绑定>表单输入绑定</h2><p>v-model 会忽略所有表单元素的 value、checked、selected attribute 的初始值而总是将当前活动实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data 选项中声明初始值。</p><p>v-model 在内部为不同的输入元素使用不同的 property 并抛出不同的事件：</p><p>text 和 textarea 元素使用 value property 和 input 事件；
+checkbox 和 radio 使用 checked property 和 change 事件；
+select 字段将 value 作为 prop 并将 change 作为事件。</p><p>使用v-model来将输出绑定数据。v-model后跟着就是data名称。</p><p>多个复选框，绑定到同一个数组：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>
+&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;v-model-multiple-checkboxes&#34;</span>&gt;
+  &lt;<span style=color:green;font-weight:700>input</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;checkbox&#34;</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;jack&#34;</span> <span style=color:#b44>value</span><span style=color:#666>=</span><span style=color:#b44>&#34;Jack&#34;</span> <span style=color:#b44>v-model</span><span style=color:#666>=</span><span style=color:#b44>&#34;checkedNames&#34;</span> /&gt;
+  &lt;<span style=color:green;font-weight:700>label</span> <span style=color:#b44>for</span><span style=color:#666>=</span><span style=color:#b44>&#34;jack&#34;</span>&gt;Jack&lt;/<span style=color:green;font-weight:700>label</span>&gt;
+  &lt;<span style=color:green;font-weight:700>input</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;checkbox&#34;</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;john&#34;</span> <span style=color:#b44>value</span><span style=color:#666>=</span><span style=color:#b44>&#34;John&#34;</span> <span style=color:#b44>v-model</span><span style=color:#666>=</span><span style=color:#b44>&#34;checkedNames&#34;</span> /&gt;
+  &lt;<span style=color:green;font-weight:700>label</span> <span style=color:#b44>for</span><span style=color:#666>=</span><span style=color:#b44>&#34;john&#34;</span>&gt;John&lt;/<span style=color:green;font-weight:700>label</span>&gt;
+  &lt;<span style=color:green;font-weight:700>input</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;checkbox&#34;</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;mike&#34;</span> <span style=color:#b44>value</span><span style=color:#666>=</span><span style=color:#b44>&#34;Mike&#34;</span> <span style=color:#b44>v-model</span><span style=color:#666>=</span><span style=color:#b44>&#34;checkedNames&#34;</span> /&gt;
+  &lt;<span style=color:green;font-weight:700>label</span> <span style=color:#b44>for</span><span style=color:#666>=</span><span style=color:#b44>&#34;mike&#34;</span>&gt;Mike&lt;/<span style=color:green;font-weight:700>label</span>&gt;
+  &lt;<span style=color:green;font-weight:700>br</span> /&gt;
+  &lt;<span style=color:green;font-weight:700>span</span>&gt;Checked names: {{ checkedNames }}&lt;/<span style=color:green;font-weight:700>span</span>&gt;
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+</code></pre></div><p>for 属性规定 label 与哪个表单元素绑定。
+这个不是vue规定的，是html规定的。注意不是v-for</p><p>但是有时我们可能想把值绑定到当前活动实例的一个动态 property 上，这时可以用 v-bind 实现，此外，使用 v-bind 可以将输入值绑定到非字符串</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>select</span> <span style=color:#b44>v-model</span><span style=color:#666>=</span><span style=color:#b44>&#34;selected&#34;</span>&gt;
+  <span style=color:#080;font-style:italic>&lt;!-- 内联对象字面量 --&gt;</span>
+  &lt;<span style=color:green;font-weight:700>option</span> <span style=color:#b44>:value</span><span style=color:#666>=</span><span style=color:#b44>&#34;{ number: 123 }&#34;</span>&gt;123&lt;/<span style=color:green;font-weight:700>option</span>&gt;
+&lt;/<span style=color:green;font-weight:700>select</span>&gt;
+// 当被选中时
+typeof vm.selected // =&gt; &#39;object&#39;
+vm.selected.number // =&gt; 123
+</code></pre></div><h2 id=组件基础>组件基础</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a2f;font-weight:700>const</span> app <span style=color:#666>=</span> Vue.createApp({})
+
+<span style=color:#080;font-style:italic>// 定义一个名为 button-counter 的新全局组件
+</span><span style=color:#080;font-style:italic></span>app.component(<span style=color:#b44>&#39;button-counter&#39;</span>, {
+  data() {
+    <span style=color:#a2f;font-weight:700>return</span> {
+      count<span style=color:#666>:</span> <span style=color:#666>0</span>
+    }
+  },
+  template<span style=color:#666>:</span> <span style=color:#b44>`
+</span><span style=color:#b44>    &lt;button @click=&#34;count++&#34;&gt;
+</span><span style=color:#b44>      You clicked me {{ count }} times.
+</span><span style=color:#b44>    &lt;/button&gt;`</span>
+})
+
+组件是带有名称的可复用实例<span>，</span>在这个例子中是 <span style=color:#666>&lt;</span>button<span style=color:#666>-</span>counter<span style=color:#666>&gt;</span><span>。</span>我们可以把这个组件作为一个根实例中的自定义元素来使用<span>：</span>
+<span style=color:#666>&lt;</span>div id<span style=color:#666>=</span><span style=color:#b44>&#34;components-demo&#34;</span><span style=color:#666>&gt;</span>
+  <span style=color:#666>&lt;</span>button<span style=color:#666>-</span>counter<span style=color:#666>&gt;&lt;</span><span>/button-counter&gt;</span>
+<span style=color:#666>&lt;</span><span>/div&gt;</span>
+app.mount(<span style=color:#b44>&#39;#components-demo&#39;</span>)
+
+component拥有自己的data域<span>。</span>注意这个data域是子data域<span>。</span>同为template的子域是无法访问的<span>。</span>
+
+</code></pre></div><h3 id=通过prop-向子组件传递数据>通过prop 向子组件传递数据</h3><p>Prop 是你可以在组件上注册的一些自定义 attribute。为了给博文组件传递一个标题，我们可以用 props 选项将其包含在该组件可接受的 prop 列表中：</p><p>这里props就是一个预先申明你会传入哪些参数，所以template可以使用哪些参数。</p><p>props 传入的值并不是从父类继承的。是在创建组件的时候集成的。即<component :value=adsf>这个时候传入value 用props接收。</p><p>整个步骤是什么？
+父级：Vue 初始app
+子级： html 组件 和 定义的component。component就是定义一段可复用的html。它应该是独立于实例的。所以它不访问实例内容。但是被实例mount的html是可以访问实例的。所以通过被mount的html访问实例。然后传值给component。</p><p>component的html 可以通过<slot :item=item>来绑定属性到slot上。然后在html上就可以通过v-slot:slotName=&ldquo;variableName&rdquo; 来访问。</p><p>总的来说component是一个独立出来的component html， 和创建的实例隔离开来，互不相访问。但是 实例可以和挂载的html互相访问。html可以使用该实例的component来访问其变量。并通过slot互相交互。component的目的就是复用。</p><p>template和组件配合使用分发插槽等。</p><h3 id=emit>$emit</h3><p>组件的作用就是来可复用。所以html理论上不能访问组件的变量。应该由组件内部自己显示变量。</p><p>数据流向，是从父html单向流向子组件的。子组件不应该修改父html的值。</p><p>javascript传值都是传引用。所以值会引发连串修改。</p><p>子组件使用props来接收父组件的传值。
+子组件使用$emit向父组件来发送值，父组件通过子组件的$emit来监听传值。</p><p>子组件 @click=$emit(&lsquo;functionName&rsquo;, args)</p><p>父组件 @functionName=&ldquo;balabala&rdquo;</p><p>这个意思是子组件点击的时候发送functionName。
+父组件接收functionName后执行balabala
+父组件可以通过$event来访问这个参数。或者将这个参数原封不动传给balabala。</p><p>注意emit出去的需要用 字符串符号括起来。它发射的是字符串。</p><p>然后发射的只能是小写字母。html不区分大小写。Vue区分。</p><p>子组件传出单个参数时：
+// 子组件
+this.$emit(&lsquo;test&rsquo;,this.param)
+// 父组件
+@test=&lsquo;test($event,userDefined)&rsquo;</p><p>子组件传出多个参数时：
+// 子组件
+this.$emit(&lsquo;test&rsquo;,this.param1，this.param2, this.param3)
+// 父组件 arguments 是以数组的形式传入
+@test=&lsquo;test(arguments,userDefined)&rsquo;</p><p>// 父组件
+@test=&lsquo;test($event,userDefined)&rsquo; //userDefined 为父组件的附加对象/参数
+常写成
+@test=&lsquo;test&rsquo; 这个时候$event默认传参了。</p><p>当执行函数时，没有参数时，$event参数默认在第一个。
+当有多个参数时，$event需要显示传参。位置随意。</p><p>$emit 传出参数的也可以进行验证。</p><h3 id=插槽>插槽</h3><p><slot></slot>在template可以使用插槽来代替html 插槽中的内容。</p><p>但是注意，子作用域可以访问父作用域。
+父作用域先渲染。
+子作用域后渲染。
+父级模板里的所有内容都是在父级作用域中编译的；子模板里的所有内容都是在子作用域中编译的。
+子作用域的内容不可以互相访问。</p><p><slot>中的内容，如果html的template中有内容会替换，没内容会保留这里的内容。</slot></p><p><template>作为vue的基本模板。大多数的内容都可以放在template上。但少数如v-slot不能放在template上。</template></p><slot name=定义name :item=绑定item到子作用域上的值><p>&lt;template v-slot:&ldquo;定义的name&rdquo;=&ldquo;一个对象用来接收item的值&rdquo;> 这样html可以操控布局应该怎样呈现数据。也可以访问子组件定义的值。</p><h3 id=在组件上使用v-model>在组件上使用v-model</h3><p>v-model是vue的语法</p><p>正常 <input v-model=searchText>
+详细 &lt;input :value=&ldquo;searchText&rdquo; @input=&ldquo;searchText=$event.target.value&rdquo;>
+在组件上 &lt;component :model-value=&ldquo;searchText&rdquo; @update:model-value=&ldquo;searchText=$event&rdquo;></p><p>v-###:asdf 使用v开头的都是vue的语法。后面跟着的asdf都不用引号的。</p><h3 id=动态组件>动态组件</h3><p>组件命了名后，如果有组件需要切换的话
+<component :is=componentNameSwitch class=tab></div>来切换</p><p><keep-alive>组件可以包裹信息，不让他消失。</p><h3 id=与dom兼容关系>与Dom兼容关系</h3><table><tr is=vue:blog-post></tr></table>由于table内允许的只能是tr标签。所以这里通过is来让component显示出来，此时加上vue:前缀。<p>当你用驼峰大小写的时候，在html 属性上，因为不区分大小写，所以驼峰大小写会被解释为带一个横线</p><p>建议直接使用kebab-case 来定义组件名称。就是全部小写带横线。</p><h3 id=局部注册>局部注册</h3><p>使用对象实例来注册局部组件。</p><h2 id=props>props</h2><p>prop可以预先声明接受的值的类型。还可以进行预先的验证。
+类型检查：
+String
+Number
+Boolean
+Array
+Object
+Date
+Function
+Symbol</p><p>这个类型检查可python不同。python类型检查错了也行，但这里必须检查正确才行。</p><h2 id=provide>provide</h2><p>这里provide :{}
+和provide(){return{}}有什么区别？
+感觉是一样的。直觉告诉我，一个是属性，一个是函数。
+感觉真的要学javascript啊。=》javascript找不到答案。</p><p>这个provide 和 inject 并非是响应式的。</p><p>使用vue.computed(()=>)来响应式更改值。</p><h2 id=没读懂>没读懂</h2><h3 id=异步组件>异步组件</h3><h3 id=非prop的attribute>非Prop的Attribute</h3><h3 id=模板引用>模板引用</h3><h1 id=api>API</h1><h2 id=计算属性>计算属性</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;computed-basics&#34;</span>&gt;
+  &lt;<span style=color:green;font-weight:700>p</span>&gt;Has published books:&lt;/<span style=color:green;font-weight:700>p</span>&gt;
+  &lt;<span style=color:green;font-weight:700>span</span>&gt;{{ publishedBooksMessage }}&lt;/<span style=color:green;font-weight:700>span</span>&gt;
+&lt;/<span style=color:green;font-weight:700>div</span>&gt;
+&lt;<span style=color:green;font-weight:700>script</span>&gt;
+Vue.createApp({
+  data() {
+    <span style=color:#a2f;font-weight:700>return</span> {
+      author<span style=color:#666>:</span> {
+        name<span style=color:#666>:</span> <span style=color:#b44>&#39;John Doe&#39;</span>,
+        books<span style=color:#666>:</span> [
+          <span style=color:#b44>&#39;Vue 2 - Advanced Guide&#39;</span>,
+          <span style=color:#b44>&#39;Vue 3 - Basic Guide&#39;</span>,
+          <span style=color:#b44>&#39;Vue 4 - The Mystery&#39;</span>
+        ]
+      }
+    }
+  },
+  computed<span style=color:#666>:</span> {
+    <span style=color:#080;font-style:italic>// 计算属性的 getter
+</span><span style=color:#080;font-style:italic></span>    publishedBooksMessage() {  <span style=color:#080;font-style:italic>// 这里的函数名就是data 的property了。
+</span><span style=color:#080;font-style:italic></span>      <span style=color:#080;font-style:italic>// `this` 指向 vm 实例
+</span><span style=color:#080;font-style:italic></span>      <span style=color:#a2f;font-weight:700>return</span> <span style=color:#a2f;font-weight:700>this</span>.author.books.length <span style=color:#666>&gt;</span> <span style=color:#666>0</span> <span style=color:#666>?</span> <span style=color:#b44>&#39;Yes&#39;</span> <span style=color:#666>:</span> <span style=color:#b44>&#39;No&#39;</span>
+    }
+  }
+}).mount(<span style=color:#b44>&#39;#computed-basics&#39;</span>)
+
+<span style=color:#080;font-style:italic>//通过computed来计算得到data 的 property，函数名就是property，记住它是个函数，处于data层
+</span><span style=color:#080;font-style:italic></span>
+<span style=color:#080;font-style:italic>// 你可能已经注意到我们可以通过在表达式中调用方法来达到同样的效果：
+</span><span style=color:#080;font-style:italic></span>methods<span style=color:#666>:</span> {
+  calculateBooksMessage() {
+    <span style=color:#a2f;font-weight:700>return</span> <span style=color:#a2f;font-weight:700>this</span>.author.books.length <span style=color:#666>&gt;</span> <span style=color:#666>0</span> <span style=color:#666>?</span> <span style=color:#b44>&#39;Yes&#39;</span> <span style=color:#666>:</span> <span style=color:#b44>&#39;No&#39;</span>
+  }
+}
+<span style=color:#080;font-style:italic>// 我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的。然而，不同的是计算属性是基于它们的响应依赖关系缓存的。计算属性只在相关响应式依赖发生改变时它们才会重新求值。这就意味着只要 author.books 还没有发生改变，多次访问 publishedBookMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。
+</span><span style=color:#080;font-style:italic></span>
+<span style=color:#080;font-style:italic>//计算属性默认只有 getter，不过在需要时你也可以提供一个 setter：
+</span><span style=color:#080;font-style:italic></span>
+computed<span style=color:#666>:</span> {
+  fullName<span style=color:#666>:</span> {
+    <span style=color:#080;font-style:italic>// getter
+</span><span style=color:#080;font-style:italic></span>    get() {
+      <span style=color:#a2f;font-weight:700>return</span> <span style=color:#a2f;font-weight:700>this</span>.firstName <span style=color:#666>+</span> <span style=color:#b44>&#39; &#39;</span> <span style=color:#666>+</span> <span style=color:#a2f;font-weight:700>this</span>.lastName
+    },
+    <span style=color:#080;font-style:italic>// setter
+</span><span style=color:#080;font-style:italic></span>    set(newValue) {
+      <span style=color:#a2f;font-weight:700>const</span> names <span style=color:#666>=</span> newValue.split(<span style=color:#b44>&#39; &#39;</span>)
+      <span style=color:#a2f;font-weight:700>this</span>.firstName <span style=color:#666>=</span> names[<span style=color:#666>0</span>]
+      <span style=color:#a2f;font-weight:700>this</span>.lastName <span style=color:#666>=</span> names[names.length <span style=color:#666>-</span> <span style=color:#666>1</span>]
+    }
+  }
+}
+<span style=color:#080;font-style:italic>// 现在再运行 vm.fullName = &#39;John Doe&#39; 时，setter 会被调用，vm.firstName 和 vm.lastName 也会相应地被更新
+</span><span style=color:#080;font-style:italic>// get是从需要的值到最终值。
+</span><span style=color:#080;font-style:italic>// set是从最终值到初始值的改变。
+</span><span style=color:#080;font-style:italic>// fullname是data property
+</span><span style=color:#080;font-style:italic></span>&lt;/<span style=color:green;font-weight:700>script</span>&gt;
+
+</code></pre></div><h1 id=补充知识>补充知识</h1><h2 id=axios>axios</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>src</span><span style=color:#666>=</span><span style=color:#b44>&#34;https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>script</span>&gt;
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>
+<span style=color:#080;font-style:italic>//  引入axios
+</span><span style=color:#080;font-style:italic></span>
+<span style=color:#080;font-style:italic>// 发送 POST 请求
+</span><span style=color:#080;font-style:italic></span>axios({
+  method<span style=color:#666>:</span> <span style=color:#b44>&#39;post&#39;</span>,
+  url<span style=color:#666>:</span> <span style=color:#b44>&#39;/user/12345&#39;</span>,
+  data<span style=color:#666>:</span> {
+    firstName<span style=color:#666>:</span> <span style=color:#b44>&#39;Fred&#39;</span>,
+    lastName<span style=color:#666>:</span> <span style=color:#b44>&#39;Flintstone&#39;</span>
+  }
+});
+
+<span style=color:#080;font-style:italic>// 请求响应的处理在 then 和 catch 回调中，请求正常会进入 then ，请求异常则会进 catch
+</span><span style=color:#080;font-style:italic></span>axios({
+  method<span style=color:#666>:</span> <span style=color:#b44>&#39;post&#39;</span>,
+  url<span style=color:#666>:</span> <span style=color:#b44>&#39;/user/12345&#39;</span>,
+  data<span style=color:#666>:</span> {
+    firstName<span style=color:#666>:</span> <span style=color:#b44>&#39;Fred&#39;</span>,
+    lastName<span style=color:#666>:</span> <span style=color:#b44>&#39;Flintstone&#39;</span>
+  }
+}).then(res =&gt; {
+    consloe.log(res)
+}).<span style=color:#a2f;font-weight:700>catch</span>(err =&gt; {
+    console.log(err)
+})
+
+
+<span style=color:#080;font-style:italic>// 通过 axios 发出的请求的响应结果中， axios 会加入一些字段，如下
+</span><span style=color:#080;font-style:italic></span>{
+  <span style=color:#080;font-style:italic>// `data` 由服务器提供的响应
+</span><span style=color:#080;font-style:italic></span>  data<span style=color:#666>:</span> {},
+  <span style=color:#080;font-style:italic>// `status` 来自服务器响应的 HTTP 状态码
+</span><span style=color:#080;font-style:italic></span>  status<span style=color:#666>:</span> <span style=color:#666>200</span>,
+  <span style=color:#080;font-style:italic>// `statusText` 来自服务器响应的 HTTP 状态信息
+</span><span style=color:#080;font-style:italic></span>  statusText<span style=color:#666>:</span> <span style=color:#b44>&#39;OK&#39;</span>,
+  <span style=color:#080;font-style:italic>// `headers` 服务器响应的头
+</span><span style=color:#080;font-style:italic></span>  headers<span style=color:#666>:</span> {},
+   <span style=color:#080;font-style:italic>// `config` 是为请求提供的配置信息
+</span><span style=color:#080;font-style:italic></span>  config<span style=color:#666>:</span> {},
+ <span style=color:#080;font-style:italic>// &#39;request&#39;
+</span><span style=color:#080;font-style:italic></span>  <span style=color:#080;font-style:italic>// `request` is the request that generated this response
+</span><span style=color:#080;font-style:italic></span>  <span style=color:#080;font-style:italic>// It is the last ClientRequest instance in node.js (in redirects)
+</span><span style=color:#080;font-style:italic></span>  <span style=color:#080;font-style:italic>// and an XMLHttpRequest instance the browser
+</span><span style=color:#080;font-style:italic></span>  request<span style=color:#666>:</span> {}
+}
+
+
+</code></pre></div><h2 id=箭头函数>箭头函数</h2><p>javascript中箭头函数就是匿名函数
+x => x * x
+等价于
+function (x) {
+return x * x;
+}</p><h2 id=判定符号>判定符号</h2><p>a==b 先类型转换后，再左右判断
+a===b 直接左右判断是否相等。</p><h1 id=注意-1>注意</h1><ol><li>html 中<div>里是没有逗号的，用空格分隔。</li></ol></div><footer class=post-footer><div class=post-tags><a href=/tags/wechat%e5%bc%80%e5%8f%91 rel=tag title=wechat开发>#wechat开发#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class=article-copyright><div class=article-copyright-img><img src=/img/qq_qrcode.png width=129px height=129px><div style=text-align:center>QQ扫一扫交流</div></div><div class=article-copyright-info><p><span>声明：</span>Vue学习</p><p><span>链接：</span>http://next.lisenhui.cn/post/study/wechatdevelopment/vue%E5%AD%A6%E4%B9%A0/</p><p><span>作者：</span>烟雨临溪</p><p><span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！</p></div></div><div class=clear></div></div><div class=reward-qr-info><div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div><button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span></button><div id=QR style=display:none><div id=wechat style=display:inline-block><img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay"><p>微信打赏</p></div><div id=alipay style=display:inline-block><img id=alipay_qr src=/img/ali-pay.png alt=Alipay><p>支付宝打赏</p></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=http://next.lisenhui.cn/post/study/leetcode/leetcode1_%E6%95%B0%E7%BB%84/ rel=next title=Leetcode1_数组><i class="fa fa-chevron-left"></i>Leetcode1_数组</a></div><div class="post-nav-prev post-nav-item"><a href=http://next.lisenhui.cn/post/essay/thought/%E5%89%8D%E4%BA%BA%E6%89%80%E6%80%9D%E6%89%80%E6%83%B3/ rel=prev title=前人所思所想>前人所思所想
+<i class="fa fa-chevron-right"></i></a></div></div><div id=wcomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/linxi_icon.png alt=烟雨临溪><p class=site-author-name itemprop=name>烟雨临溪</p><p class="site-description motion-element" itemprop=description>再平凡的人也有属于他自己的梦想!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>112</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>6</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>31</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/yanyuLinxi target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>GitHub</a></span>
+<span class=links-of-author-item><a href=https://space.bilibili.com/19237450 target=_blank title=哔哩哔哩><i class="fa fa-fw fa-globe"></i>哔哩哔哩</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class=links-of-blogroll-title><i class="fa fa-fw fa-globe"></i>友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.liaoxuefeng.com/ title=廖雪峰 target=_blank>廖雪峰</a></li></ul></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0>论文阅读笔记</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%BC%82%E5%B8%B8%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90>异常行为分析</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/python%E7%9B%B8%E5%85%B3%E5%BA%93%E5%AD%A6%E4%B9%A0>Python相关库学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E5%BA%93>机器学习相关库</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/java%E5%AD%A6%E4%B9%A0>Java学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/insider-threat>Insider threat</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/leetcode%E5%AD%A6%E4%B9%A0>Leetcode学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BE%8E%E9%A3%9F%E7%82%B9%E8%AF%84>美食点评</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/rnn>Rnn</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0>科研学习笔记</a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2022</span>
+<span class=with-love><i class="fa fa-heart"></i></span><span class=copyright-author>希望至美，永不凋零</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.81.0</a></span>
+<span class=separator-line>/</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=site-uv><i class="fa fa-user"></i><span class=busuanzi-value id=busuanzi_value_site_uv></span></span><span class=separator-line>/</span>
+<span class=site-pv><i class="fa fa-eye"></i><span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://www.ucloud.cn/ style=font-weight:700 target=_blank>UCloud云存储</a></span>
+<span class=separator-line>/</span>
+<span class=license-num><a href=http://beian.miit.gov.cn target=_blank>未归档</a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i><span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script><script type=text/javascript src=/js/search.js></script><script type=text/javascript src=/js/affix.js></script><script type=text/javascript src=/js/scrollspy.js></script><script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script><script type=text/javascript>$(function(){$('.post-body').viewer()})</script><script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' 欢迎留下您的宝贵建议，请填写您的昵称和邮箱便于后续交流. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"zh-cn"})}):$('#wcomments').html('抱歉，Waline插件不支持IE或Edge，建议使用Chrome浏览器。')})</script><script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script><script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></body></html>
