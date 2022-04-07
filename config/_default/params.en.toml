@@ -1,0 +1,38 @@
+Description = "欢迎来到临溪的博客站，个人主要专注于机器学习、深度学习的相关研究。在这里分享自己的学习心得。"
+Keywords =  "博客, 程序员,思考, 读书, 笔记, 技术, 分享"
+Subtitle = "让我们消除隔阂的，不是无所不知的脑袋，而是手拉手，坚决不放弃的那颗心"
+AuthorImg = "/img/linxi_icon.png"
+AuthorName = "烟雨临溪"
+Introduce = "再平凡的人也有属于他自己的梦想!"
+DateFormat = "2020-01-02"
+YearFormat = "2020年"
+MonthFormat = "01-02"
+
+ArticleDecContent = "本博客文章除特别声明外，均采用 <a href='https://creativecommons.org/licenses/by-nc-sa/3.0/' target='_blank' style='text-decoration: underline;'>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！"
+
+
+## 底部连接
+[Footer]
+  StorageLink = "https://www.ucloud.cn/"
+  StorageName = "UCloud云存储"
+  ICPLink = "http://beian.miit.gov.cn"
+  ICPNo = "未归档"
+  # ICPNo = "粤ICP备18047355号"
+
+
+## 这个是左侧的订阅连接
+[[Socials]]
+  Name = "GitHub"
+  Icon = "github"
+  URL = "https://github.com/yanyuLinxi"
+
+[[Socials]]
+  Name = "哔哩哔哩"
+  Icon = "globe"
+  URL = "https://space.bilibili.com/19237450"
+
+
+## Links 是友情链接
+[[Links]]
+  Name = "廖雪峰"
+  Permalink = "https://www.liaoxuefeng.com/"

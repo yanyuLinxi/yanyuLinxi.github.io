@@ -1,0 +1,12 @@
+[zh-CN]
+  title = "阳阳的人间旅游日记"
+  languageName = "中文"
+  weight = 1
+  contentdir = "content/zh-CN"
+
+# 英文界面。暂不设置。
+[en]
+  title = "Loving life and dreams."
+  languageName = "English"
+  weight = 2
+  contentdir = "content/en"
