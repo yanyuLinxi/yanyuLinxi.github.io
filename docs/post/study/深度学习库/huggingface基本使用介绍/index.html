@@ -1,0 +1,228 @@
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>Huggingface基本使用介绍 - 阳阳的人间旅游日记</title><meta name=keywords content="博客,程序员,思考,读书,笔记,技术,分享"><meta name=author content="阳阳"><meta property="og:title" content="Huggingface基本使用介绍"><meta property="og:site_name" content="阳阳的人间旅游日记"><meta property="og:image" content="/img/author.jpg"><meta name=title content="Huggingface基本使用介绍 - 阳阳的人间旅游日记"><meta name=description content="欢迎来到临溪的博客站，个人主要专注于机器学习、深度学习的相关研究。在这里分享自己的学习心得。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span><span class=toggle-line></span><span class=toggle-line></span></div></div><div class=site-meta><div class=multi-lang-switch><i class="fa fa-fw fa-language" style=margin-right:5px></i><a class=lang-link id=zh-cn href=#>中文</a></div><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span><span class=site-title>阳阳的人间旅游日记</span>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>让我们消除隔阂的，不是无所不知的脑袋，而是手拉手，坚决不放弃的那颗心</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class=menu-item><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class=menu-item><a href=/404.html rel=section><i class="menu-item-icon fa fa-fw fa-heartbeat"></i><br>公益404</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span><span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=https://yanyulinxi.github.io/post/study/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BA%93/huggingface%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/ itemprop=url>Huggingface基本使用介绍</a></h1><div class=post-meta><span class=post-time><i class="fa fa-calendar-o fa-fw"></i><span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-04-08">2022-04-08</time></span>
+<span class=post-category>&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i><span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a href=/categories/%E5%AD%A6%E4%B9%A0 itemprop=url rel=index style=text-decoration:underline><span itemprop=name>学习</span></a>
+&nbsp;</span></span>
+<span>|
+<i class="fa fa-file-word-o fa-fw"></i><span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>3849 字</span></span>
+<span>|
+<i class="fa fa-eye fa-fw"></i><span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>8分钟</span></span>
+<span id=/post/study/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BA%93/huggingface%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/ class=leancloud_visitors data-flag-title=Huggingface基本使用介绍>|
+<i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><h2 id=这个教程怎么写>这个教程怎么写</h2><p>大致介绍。整个模型在干嘛。简单介绍一下主要的几个模块</p><p>给出代码流程示例： autoclass 微调 和 pipeline直接训练。</p><p>再详细讲解下主要模块： autoclass， 分词器， 微调等几个模块</p><p>详细介绍下辅助模块：metrics等</p><p>详细介绍下其他的一些辅助功能：分布式训练等</p><h2 id=1-huggingface-介绍>1. Huggingface 介绍</h2><p>Huggingface Transformers(<a href=https://huggingface.co/>官网</a>)是基于一个开源基于 transformer 模型结构提供的预训练语言库。支持Tensorflow和pytorch。提供了很多NLP中的预训练模型（主要是和Bert以及Bert有关的一些模型）以及数据集等。API简单清晰，做到了开箱即用，十分方便。</p><p>总结：几个关键词：Transformers、Bert、预训练模型、预训练语料库、开箱即用。</p><p>注意：官方教程十分详细，有时间可以直接啃官方教程。这里我着重对几个大模块的使用方法进行总结。</p><h2 id=2-章节分布>2. 章节分布</h2><p>首先本文会简单介绍下Huggingface框架，介绍下组成部分和涉及到的接口类。接下来会给出两个典型代码例子进行展示，方便快速上手。最后会对部分关键类进行详细解释。</p><h2 id=架构简介>架构简介</h2><p>Transformer(<a href=https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html>Attention is all you need</a>)是一个Seq2Seq模型，最开始用于NLP中的机器翻译任务。后来出现的Bert模型使用了Transformer的编码器，并引入了多个任务做预训练。它也被越来越多的应用于多模态数据（图像、音频等）。为了尽可能的兼容不同的数据和不同的任务，Huggingface设计的Transformers框架，将框架分为了三个部分：数据预处理、预训练模型、微调。</p><h3 id=预处理>预处理</h3><p>数据预处理部分主要对数据进行预处理。这里会包括数据导入(dataset类)、文本数据的分词（Tokenizer类）、图像数据和音频数据的特征提取（FeatureExtractor类）、结合了分词和特征提取的预处理（Processor类）。根据任务不同需要处理成的格式也不同，所以Tokenizer、Extractor、Processor等类是和任务绑定的。其中dataset类还包含了社区中的预训练数据库（语料库）</p><h3 id=预训练模型>预训练模型</h3><p>预训练模型中则可以根据已经发布在<a href=https://huggingface.co/models>社区</a>中的模型名称来获取预训练模型（AutoModel和其子类）。由于任务不同，模型也存在差异，比如输出层可能存在差异，所以可以更具体的根据任务来获取预训练模型。也可以重新配置网络模型的参数来建立一个未预训练的新模型（Configuration类）。这里配置需要注意的地方就是，如果自定义配置不改变核心网络结构的则仍旧可以使用预训练模型权重，如果配置涉及到核心结构的修改，例如前馈网络的隐层神经元的个数，则无法使用预训练模型权重，这个时候transformers会默认你要重新自己预训练一个模型从而随机初始化整个模型的权重，这是一种半灵活性的设计。</p><h3 id=微调>微调</h3><p>微调阶段。如果不进行微调，可以直接使用pipeline类，它包含了数据处理、预训练模型、模型输出等多个部分，可以开箱即用。如果需要微调，可以使用Trainer来做预训练（TrainingArguments类、Trainer类），也可以转成pytorch模型、tensorflow模型进行微调。</p><h3 id=其他类>其他类</h3><p>在微调完毕后，或者创建了新模型后，可以通过Huggingface的API将其上传到社区。</p><p>Huggingface还提供了一些工具类，比如dataset中的load_metric()可以获取评价指标。比如还和Accelerator结合进行分布式训练。</p><h2 id=模型分类>模型分类</h2><p>现有的预训练模型整体上都属于下面的5个类别之一：</p><ol><li>自回归模型：</li><li>自编码模型：</li><li>序列到序列模型：</li><li>多模态模型将文本输入与其他类型的输入（例如图像）混合在一起</li><li>基于检索的模型</li></ol><h2 id=案例>案例</h2><p>这一节给出两个代码案例，分别介绍使用pipeline和AutoModel的使用方法。方便快速上手</p><h3 id=安装>安装</h3><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>pip install transformers
+
+<span style=color:#080;font-style:italic># 预训练数据库（语料库）</span>
+pip install datasets
+</code></pre></div><h3 id=pipeline开箱即用>pipeline开箱即用</h3><p>pipeline可以一行代码直接导入预训练模型，适合不需要对模型做更改，只需要简单的测试下使用。</p><p>使用pipeline的流程：</p><ol><li>指定任务类型和模型名称，以获取对应的预训练pipeline</li><li>将数据传入到pipeline中获得输出。</li></ol><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>transformers</span> <span style=color:#a2f;font-weight:700>import</span> pipeline
+
+<span style=color:#080;font-style:italic># 指定任务，使用pipeline导入预训练的模型。</span>
+generator <span style=color:#666>=</span> pipeline(task<span style=color:#666>=</span><span style=color:#b44>&#34;text-generation&#34;</span>)
+
+<span style=color:#080;font-style:italic># generator包括了设定好的tokenizer和model。可以直接对结果进行预测</span>
+out <span style=color:#666>=</span> generator(<span style=color:#b44>&#34;Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone&#34;</span>)
+<span style=color:#080;font-style:italic># &gt;&gt;&gt; [{&#39;generated_text&#39;: &#39;Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone, Seven for the Iron-priests at the door to the east, and thirteen for the Lord Kings at the end of the mountain&#39;}]</span>
+
+<span style=color:#080;font-style:italic># generator中可以设定部分参数。比如text generator可以设置返回的语句数。</span>
+out <span style=color:#666>=</span> generator(<span style=color:#b44>&#34;Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone&#34;</span>, num_return_sequences<span style=color:#666>=</span><span style=color:#666>2</span>)
+<span style=color:#080;font-style:italic># &gt;&gt;&gt;  [{&#39;generated_text&#39;: &#39;Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone, Seven for the Dragon-lords (for them to rule in a world ruled by their rulers, and all who live within the realm&#39;}]</span>
+
+<span style=color:#080;font-style:italic># 可以在导入pipeline的时候指定模型和分词器等</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>transformers</span> <span style=color:#a2f;font-weight:700>import</span> AutoTokenizer, AutoModelForCausalLM
+
+<span style=color:#080;font-style:italic># 指定分词器。分词器是对文本做分词，并添加标记符号等。后文会详细介绍</span>
+<span style=color:#080;font-style:italic># from_pretrained方法可以根据名称来导入预训练模型。这里的名称在官网Model页面中进行查找。</span>
+tokenizer <span style=color:#666>=</span> AutoTokenizer<span style=color:#666>.</span>from_pretrained(<span style=color:#b44>&#34;distilgpt2&#34;</span>)
+<span style=color:#080;font-style:italic># 指定预训练模型。</span>
+model <span style=color:#666>=</span> AutoModelForCausalLM<span style=color:#666>.</span>from_pretrained(<span style=color:#b44>&#34;distilgpt2&#34;</span>)
+generator <span style=color:#666>=</span> pipeline(task<span style=color:#666>=</span><span style=color:#b44>&#34;text-generation&#34;</span>, model<span style=color:#666>=</span>model, tokenizer<span style=color:#666>=</span>tokenizer)
+
+
+<span style=color:#080;font-style:italic># 其他任务的使用方法可以看模型的页面，会有详细的介绍</span>
+<span style=color:#080;font-style:italic># 其他有关音频和图象的pipeline使用方法可以看官网教程。</span>
+</code></pre></div><h3 id=使用transformers导入模型并使用pytorch微调>使用transformers导入模型并使用pytorch微调</h3><p>使用transformers库导入模型并微调，包括以下几个步骤（对于NLP任务）：</p><ol><li>导入数据。</li><li>导入预训练的分词器（和任务绑定）。对于图象和音频，也可能导入feature extractor和processor。</li><li>使用分词器（预处理器）对数据进行预处理</li><li>导入预训练模型</li><li>使用pytorch对模型进行微调</li></ol><p>本示例以官方教程<a href=https://huggingface.co/docs/transformers/training>句子分类模型微调</a>为例。</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+<span style=color:#080;font-style:italic># 1. 使用datasets类导入数据</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>datasets</span> <span style=color:#a2f;font-weight:700>import</span> load_dataset
+
+dataset <span style=color:#666>=</span> load_dataset(<span style=color:#b44>&#34;yelp_review_full&#34;</span>)
+
+<span style=color:#b44>&#34;&#34;&#34;
+</span><span style=color:#b44>dataset[100]:
+</span><span style=color:#b44>{&#39;label&#39;: 0,
+</span><span style=color:#b44> &#39;text&#39;: &#39;My expectations for McDonalds are t rarely high. But for one to still fail so spectacularly...that takes something special!.....&#39;}
+</span><span style=color:#b44>&#34;&#34;&#34;</span>
+
+<span style=color:#080;font-style:italic># 2. 导入预训练分词器，bert-base-cased，然后对数据进行分词处理。</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>transformers</span> <span style=color:#a2f;font-weight:700>import</span> AutoTokenizer
+tokenizer <span style=color:#666>=</span> AutoTokenizer<span style=color:#666>.</span>from_pretrained(<span style=color:#b44>&#34;bert-base-cased&#34;</span>)
+<span style=color:#a2f;font-weight:700>def</span> <span style=color:#00a000>tokenize_function</span>(examples):
+    <span style=color:#a2f;font-weight:700>return</span> tokenizer(examples[<span style=color:#b44>&#34;text&#34;</span>], padding<span style=color:#666>=</span><span style=color:#b44>&#34;max_length&#34;</span>, truncation<span style=color:#666>=</span>True)
+
+
+<span style=color:#080;font-style:italic># 3. 使用分词器对数据进行预处理</span>
+<span style=color:#080;font-style:italic># dataset中的map方法可以将操作映射到每一个样本。</span>
+tokenized_datasets <span style=color:#666>=</span> dataset<span style=color:#666>.</span>map(tokenize_function, batched<span style=color:#666>=</span>True)
+
+
+<span style=color:#080;font-style:italic># 针对pytorch模型做适配。移除text列，重命名label列。模型接收的参数定义可以查看模型定义界面。</span>
+tokenized_datasets <span style=color:#666>=</span> tokenized_datasets<span style=color:#666>.</span>remove_columns([<span style=color:#b44>&#34;text&#34;</span>])
+tokenized_datasets <span style=color:#666>=</span> tokenized_datasets<span style=color:#666>.</span>rename_column(<span style=color:#b44>&#34;label&#34;</span>, <span style=color:#b44>&#34;labels&#34;</span>)
+
+<span style=color:#080;font-style:italic># 将数据转为torch格式。此时数据已经是torch张量了。</span>
+tokenized_datasets<span style=color:#666>.</span>set_format(<span style=color:#b44>&#34;torch&#34;</span>)
+
+<span style=color:#080;font-style:italic># 获取训练和评估用的数据集</span>
+small_train_dataset <span style=color:#666>=</span> tokenized_datasets[<span style=color:#b44>&#34;train&#34;</span>]<span style=color:#666>.</span>shuffle(seed<span style=color:#666>=</span><span style=color:#666>42</span>)<span style=color:#666>.</span>select(<span style=color:#a2f>range</span>(<span style=color:#666>1000</span>))
+small_eval_dataset <span style=color:#666>=</span> tokenized_datasets[<span style=color:#b44>&#34;test&#34;</span>]<span style=color:#666>.</span>shuffle(seed<span style=color:#666>=</span><span style=color:#666>42</span>)<span style=color:#666>.</span>select(<span style=color:#a2f>range</span>(<span style=color:#666>1000</span>))
+
+<span style=color:#080;font-style:italic># 将数据转为torch中dataloader进行存储。</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>torch.utils.data</span> <span style=color:#a2f;font-weight:700>import</span> DataLoader
+
+train_dataloader <span style=color:#666>=</span> DataLoader(small_train_dataset, shuffle<span style=color:#666>=</span>True, batch_size<span style=color:#666>=</span><span style=color:#666>8</span>)
+eval_dataloader <span style=color:#666>=</span> DataLoader(small_eval_dataset, batch_size<span style=color:#666>=</span><span style=color:#666>8</span>)
+
+<span style=color:#080;font-style:italic># 4. 导入预训练模型</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>transformers</span> <span style=color:#a2f;font-weight:700>import</span> AutoModelForSequenceClassification
+
+model <span style=color:#666>=</span> AutoModelForSequenceClassification<span style=color:#666>.</span>from_pretrained(<span style=color:#b44>&#34;bert-base-cased&#34;</span>, num_labels<span style=color:#666>=</span><span style=color:#666>5</span>)
+
+<span style=color:#080;font-style:italic># 使用pytorch设置优化器。</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>torch.optim</span> <span style=color:#a2f;font-weight:700>import</span> AdamW
+
+optimizer <span style=color:#666>=</span> AdamW(model<span style=color:#666>.</span>parameters(), lr<span style=color:#666>=</span><span style=color:#666>5e-5</span>)
+
+<span style=color:#080;font-style:italic># 使用torch设置动态学习器。不熟悉可以跳过</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>transformers</span> <span style=color:#a2f;font-weight:700>import</span> get_scheduler
+
+num_epochs <span style=color:#666>=</span> <span style=color:#666>3</span>
+num_training_steps <span style=color:#666>=</span> num_epochs <span style=color:#666>*</span> <span style=color:#a2f>len</span>(train_dataloader)
+lr_scheduler <span style=color:#666>=</span> get_scheduler(
+    name<span style=color:#666>=</span><span style=color:#b44>&#34;linear&#34;</span>, optimizer<span style=color:#666>=</span>optimizer, num_warmup_steps<span style=color:#666>=</span><span style=color:#666>0</span>, num_training_steps<span style=color:#666>=</span>num_training_steps
+)
+
+<span style=color:#080;font-style:italic># 将模型转为gpu上训练。</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>torch</span>
+
+device <span style=color:#666>=</span> torch<span style=color:#666>.</span>device(<span style=color:#b44>&#34;cuda&#34;</span>) <span style=color:#a2f;font-weight:700>if</span> torch<span style=color:#666>.</span>cuda<span style=color:#666>.</span>is_available() <span style=color:#a2f;font-weight:700>else</span> torch<span style=color:#666>.</span>device(<span style=color:#b44>&#34;cpu&#34;</span>)
+model<span style=color:#666>.</span>to(device)
+
+<span style=color:#080;font-style:italic># 5. 开始训练</span>
+model<span style=color:#666>.</span>train()
+<span style=color:#a2f;font-weight:700>for</span> epoch <span style=color:#a2f;font-weight:700>in</span> tqdm(<span style=color:#a2f>range</span>(num_epochs)):
+    <span style=color:#a2f;font-weight:700>for</span> batch <span style=color:#a2f;font-weight:700>in</span> train_dataloader:
+        <span style=color:#080;font-style:italic># 数据转到gpu上</span>
+        batch <span style=color:#666>=</span> {k: v<span style=color:#666>.</span>to(device) <span style=color:#a2f;font-weight:700>for</span> k, v <span style=color:#a2f;font-weight:700>in</span> batch<span style=color:#666>.</span>items()}
+        <span style=color:#080;font-style:italic># 数据传入模型中</span>
+        outputs <span style=color:#666>=</span> model(<span style=color:#666>**</span>batch)
+        loss <span style=color:#666>=</span> outputs<span style=color:#666>.</span>loss
+        loss<span style=color:#666>.</span>backward()
+
+        <span style=color:#080;font-style:italic># 进行梯度下降</span>
+        optimizer<span style=color:#666>.</span>step()
+        lr_scheduler<span style=color:#666>.</span>step()
+        optimizer<span style=color:#666>.</span>zero_grad()
+
+<span style=color:#080;font-style:italic># 使用验证集进行评估</span>
+metric <span style=color:#666>=</span> load_metric(<span style=color:#b44>&#34;accuracy&#34;</span>)
+model<span style=color:#666>.</span>eval()
+<span style=color:#a2f;font-weight:700>for</span> batch <span style=color:#a2f;font-weight:700>in</span> eval_dataloader:
+    batch <span style=color:#666>=</span> {k: v<span style=color:#666>.</span>to(device) <span style=color:#a2f;font-weight:700>for</span> k, v <span style=color:#a2f;font-weight:700>in</span> batch<span style=color:#666>.</span>items()}
+    <span style=color:#a2f;font-weight:700>with</span> torch<span style=color:#666>.</span>no_grad():
+        outputs <span style=color:#666>=</span> model(<span style=color:#666>**</span>batch)
+
+    logits <span style=color:#666>=</span> outputs<span style=color:#666>.</span>logits
+    predictions <span style=color:#666>=</span> torch<span style=color:#666>.</span>argmax(logits, dim<span style=color:#666>=-</span><span style=color:#666>1</span>)
+    metric<span style=color:#666>.</span>add_batch(predictions<span style=color:#666>=</span>predictions, references<span style=color:#666>=</span>batch[<span style=color:#b44>&#34;labels&#34;</span>])
+
+metric<span style=color:#666>.</span>compute()
+</code></pre></div><h2 id=关键模块介绍>关键模块介绍</h2><h3 id=分词器tokenizer>分词器Tokenizer</h3><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#080;font-style:italic># 使用分词器预处理文本数据。</span>
+<span style=color:#080;font-style:italic># 使用特征提取器预处理图像或音频数据。</span>
+<span style=color:#080;font-style:italic># 使用处理器预处理多模式任务的数据。</span>
+
+<span style=color:#080;font-style:italic># 对于自然语言，需要使用tokenizer对自然语言添加词token用于分词等。</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>transformers</span> <span style=color:#a2f;font-weight:700>import</span> AutoTokenizer
+
+tokenizer <span style=color:#666>=</span> AutoTokenizer<span style=color:#666>.</span>from_pretrained(<span style=color:#b44>&#34;bert-base-cased&#34;</span>)
+
+<span style=color:#080;font-style:italic># tokenizer 会添加[CLS], [SEP]等标签</span>
+encoded_input <span style=color:#666>=</span> tokenizer(<span style=color:#b44>&#34;Do not meddle in the affairs of wizards, for they are subtle and quick to anger.&#34;</span>)
+<span style=color:#a2f;font-weight:700>print</span>(encoded_input)
+{<span style=color:#b44>&#39;input_ids&#39;</span>: [<span style=color:#666>101</span>, <span style=color:#666>2079</span>, <span style=color:#666>2025</span>, <span style=color:#666>19960</span>, <span style=color:#666>10362</span>, <span style=color:#666>1999</span>, <span style=color:#666>1996</span>, <span style=color:#666>3821</span>, <span style=color:#666>1997</span>, <span style=color:#666>16657</span>, <span style=color:#666>1010</span>, <span style=color:#666>2005</span>, <span style=color:#666>2027</span>, <span style=color:#666>2024</span>, <span style=color:#666>11259</span>, <span style=color:#666>1998</span>, <span style=color:#666>4248</span>, <span style=color:#666>2000</span>, <span style=color:#666>4963</span>, <span style=color:#666>1012</span>, <span style=color:#666>102</span>], 
+ <span style=color:#b44>&#39;token_type_ids&#39;</span>: [<span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>], 
+ <span style=color:#b44>&#39;attention_mask&#39;</span>: [<span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>, <span style=color:#666>1</span>]}
+
+<span style=color:#080;font-style:italic># 其中input_ids是句子中每个标记对应的索引。</span>
+<span style=color:#080;font-style:italic># 当有多个序列时，token_type_ids标识一个令牌属于哪个序列。</span>
+<span style=color:#080;font-style:italic># attention_mask指示是否应注意令牌。在预测下一个单词的任务中，网络不应该看到当前词以后的词，此时当前词以后的词的mask会为0.</span>
+
+<span style=color:#080;font-style:italic># 解码以看到原始输入胡</span>
+tokenizer<span style=color:#666>.</span>decode(encoded_input[<span style=color:#b44>&#34;input_ids&#34;</span>])
+<span style=color:#b44>&#39;[CLS] Do not meddle in the affairs of wizards, for they are subtle and quick to anger. [SEP]&#39;</span>
+
+<span style=color:#080;font-style:italic># 如果您要处理多个句子，请将这些句子作为列表传递给标记器：</span>
+
+<span style=color:#080;font-style:italic># 填充是一种通过向具有较少标记的句子添加特殊填充标记来确保张量是矩形的策略。</span>
+<span style=color:#080;font-style:italic># 将return_tensors参数设置pt则返回pytorch格式的数据。 tf则对应于TensorFlow：</span>
+encoded_input <span style=color:#666>=</span> tokenizer(batch_sentences, padding<span style=color:#666>=</span>True, truncation<span style=color:#666>=</span>True, return_tensors<span style=color:#666>=</span> <span style=color:#b44>&#34;pt&#34;</span>)
+
+<span style=color:#080;font-style:italic># 导入预训练数据库</span>
+
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>datasets</span> <span style=color:#a2f;font-weight:700>import</span> load_dataset, Audio
+
+dataset <span style=color:#666>=</span> load_dataset(<span style=color:#b44>&#34;superb&#34;</span>, <span style=color:#b44>&#34;ks&#34;</span>)
+
+</code></pre></div><h2 id=任务总结>任务总结</h2><h2 id=模型总结>模型总结</h2><p>微调可以使用huggingface的API进行微调。也可以使用pytorchAPI进行微调。
+pytorch 微调book <a href="https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/question_answering.ipynb#scrollTo=RzfPtOMoIrIu">https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/question_answering.ipynb#scrollTo=RzfPtOMoIrIu</a></p><h2 id=其他功能>其他功能</h2><h3 id=分布式训练>分布式训练</h3><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+pip install accelerate
+
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>accelerate</span> <span style=color:#a2f;font-weight:700>import</span> Accelerator
+
+accelerator <span style=color:#666>=</span> Accelerator()
+
+<span style=color:#080;font-style:italic># Accelerator将自动检测您的分布式设置类型并初始化所有必要的培训组件。您无需将模型显式放置在设备上。</span>
+
+<span style=color:#080;font-style:italic># 下一步是将所有相关的训练对象传递给该prepare方法。</span>
+<span style=color:#080;font-style:italic># 这包括您的训练和评估 DataLoaders、模型和优化器：</span>
+train_dataloader, eval_dataloader, model, optimizer <span style=color:#666>=</span> accelerator<span style=color:#666>.</span>prepare(
+    train_dataloader, eval_dataloader, model, optimizer
+)
+
+<span style=color:#080;font-style:italic># 和平常训练的不同的是，用accelerator.backward(loss)代替loss.backward()</span>
+<span style=color:#a2f;font-weight:700>for</span> epoch <span style=color:#a2f;font-weight:700>in</span> <span style=color:#a2f>range</span>(num_epochs):
+    <span style=color:#a2f;font-weight:700>for</span> batch <span style=color:#a2f;font-weight:700>in</span> train_dataloader:
+        outputs <span style=color:#666>=</span> model(<span style=color:#666>**</span>batch)
+        loss <span style=color:#666>=</span> outputs<span style=color:#666>.</span>loss
+        accelerator<span style=color:#666>.</span>backward(loss)
+
+        optimizer<span style=color:#666>.</span>step()
+        lr_scheduler<span style=color:#666>.</span>step()
+        optimizer<span style=color:#666>.</span>zero_grad()
+        progress_bar<span style=color:#666>.</span>update(<span style=color:#666>1</span>)
+
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch>@<span style=color:#080;font-style:italic>REM 使用脚本进行训练</span>
+@<span style=color:#080;font-style:italic>REM 如果从脚本运行训练，请运行以下命令来创建并保存配置文件</span>
+accelerate config
+
+@<span style=color:#080;font-style:italic>REM 然后开始你的训练</span>
+accelerate launch train.py
+</code></pre></div><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#080;font-style:italic># 在notebook中使用accelerate</span>
+<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>accelerate</span> <span style=color:#a2f;font-weight:700>import</span> notebook_launcher
+
+notebook_launcher(training_function)
+</code></pre></div><p>更多知识参考<a href=https://huggingface.co/docs/accelerate/index.html>文档</a></p><h2 id=参考资料>参考资料</h2><ol><li>官网资料（官网教程十分详细了，时间充足可以直接啃官方教程）：<a href=https://huggingface.co/docs/transformers/quicktour>https://huggingface.co/docs/transformers/quicktour</a></li><li>中文讲解：<a href=https://zhuanlan.zhihu.com/p/358525654>https://zhuanlan.zhihu.com/p/358525654</a></li><li><a href=https://zhuanlan.zhihu.com/p/330069758>https://zhuanlan.zhihu.com/p/330069758</a></li></ol></div><footer class=post-footer><div class=post-tags><a href=/tags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e8%be%85%e5%8a%a9%e5%b7%a5%e5%85%b7 rel=tag title=深度学习辅助工具>#深度学习辅助工具#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class=article-copyright><div class=article-copyright-img><img src=/img/qq_qrcode.png width=129px height=129px><div style=text-align:center>QQ扫一扫交流</div></div><div class=article-copyright-info><p><span>声明：</span>Huggingface基本使用介绍</p><p style=word-break:break-all><span>链接：</span>
+https://yanyulinxi.github.io/post/study/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BA%93/huggingface%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</p><p><span>作者：</span>阳阳</p><p><span>邮箱：</span>yanyulinxi@qq.com</p><p><span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！</p></div></div><div class=clear></div></div><div class=reward-qr-info><div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div><button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span></button><div id=QR style=display:none><div id=wechat style=display:inline-block><img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay"><p>微信打赏</p></div><div id=alipay style=display:inline-block><img id=alipay_qr src=/img/ali-pay.png alt=Alipay><p>支付宝打赏</p></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=https://yanyulinxi.github.io/post/essay/thought/%E6%AF%81%E6%8E%89%E4%BA%BA%E7%94%9F%E7%9A%84%E5%B9%B3%E5%BA%B8/ rel=next title=毁掉人生的平庸><i class="fa fa-chevron-left"></i>毁掉人生的平庸</a></div><div class="post-nav-prev post-nav-item"><a href=https://yanyulinxi.github.io/post/study/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BA%93/pytorch%E4%B8%8D%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/ rel=prev title=Pytorch不常用命令随记>Pytorch不常用命令随记
+<i class="fa fa-chevron-right"></i></a></div></div><div id=wcomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target=post-toc-wrap>文章目录</li><li class=sidebar-nav-overview data-target=site-overview>站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/linxi_icon.png alt=阳阳><p class=site-author-name itemprop=name>阳阳</p><p class="site-description motion-element" itemprop=description>再平凡的人也有属于他自己的梦想!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>123</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>6</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>32</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/yanyuLinxi target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>GitHub</a></span>
+<span class=links-of-author-item><a href=https://space.bilibili.com/19237450 target=_blank title=哔哩哔哩><i class="fa fa-fw fa-globe"></i>哔哩哔哩</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class=links-of-blogroll-title><i class="fa fa-fw fa-globe"></i>友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://www.liaoxuefeng.com/ title=廖雪峰 target=_blank>廖雪峰</a></li></ul></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0>论文阅读笔记</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%BC%82%E5%B8%B8%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90>异常行为分析</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/python%E7%9B%B8%E5%85%B3%E5%BA%93%E5%AD%A6%E4%B9%A0>Python相关库学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7>深度学习辅助工具</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E5%BA%93>机器学习相关库</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/java%E5%AD%A6%E4%B9%A0>Java学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/insider-threat>Insider threat</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/leetcode%E5%AD%A6%E4%B9%A0>Leetcode学习</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BE%8E%E9%A3%9F%E7%82%B9%E8%AF%84>美食点评</a></li><li class=tagcloud-of-blogroll-item><a href=/tags/rnn>Rnn</a></li></ul></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class=post-toc><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#这个教程怎么写>这个教程怎么写</a></li><li><a href=#1-huggingface-介绍>1. Huggingface 介绍</a></li><li><a href=#2-章节分布>2. 章节分布</a></li><li><a href=#架构简介>架构简介</a><ul><li><a href=#预处理>预处理</a></li><li><a href=#预训练模型>预训练模型</a></li><li><a href=#微调>微调</a></li><li><a href=#其他类>其他类</a></li></ul></li><li><a href=#模型分类>模型分类</a></li><li><a href=#案例>案例</a><ul><li><a href=#安装>安装</a></li><li><a href=#pipeline开箱即用>pipeline开箱即用</a></li><li><a href=#使用transformers导入模型并使用pytorch微调>使用transformers导入模型并使用pytorch微调</a></li></ul></li><li><a href=#关键模块介绍>关键模块介绍</a><ul><li><a href=#分词器tokenizer>分词器Tokenizer</a></li></ul></li><li><a href=#任务总结>任务总结</a></li><li><a href=#模型总结>模型总结</a></li><li><a href=#其他功能>其他功能</a><ul><li><a href=#分布式训练>分布式训练</a></li></ul></li><li><a href=#参考资料>参考资料</a></li></ul></nav></div></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2022</span>
+<span class=with-love><i class="fa fa-heart"></i></span><span class=copyright-author>阳阳的人间旅游日记</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.81.0</a></span>
+<span class=separator-line>/</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=site-uv><i class="fa fa-user"></i><span class=busuanzi-value id=busuanzi_value_site_uv></span></span><span class=separator-line>/</span>
+<span class=site-pv><i class="fa fa-eye"></i><span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href style=font-weight:700 target=_blank></a></span><span class=separator-line>/</span>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i><span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script><script type=text/javascript src=/js/search.js></script><script type=text/javascript src=/js/affix.js></script><script type=text/javascript src=/js/scrollspy.js></script><script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script><script type=text/javascript>$(function(){$('.post-body').viewer()})</script><script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' 欢迎留下您的宝贵建议，请填写您的昵称和邮箱便于后续交流. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"zh-cn"})}):$('#wcomments').html('抱歉，Waline插件不支持IE或Edge，建议使用Chrome浏览器。')})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script><script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></body></html>
